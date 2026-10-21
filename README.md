@@ -1,21 +1,47 @@
-# Curriculum Interactivo
+# Interactive Portfolio
 
-Currículum interactivo con estética **Dark Hacker Terminal**. El proyecto combina un frontend en Nuxt 3 y Vue 3 con un backend en FastAPI y MongoDB.
+A multilingual developer portfolio with a terminal-inspired interface, built with Nuxt and FastAPI.
 
-## Stack
+## Overview
 
-Frontend: Nuxt 3, Vue 3, Pinia, PrimeVue, Chart.js, Lucide Vue, SCSS, composable propio de copy multilingüe.
+A personal website for presenting professional experience, projects and skills. The current design uses a dark palette, red accents and monospace typography.
 
-Backend: FastAPI, Motor, Pydantic.
+## Features
 
-Base de datos: MongoDB.
+- Interactive portfolio sections backed by a REST API.
+- Persistent language selection.
+- Localized interface copy and content fields.
+- Containerized frontend, backend and database.
 
-Infraestructura: Docker, Docker Compose.
+## Tech stack
 
-## Traducciones
+| Layer | Technologies |
+| --- | --- |
+| Frontend | Nuxt 3, Vue 3, Pinia, PrimeVue, Chart.js, SCSS |
+| Backend | Python, FastAPI, Motor, Pydantic |
+| Database | MongoDB |
+| Infrastructure | Docker Compose |
 
-El frontend incluye selector persistente de idioma para español, inglés, alemán y ruso. El copy visible y varios campos del contenido se traducen desde `frontend/composables/usePortfolioCopy.ts`.
+## Getting started
 
-## Diseño
+Review [docker-compose.yml](docker-compose.yml) and the backend settings in [config.py](backend/app/core/config.py). Create a local `.env` with the database and frontend API URLs appropriate for your environment.
 
-La interfaz mantiene una estética oscura con terminal, acentos rojos, tipografía monospace y componentes con bordes marcados.
+The development services use ports 3000 for the frontend, 8000 for the API and 27017 for MongoDB. The Compose configuration includes development reload settings.
+
+## Project structure
+
+- `frontend/` — portfolio interface and translations.
+- `backend/` — API, content and contact functionality.
+- `docker-compose.yml` — local service configuration.
+
+## Languages
+
+Includes Spanish, English, German and Russian interface copy. This README is written in English. Translation definitions live in [usePortfolioCopy.ts](frontend/composables/usePortfolioCopy.ts).
+
+## License
+
+[MIT](LICENSE).
+
+---
+
+A project in [Javier Sepúlveda's portfolio](https://github.com/jsk11L).
