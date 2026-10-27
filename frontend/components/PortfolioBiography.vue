@@ -2,16 +2,21 @@
 const store = useCvStore();
 const { translateProfile } = usePortfolioCopy();
 const { text } = useStudioCopy();
+const { theme } = usePortfolioTheme();
 const profile = computed(() => translateProfile(store.profile));
 </script>
 
 <template>
   <section id="about" class="biography-section section-block" tabindex="-1">
     <div class="biography-heading">
-      <span class="eyebrow">{{ text.sideB }}</span>
+      <span class="eyebrow">{{ text.about }}</span>
       <h2>{{ text.aboutTitle }}</h2>
       <img
-        src="/images/profile.webp"
+        :src="
+          theme === 'friend'
+            ? '/images/artwork/javier-manga-v3.webp'
+            : '/images/profile.webp'
+        "
         alt="Javier Sepúlveda"
         width="900"
         height="1000"

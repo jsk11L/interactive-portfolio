@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, Printer } from "lucide-vue-next";
 const store = useCvStore();
+const { theme } = usePortfolioTheme();
 const {
   translateProfile,
   translateExperience,
@@ -25,7 +26,7 @@ useSeoMeta({ title: () => `${text.value.cvTitle} — Javier Sepúlveda` });
         <Printer :size="16" aria-hidden="true" />{{ text.print }}
       </button>
     </div>
-    <article v-if="profile" class="cv-document">
+    <article v-if="profile" class="cv-document" :class="`cv-${theme}`">
       <header>
         <span class="eyebrow">{{ text.cvTitle }}</span>
         <h1>{{ profile.name }}</h1>

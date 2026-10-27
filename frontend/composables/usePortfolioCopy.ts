@@ -618,14 +618,14 @@ const localeCopies: Record<Locale, LocaleCopy> = {
 
 export function usePortfolioCopy() {
   // A deterministic initial locale keeps pre-rendered HTML and hydration identical.
-  const locale = useState<Locale>('portfolio-locale', () => 'es')
+  const locale = useState<Locale>('portfolio-locale', () => 'en')
   const copy = computed(() => localeCopies[locale.value] ?? localeCopies.es)
 
   const setLocale = (nextLocale: Locale) => {
     if (!localeOptions.some(option => option.code === nextLocale)) return
     locale.value = nextLocale
     if (import.meta.client) {
-      try { localStorage.setItem('portfolio-locale', nextLocale) } catch { /* Storage may be disabled. */ }
+      try { localStorage.setItem('portfolio-language', nextLocale) } catch { /* Storage may be disabled. */ }
     }
   }
 

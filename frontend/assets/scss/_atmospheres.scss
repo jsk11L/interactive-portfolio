@@ -1,0 +1,448 @@
+/* Motion belongs to the illustration rather than to repeated content reveals. */
+[data-theme="ferment"] .ambient-controls > .theme-controls > .universe-trigger {
+  background: #f0f6f3df;
+  opacity: 1;
+}
+.portfolio-composition h2,
+.portfolio-composition h3 {
+  text-wrap: balance;
+}
+.portfolio-composition button,
+.language-trigger,
+.language-menu button {
+  touch-action: manipulation;
+}
+.floating-language {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.portfolio .colophon {
+  padding-bottom: 90px;
+}
+.kh2-menu-layout h1 {
+  font-size: clamp(65px, 6.2vw, 105px);
+}
+.kh2-water-motion {
+  position: absolute;
+  inset: 61% -3% 0;
+  width: 106%;
+  height: 39%;
+  opacity: 0.26;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: shore-drift 12s ease-in-out infinite alternate;
+}
+@keyframes shore-drift {
+  to {
+    transform: translate(-12px, 5px) scaleY(0.97);
+    opacity: 0.16;
+  }
+}
+.cover-candle .candle-real-flame {
+  position: absolute;
+  top: 40.2%;
+  left: 50%;
+  width: 6%;
+  height: 10%;
+  object-fit: contain;
+  mask-image: none;
+  filter: none;
+  z-index: 3;
+  transform: translate(-50%, -100%);
+  transform-origin: 50% 100%;
+  animation: photographic-flame 4.7s ease-in-out infinite;
+}
+@keyframes photographic-flame {
+  0%,
+  100% {
+    transform: translate(-50%, -100%) scale(0.97, 1) skewX(-1deg);
+    opacity: 0.96;
+  }
+  17% {
+    transform: translate(-50%, -100%) scale(1.02, 0.97) skewX(1.5deg);
+    opacity: 1;
+  }
+  39% {
+    transform: translate(-50%, -100%) scale(0.96, 1.025) skewX(-2deg);
+  }
+  62% {
+    transform: translate(-50%, -100%) scale(1, 0.98) skewX(0.8deg);
+    opacity: 0.94;
+  }
+  83% {
+    transform: translate(-50%, -100%) scale(0.98, 1.01) skewX(-0.7deg);
+  }
+}
+.candle-real-smoke {
+  position: absolute;
+  left: 50%;
+  top: 31.4%;
+  width: 12%;
+  height: 37%;
+  z-index: 4;
+  transform: translate(-50%, -100%);
+  overflow: visible;
+  pointer-events: none;
+}
+.candle-real-smoke > g {
+  transform-origin: 50% 100%;
+  animation: smoke-curl 14s ease-in-out infinite alternate;
+}
+@keyframes smoke-curl {
+  from {
+    transform: skewX(-3deg) scaleX(0.8);
+    opacity: 0.5;
+  }
+  to {
+    transform: skewX(6deg) scaleX(1.2);
+    opacity: 0.95;
+  }
+}
+.factory-smoke-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.industrial-plume {
+  transform-origin: 0 0;
+  animation: industrial-drift 17s ease-in-out infinite alternate;
+  animation-delay: var(--plume-delay);
+}
+.plume-second {
+  animation-delay: calc(var(--plume-delay) - 8s);
+  animation-duration: 21s;
+  opacity: 0.6;
+}
+@keyframes industrial-drift {
+  from {
+    transform: skewX(-7deg) scaleX(0.8) scaleY(0.85);
+    opacity: 0.5;
+  }
+  to {
+    transform: skewX(11deg) scaleX(1.15) scaleY(1.15);
+    opacity: 0.9;
+  }
+}
+.hunter-fog {
+  animation-duration: 30s;
+}
+.p5-calling-card {
+  animation-duration: 12s;
+}
+.phantom-hero .phantom-copy h1 {
+  font-size: clamp(75px, 8.5vw, 135px);
+}
+.phantom-kicker {
+  max-width: 580px;
+  font-size: 10px;
+  line-height: 1.8;
+}
+.phantom-hero .portrait-sticker {
+  font-size: 18px;
+}
+.animals-scene h1 {
+  font-size: clamp(65px, 7vw, 112px);
+  max-width: 650px;
+}
+.animals-scene > .scene-eyebrow {
+  max-width: 500px;
+  line-height: 1.8;
+}
+.scene-ferment {
+  background: #e4ebdd;
+}
+.scene-ferment .scene-art {
+  opacity: 1;
+  object-position: center;
+}
+.scene-ferment::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, #ede6d3aa, transparent 55%);
+}
+.ferment-scene {
+  padding-top: 16vh;
+}
+.ferment-scene h1 {
+  font-size: clamp(65px, 7vw, 110px);
+  max-width: 620px;
+  transform: rotate(-3deg);
+}
+.ferment-scene > p {
+  max-width: 350px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.ferment-track-menu {
+  gap: 5px;
+  max-width: 300px;
+}
+.ferment-track-menu button,
+.ferment-track-menu a {
+  min-width: 260px;
+  padding: 12px 0;
+  justify-content: space-between;
+}
+.headphone-cable {
+  opacity: 0.35;
+  animation: cable-breath 22s ease-in-out infinite alternate;
+}
+@keyframes cable-breath {
+  to {
+    transform: translateY(5px) rotate(0.3deg);
+  }
+}
+.redroom-scene h1 {
+  font-size: clamp(80px, 9vw, 150px);
+  line-height: 0.9;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.redroom-scene > p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-inline: auto;
+}
+.velvet-light {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 60% 20%, #f9543415, transparent 65%);
+  animation: velvet-breath 19s ease-in-out infinite alternate;
+}
+@keyframes velvet-breath {
+  to {
+    opacity: 0.15;
+    transform: translateX(2%);
+  }
+}
+.eva-title h1 {
+  font-size: clamp(80px, 9vw, 150px);
+}
+.eva-title > p {
+  max-width: 500px;
+  line-height: 1.8;
+}
+.eva-acquisition {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  height: 2px;
+  background: #a5cda365;
+  box-shadow: 0 0 15px #a5cda3;
+  animation: magi-acquisition 2.8s ease-out both;
+}
+@keyframes magi-acquisition {
+  0% {
+    top: 5%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+.edgerunner-scene h1 {
+  font-size: clamp(80px, 10vw, 160px);
+  max-width: 750px;
+}
+.edgerunner-scene > p {
+  max-width: 390px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.scene-friend {
+  background: #f0eee5;
+  color: #242723;
+  min-height: 880px;
+  height: max(100svh, 880px);
+}
+.manga-opening {
+  width: min(1260px, calc(100% - 140px));
+  margin: auto;
+  padding: 85px 0 100px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 22px;
+}
+.manga-title-block {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 25px 10px;
+}
+.manga-title-block > p {
+  font:
+    11px/1.8 "Special Elite",
+    monospace;
+}
+.manga-title-block h1 {
+  font:
+    105px/0.9 "Bangers",
+    Impact,
+    sans-serif;
+  letter-spacing: -0.025em;
+  margin-top: 20px;
+  transform: rotate(-2deg);
+}
+.manga-portrait-panel {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  border: 4px solid #242723;
+  position: relative;
+  overflow: hidden;
+  height: 510px;
+  background: white;
+  transform: rotate(1deg);
+}
+.manga-portrait-panel > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+}
+.manga-speech {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  width: 230px;
+  max-width: 70%;
+  padding: 20px;
+  border: 2px solid #242723;
+  border-radius: 45% 40% 42% 30% / 25%;
+  font:
+    15px/1.5 Georgia,
+    serif;
+  background: white;
+}
+.manga-city-panel {
+  grid-column: 1;
+  grid-row: 2;
+  height: 255px;
+  position: relative;
+  border: 3px solid #242723;
+  background: #fff;
+  overflow: hidden;
+  transform: rotate(-1deg);
+}
+.manga-city-panel > svg:first-child {
+  width: 100%;
+  height: 100%;
+}
+.manga-city-panel > span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 8px;
+  background: #fff;
+  font:
+    11px "Special Elite",
+    monospace;
+}
+.manga-small-mark {
+  position: absolute;
+  top: 6%;
+  right: 8%;
+  height: 100px;
+  width: 70px;
+  transform: rotate(9deg);
+}
+.manga-introduction-panel {
+  grid-column: 1 / -1;
+  border: 3px solid #242723;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 24px 30px;
+  position: relative;
+  background: repeating-linear-gradient(135deg, #fff 0 9px, #24272308 9px 10px);
+}
+.manga-introduction-panel > p {
+  max-width: 680px;
+  font:
+    17px/1.8 Georgia,
+    serif;
+}
+.manga-introduction-panel > div {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 25px;
+}
+.manga-introduction-panel .manga-enter {
+  margin: 0;
+  font-size: 15px;
+  padding: 14px 20px;
+}
+.manga-introduction-panel a {
+  font:
+    13px "Special Elite",
+    monospace;
+  border-bottom: 1px solid;
+}
+.manga-reference {
+  position: absolute;
+  bottom: -24px;
+  right: 10px;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+}
+.manga-title-block,
+.manga-portrait-panel,
+.manga-city-panel {
+  animation: ink-panel 1s ease-out both;
+}
+.manga-portrait-panel {
+  animation-delay: 0.08s;
+}
+.manga-city-panel {
+  animation-delay: 0.16s;
+}
+@keyframes ink-panel {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+  }
+}
+.journey-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+[data-paused="true"] .kh2-water-motion,
+[data-paused="true"] .candle-real-flame,
+[data-paused="true"] .candle-real-smoke > g,
+[data-paused="true"] .industrial-plume {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .kh2-water-motion,
+  .candle-real-flame,
+  .candle-real-smoke > g,
+  .industrial-plume,
+  .velvet-light,
+  .headphone-cable,
+  .manga-title-block,
+  .manga-portrait-panel,
+  .manga-city-panel {
+    animation: none !important;
+  }
+  .eva-acquisition {
+    display: none;
+  }
+}

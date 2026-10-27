@@ -8,7 +8,6 @@ const { locale, localeOptions, setLocale } = usePortfolioCopy();
 const { text } = useStudioCopy();
 const route = useRoute();
 const { progress, active, pastIntro, travel } = useJourney();
-let observer: IntersectionObserver | undefined;
 let scrollFrame = 0;
 function updateScroll() {
   const max = Math.max(
@@ -17,16 +16,14 @@ function updateScroll() {
   );
   progress.value = Math.min(1, window.scrollY / max);
   pastIntro.value = window.scrollY > window.innerHeight * 0.7;
-  let current = "intro";
-  for (const id of ["intro", "projects", "about", "experience"]) {
-    const element = document.getElementById(id);
-    if (
-      element &&
-      element.getBoundingClientRect().top < window.innerHeight * 0.4
-    )
-      current = id;
-  }
-  active.value = current;
+  const positions = ["intro", "projects", "about", "experience"]
+    .map((id) => ({
+      id,
+      top: document.getElementById(id)?.getBoundingClientRect().top ?? Infinity,
+    }))
+    .filter((item) => item.top < window.innerHeight * 0.4)
+    .sort((a, b) => b.top - a.top);
+  active.value = positions[0]?.id || "intro";
 }
 function handleScroll() {
   if (scrollFrame) return;
@@ -37,22 +34,12 @@ function handleScroll() {
 }
 async function observeSections() {
   await nextTick();
-  observer?.disconnect();
-  observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries)
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-revealed");
-          observer?.unobserve(entry.target);
-        }
-    },
-    { threshold: 0.08 },
-  );
-  for (const element of document.querySelectorAll(
-    ".section-heading, .biography-heading, .biography-copy, .experience-entry, .toolkit-grid article",
-  )) {
-    element.classList.add("journey-reveal");
-    observer.observe(element);
+  const anchor = route.hash.slice(1);
+  if (
+    route.path === "/" &&
+    ["intro", "projects", "about", "experience", "contact"].includes(anchor)
+  ) {
+    document.getElementById(anchor)?.scrollIntoView({ behavior: "instant" });
   }
   updateScroll();
 }
@@ -60,23 +47,23 @@ onMounted(() => {
   window.addEventListener("scroll", handleScroll, { passive: true });
   observeSections();
 });
-watch(() => route.path, observeSections);
+watch(() => route.fullPath, observeSections);
 watch(theme, observeSections);
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
-  observer?.disconnect();
   cancelAnimationFrame(scrollFrame);
 });
 useHead({ htmlAttrs: { lang: () => locale.value } });
-onNuxtReady(() => {
+onNuxtReady(async () => {
   initialize();
   try {
-    const stored = localStorage.getItem("portfolio-locale");
+    const stored = localStorage.getItem("portfolio-language");
     if (localeOptions.some((item) => item.code === stored))
       setLocale(stored as Locale);
   } catch {
     /* Preferences are optional. */
   }
+  await observeSections();
 });
 
 // Query changes can arrive after the pre-rendered payload has hydrated.
@@ -122,24 +109,6 @@ watch(
         /></NuxtLink>
       </nav>
       <div class="masthead-tools">
-        <label class="locale-control"
-          ><span class="sr-only">Idioma / Language</span
-          ><select
-            aria-label="Idioma / Language"
-            :value="locale"
-            @change="
-              setLocale(($event.target as HTMLSelectElement).value as Locale)
-            "
-          >
-            <option
-              v-for="option in localeOptions"
-              :key="option.code"
-              :value="option.code"
-            >
-              {{ option.label }}
-            </option>
-          </select></label
-        >
         <ThemeControls />
       </div>
     </header>
@@ -147,7 +116,7 @@ watch(
       <ThemeControls />
     </div>
     <main id="main-content" tabindex="-1"><slot /></main>
-    <JourneyRail /><PhantomTransition />
+    <LanguageControl /><JourneyRail /><PhantomTransition />
     <footer class="colophon no-print">
       <span>© {{ new Date().getFullYear() }} Javier Sepúlveda</span
       ><span

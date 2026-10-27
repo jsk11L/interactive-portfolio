@@ -1,0 +1,758 @@
+@media (max-width: 1100px) {
+  .portfolio-composition {
+    width: calc(100% - 80px);
+    gap: 70px 40px;
+  }
+  .composition-dearly,
+  .composition-daydream {
+    grid-template-columns: 135px minmax(0, 1fr);
+  }
+  .composition-index .composition-signature {
+    font-size: 29px;
+  }
+  .composition-index > p {
+    font-size: 10px;
+  }
+  .composition-dearly .biography-section,
+  .composition-daydream .biography-section {
+    grid-template-columns: 1fr;
+  }
+  .composition-dearly .biography-heading,
+  .composition-daydream .biography-heading {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    column-gap: 20px;
+  }
+  .composition-dearly .biography-heading img,
+  .composition-daydream .biography-heading img {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    margin: 0;
+    width: 140px;
+    height: 160px;
+  }
+  .composition-phantom .poster-copy h3 {
+    font-size: 34px;
+  }
+  .composition-phantom .biography-section {
+    padding: 40px;
+    gap: 40px;
+  }
+  .composition-bloodborne {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+  .composition-animals .experience-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .composition-animals .project-poster {
+    gap: 35px;
+  }
+  .composition-animals .poster-copy h3 {
+    font-size: 40px;
+  }
+  .composition-ferment .poster-catalog {
+    gap: 25px 50px;
+  }
+  .composition-eva {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 35px;
+  }
+  .composition-eva .poster-copy h3 {
+    font-size: 28px;
+  }
+  .composition-eva .project-technologies {
+    font-size: 8px;
+    gap: 5px;
+  }
+  .composition-edgerunner .track-text > strong {
+    font-size: 42px;
+  }
+  .composition-friend .biography-copy {
+    display: block;
+  }
+  .composition-friend .biography-copy > * {
+    margin-top: 25px;
+  }
+  .composition-friend .poster-copy h3 {
+    font-size: 34px;
+  }
+  .manga-opening {
+    width: calc(100% - 90px);
+  }
+  .manga-title-block h1 {
+    font-size: 83px;
+  }
+  .manga-introduction-panel {
+    gap: 25px;
+  }
+}
+@media (max-width: 850px) {
+  .portfolio-composition {
+    width: calc(100% - 60px);
+    padding-top: 65px;
+    gap: 65px;
+  }
+  .composition-dearly,
+  .composition-daydream,
+  .composition-eva,
+  .composition-bloodborne {
+    display: block;
+  }
+  .portfolio-composition > * {
+    margin-bottom: 65px !important;
+  }
+  .portfolio-composition > .composition-index {
+    display: none;
+  }
+  .portfolio-composition > .section-block {
+    margin-bottom: 70px;
+  }
+  .profile-intro h2,
+  .composition-dearly .profile-intro h2,
+  .composition-daydream .profile-intro h2 {
+    font-size: 42px;
+  }
+  .profile-intro > p:not(:first-child) {
+    font-size: 15px;
+  }
+  .composition-bloodborne > .biography-section {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    border: 0;
+    padding: 0;
+    gap: 30px;
+  }
+  .composition-bloodborne .biography-heading img {
+    width: 200px;
+    height: 240px;
+  }
+  .composition-bloodborne .biography-copy {
+    padding: 0;
+  }
+  .composition-bloodborne .project-poster {
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+  }
+  .composition-phantom .profile-intro {
+    margin-left: 10%;
+    padding-left: 25px;
+  }
+  .composition-phantom .poster-catalog {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 25px;
+  }
+  .composition-phantom .project-poster:first-child {
+    grid-row: auto;
+  }
+  .composition-phantom .project-poster:first-child .poster-image img {
+    aspect-ratio: 1.8;
+  }
+  .composition-phantom .biography-section {
+    transform: none;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+  }
+  .composition-animals .profile-intro h2 {
+    font-size: 53px;
+  }
+  .composition-animals .biography-section,
+  .composition-ferment .biography-section,
+  .composition-edgerunner .biography-section {
+    gap: 40px;
+  }
+  .composition-ferment .profile-intro h2 {
+    font-size: 51px;
+  }
+  .composition-ferment .biography-heading img {
+    width: 100%;
+    height: 310px;
+  }
+  .composition-eva > .biography-section {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+    padding: 25px;
+  }
+  .composition-eva .biography-copy {
+    padding: 0;
+  }
+  .composition-eva .poster-copy h3 {
+    font-size: 38px;
+  }
+  .composition-eva .poster-image img {
+    aspect-ratio: 1.7;
+  }
+  .composition-redroom .poster-copy h3 {
+    font-size: 44px;
+  }
+  .composition-redroom .biography-section {
+    gap: 30px;
+    grid-template-columns: 200px 1fr;
+  }
+  .composition-edgerunner .record-catalog {
+    gap: 30px;
+  }
+  .composition-edgerunner .track-text > strong {
+    font-size: 37px;
+  }
+  .composition-friend .poster-catalog {
+    grid-template-columns: 1fr 1fr;
+  }
+  .composition-friend .project-poster:nth-child(6) {
+    grid-column: auto;
+  }
+  .composition-friend .project-poster:nth-child(6) .poster-image img {
+    aspect-ratio: 1.5;
+  }
+  .composition-friend .biography-section {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  .manga-opening {
+    width: calc(100% - 60px);
+    gap: 17px;
+  }
+  .manga-title-block h1 {
+    font-size: 71px;
+  }
+  .manga-introduction-panel {
+    display: block;
+  }
+  .manga-introduction-panel > div {
+    margin-top: 20px;
+  }
+  .manga-speech {
+    font-size: 13px;
+    padding: 15px;
+  }
+  .redroom-scene h1 {
+    font-size: 105px;
+  }
+  .eva-title h1 {
+    font-size: 100px;
+  }
+  .edgerunner-scene h1 {
+    font-size: 105px;
+  }
+}
+@media (max-width: 600px) {
+  .portfolio-composition {
+    width: calc(100% - 44px);
+    padding: 50px 0 20px;
+    display: block;
+  }
+  .portfolio-composition > .section-block {
+    padding: 0;
+    scroll-margin-top: 140px;
+  }
+  .portfolio-composition .section-heading {
+    align-items: center;
+    gap: 15px;
+  }
+  .portfolio-composition .section-heading h2 {
+    font-size: 38px;
+  }
+  .portfolio-composition .section-heading > p {
+    max-width: 100px;
+    font-size: 10px;
+  }
+  .portfolio-composition .profile-intro h2 {
+    font-size: 38px;
+  }
+  .portfolio-composition .profile-intro > p:not(:first-child) {
+    font-size: 14px;
+  }
+  .portfolio-composition .catalog-toolbar {
+    gap: 15px;
+    padding-top: 18px;
+  }
+  .portfolio-composition .project-filters button {
+    font-size: 10px;
+  }
+  .portfolio-composition .catalog-controls {
+    width: 100%;
+  }
+  .portfolio-composition .biography-section {
+    display: block;
+    width: 100%;
+  }
+  .portfolio-composition .biography-heading {
+    display: block;
+    transform: none;
+  }
+  .portfolio-composition .biography-heading img {
+    width: 200px;
+    height: 240px;
+    margin: 25px 0;
+  }
+  .portfolio-composition .biography-heading h2 {
+    font-size: 35px;
+  }
+  .portfolio-composition .biography-copy {
+    padding: 0;
+  }
+  .portfolio-composition .biography-summary {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .portfolio-composition .experience-entry {
+    display: block;
+  }
+  .portfolio-composition .experience-entry h3 {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+  .portfolio-composition .experience-entry li {
+    font-size: 12px;
+  }
+  .portfolio-composition .toolkit-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 20px;
+  }
+  .portfolio-composition .composition-contact {
+    padding: 40px 0;
+  }
+  .portfolio-composition .composition-contact h2 {
+    font-size: 60px;
+  }
+  .composition-dearly .poster-catalog {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 18px;
+  }
+  .composition-dearly .project-poster:first-child {
+    grid-column: 1 / -1;
+  }
+  .composition-dearly .poster-copy h3 {
+    font-size: 27px;
+  }
+  .composition-dearly .poster-copy > p {
+    font-size: 11px;
+  }
+  .composition-dearly .project-technologies {
+    display: none;
+  }
+  .composition-dearly .experience-list {
+    display: block;
+  }
+  .composition-phantom .profile-intro {
+    margin-left: 0;
+    border-left-width: 6px;
+    padding-left: 20px;
+  }
+  .composition-phantom .poster-catalog {
+    gap: 28px 15px;
+  }
+  .composition-phantom .project-poster {
+    padding: 7px 7px 20px;
+    box-shadow: 4px 5px 0 #ed2939;
+  }
+  .composition-phantom .project-poster:nth-child(3n + 2) {
+    margin-top: 15px;
+  }
+  .composition-phantom .poster-copy {
+    padding-inline: 3px;
+  }
+  .composition-phantom .poster-copy h3 {
+    font-size: 28px;
+  }
+  .composition-phantom .project-poster:first-child .poster-copy h3 {
+    font-size: 43px;
+  }
+  .composition-phantom .poster-copy > p {
+    font-size: 11px;
+  }
+  .composition-phantom .project-technologies,
+  .composition-phantom .project-status {
+    display: none;
+  }
+  .composition-phantom .biography-section {
+    padding: 30px 22px;
+  }
+  .composition-bloodborne .project-poster {
+    grid-template-columns: 105px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+  }
+  .composition-bloodborne .poster-image img {
+    aspect-ratio: 0.85;
+  }
+  .composition-bloodborne .poster-copy h3 {
+    font-size: 31px;
+  }
+  .composition-bloodborne .poster-copy > p {
+    font-size: 11px;
+  }
+  .composition-bloodborne .poster-copy .eyebrow,
+  .composition-bloodborne .project-technologies {
+    display: none;
+  }
+  .composition-bloodborne .poster-image {
+    border-width: 4px;
+    padding: 2px;
+  }
+  .composition-daydream .record-catalog {
+    display: flex;
+    gap: 25px;
+  }
+  .composition-daydream .record-stage {
+    display: contents;
+  }
+  .composition-daydream .project-track {
+    min-height: 125px;
+  }
+  .composition-animals .project-poster,
+  .composition-animals .project-poster:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 35px 0;
+  }
+  .composition-animals .project-poster:nth-child(even) {
+    align-items: flex-end;
+  }
+  .composition-animals .poster-copy {
+    width: 88%;
+    padding: 0;
+  }
+  .composition-animals .poster-copy h3 {
+    font-size: 40px;
+  }
+  .composition-animals .poster-copy > p {
+    font-size: 14px;
+  }
+  .composition-animals .experience-list {
+    display: block;
+  }
+  .composition-animals .experience-entry {
+    border-top-width: 6px;
+  }
+  .composition-ferment .poster-catalog {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .composition-ferment .project-poster,
+  .composition-ferment .project-poster:nth-child(even) {
+    margin-top: 20px;
+    width: 88%;
+  }
+  .composition-ferment .project-poster:nth-child(even) {
+    margin-left: auto;
+  }
+  .composition-ferment .poster-copy h3 {
+    font-size: 37px;
+  }
+  .composition-ferment .composition-contact {
+    margin-right: 0;
+  }
+  .composition-redroom .profile-intro {
+    text-align: left;
+  }
+  .composition-redroom .project-poster {
+    margin-bottom: 55px;
+  }
+  .composition-redroom .poster-image img {
+    aspect-ratio: 1.7;
+  }
+  .composition-redroom .poster-copy {
+    display: block;
+    padding: 20px 0;
+  }
+  .composition-redroom .poster-copy h3 {
+    font-size: 44px;
+  }
+  .composition-redroom .poster-copy > p {
+    margin-top: 18px;
+  }
+  .composition-eva > .biography-section {
+    padding: 20px;
+  }
+  .composition-eva .poster-catalog {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .composition-eva .project-poster {
+    padding: 8px;
+  }
+  .composition-eva .poster-image img {
+    aspect-ratio: 1.1;
+  }
+  .composition-eva .poster-copy {
+    padding-top: 15px;
+  }
+  .composition-eva .poster-copy h3 {
+    font-size: 28px;
+    overflow-wrap: anywhere;
+  }
+  .composition-eva .poster-copy > p {
+    font-size: 11px;
+  }
+  .composition-eva .project-technologies,
+  .composition-eva .project-status {
+    display: none;
+  }
+  .composition-eva .experience-list {
+    display: block;
+  }
+  .composition-eva .experience-entry {
+    margin-top: 20px;
+  }
+  .composition-edgerunner .record-catalog {
+    display: flex;
+    gap: 25px;
+  }
+  .composition-edgerunner .record-stage {
+    display: contents;
+  }
+  .composition-edgerunner .record-sleeve {
+    order: 0;
+  }
+  .composition-edgerunner .record-stage-controls {
+    order: 1;
+  }
+  .composition-edgerunner .selected-project-note {
+    order: 2;
+  }
+  .composition-edgerunner .track-list {
+    order: 3;
+  }
+  .composition-edgerunner .project-track {
+    min-height: 145px;
+  }
+  .composition-edgerunner .track-text > strong {
+    font-size: 42px;
+  }
+  .composition-edgerunner .experience-list {
+    display: block;
+  }
+  .composition-friend .profile-intro {
+    padding: 25px;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .composition-friend .profile-intro h2 {
+    font-size: 40px;
+  }
+  .composition-friend .biography-heading img {
+    width: 100%;
+    height: 300px;
+  }
+  .composition-friend .biography-copy {
+    display: block;
+    padding-top: 5px;
+  }
+  .composition-friend .biography-summary {
+    padding: 22px;
+    border-radius: 10%;
+    font-size: 15px;
+  }
+  .composition-friend .poster-catalog {
+    gap: 16px;
+  }
+  .composition-friend .project-poster {
+    padding: 7px 7px 18px;
+    border-width: 2px;
+  }
+  .composition-friend .poster-copy {
+    padding-inline: 2px;
+  }
+  .composition-friend .poster-copy h3 {
+    font-size: 29px;
+  }
+  .composition-friend .poster-copy > p {
+    font-size: 11px;
+  }
+  .composition-friend .project-technologies,
+  .composition-friend .project-status {
+    display: none;
+  }
+  .composition-friend .experience-list {
+    display: block;
+  }
+  .composition-friend .experience-entry {
+    padding: 25px;
+    margin-top: 20px;
+  }
+  .floating-language {
+    left: 16px;
+    bottom: 22px;
+  }
+  .past-intro .floating-language {
+    bottom: 87px;
+  }
+  .language-trigger {
+    font-size: 11px;
+    padding: 11px 13px;
+  }
+  .immersive-home:not(.past-intro) .floating-language {
+    top: 17px;
+    bottom: auto;
+  }
+  .language-menu {
+    width: 175px;
+  }
+  .kh2-menu-layout h1 {
+    font-size: 55px;
+  }
+  .kh2-main-menu button {
+    font-size: 17px;
+  }
+  .kh2-water-motion {
+    inset: 72% -10% 0;
+    width: 120%;
+    height: 28%;
+    opacity: 0.2;
+  }
+  .phantom-hero .phantom-copy h1 {
+    font-size: 74px;
+  }
+  .phantom-kicker {
+    font-size: 8px;
+    line-height: 1.8;
+    max-width: 290px;
+  }
+  .phantom-hero .portrait-sticker {
+    font-size: 13px;
+  }
+  .hunter-scene > p {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 300px;
+  }
+  .animals-scene h1 {
+    font-size: 67px;
+    max-width: 340px;
+  }
+  .animals-scene > .scene-eyebrow {
+    font-size: 8px;
+    max-width: 280px;
+  }
+  .factory-smoke-layer {
+    width: 178%;
+    left: -40%;
+    max-width: none;
+  }
+  .scene-ferment .scene-art {
+    object-position: 58% center;
+    opacity: 0.8;
+  }
+  .scene-ferment::after {
+    background: linear-gradient(90deg, #ede6d3d9, #ede6d333 65%);
+  }
+  .ferment-scene {
+    padding-top: 18vh;
+  }
+  .ferment-scene h1 {
+    font-size: 71px;
+    max-width: 330px;
+  }
+  .ferment-scene > p {
+    font-size: 13px;
+    max-width: 275px;
+    background: #f3ead8cf;
+    padding: 12px 14px;
+    margin-left: -14px;
+    backdrop-filter: blur(4px);
+  }
+  .ferment-track-menu {
+    max-width: 250px;
+    margin-top: 25px;
+  }
+  .ferment-track-menu strong {
+    font-size: 22px;
+  }
+  .redroom-scene h1 {
+    font-size: 90px;
+  }
+  .redroom-scene > p {
+    font-size: 15px;
+    max-width: 270px;
+  }
+  .eva-title h1 {
+    font-size: 87px;
+  }
+  .edgerunner-scene h1 {
+    font-size: 88px;
+    max-width: 340px;
+  }
+  .edgerunner-scene > p {
+    font-size: 13px;
+    max-width: 275px;
+  }
+  .scene-friend {
+    min-height: 1050px;
+    height: auto;
+  }
+  .manga-opening {
+    width: calc(100% - 40px);
+    padding: 85px 0 105px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .manga-title-block {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: 10px 5px;
+  }
+  .manga-title-block h1 {
+    font-size: 78px;
+  }
+  .manga-title-block > p {
+    font-size: 9px;
+  }
+  .manga-portrait-panel {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 330px;
+    border-width: 3px;
+  }
+  .manga-portrait-panel > img {
+    object-position: center 12%;
+  }
+  .manga-speech {
+    width: 150px;
+    font-size: 12px;
+    bottom: 13px;
+    right: 13px;
+  }
+  .manga-city-panel {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    height: 150px;
+    border-width: 2px;
+  }
+  .manga-city-panel > span {
+    font-size: 9px;
+  }
+  .manga-small-mark {
+    height: 80px;
+    width: 50px;
+  }
+  .manga-introduction-panel {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    padding: 20px;
+    border-width: 2px;
+  }
+  .manga-introduction-panel > p {
+    font-size: 14px;
+  }
+  .manga-introduction-panel > div {
+    gap: 20px;
+  }
+  .manga-introduction-panel .manga-enter {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+  .manga-introduction-panel a {
+    font-size: 12px;
+  }
+  .scene-friend .scene-caption {
+    bottom: 25px;
+    left: 22px;
+  }
+}
+@media print {
+  .floating-language,
+  .composition-index {
+    display: none !important;
+  }
+}

@@ -19,7 +19,7 @@ const experiences = computed(() => store.experiences.map(translateExperience));
   >
     <div class="section-heading">
       <div>
-        <span class="eyebrow">{{ text.sideC }}</span>
+        <span class="eyebrow">{{ text.background }}</span>
         <h2>{{ text.experience }}</h2>
       </div>
       <NuxtLink to="/cv" class="text-link">{{ text.readCv }} ↗</NuxtLink>

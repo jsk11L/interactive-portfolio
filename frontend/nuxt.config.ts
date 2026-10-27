@@ -21,14 +21,14 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Javier Sepúlveda — Software, música & otras ideas",
-      htmlAttrs: { lang: "es" },
+      title: "Javier Sepúlveda — Software & research",
+      htmlAttrs: { lang: "en" },
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           name: "description",
           content:
-            "El portafolio de Javier Sepúlveda. Desarrollo de software, investigación y proyectos personales. Diez universos de música, videojuegos, cine y manga para explorar la misma historia.",
+            "Javier Sepúlveda: computer science engineering student, software development, research and personal projects.",
         },
         { name: "theme-color", content: "#eeeae0" },
       ],

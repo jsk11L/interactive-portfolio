@@ -1,0 +1,1190 @@
+/* Shared content, deliberately different reading structures. */
+.portfolio-composition {
+  width: min(1320px, calc(100% - 112px));
+  margin-inline: auto;
+  padding: 100px 0;
+  display: grid;
+  gap: 100px;
+  align-items: start;
+  > * {
+    min-width: 0;
+  }
+  > .section-block {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    scroll-margin-top: 100px;
+  }
+  > .section-block:focus {
+    outline: none;
+  }
+  > .section-block:focus-visible > .section-heading h2 {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 1px;
+  }
+  .section-heading {
+    margin-bottom: 30px;
+  }
+  .section-heading .eyebrow {
+    display: none;
+  }
+  .section-heading h2 {
+    font-size: clamp(34px, 3.6vw, 54px);
+  }
+  .catalog-toolbar {
+    position: static;
+    flex-wrap: wrap;
+    margin-top: 0;
+    gap: 15px;
+  }
+  .catalog-controls {
+    margin-left: auto;
+  }
+  .project-filters {
+    gap: 5px;
+  }
+  .project-filters button {
+    font-size: 11px;
+  }
+  .project-search input {
+    font-size: 11px;
+  }
+  .biography-summary {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  .biography-heading h2 {
+    font-size: 42px;
+  }
+  .experience-entry {
+    padding-block: 30px;
+  }
+  .experience-entry h3 {
+    font-size: 23px;
+    line-height: 1.25;
+  }
+  .experience-entry li {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .experience-date {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .poster-copy > p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .poster-copy h3 {
+    line-height: 1.1;
+  }
+  .toolkit {
+    margin-top: 60px;
+  }
+  .github-index {
+    margin-top: 40px;
+  }
+}
+.composition-index {
+  display: none;
+}
+.composition-signature {
+  display: block;
+  font:
+    36px/1 Georgia,
+    serif;
+  letter-spacing: -0.045em;
+}
+.composition-index > p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 25px;
+  max-width: 190px;
+  color: var(--muted);
+}
+.composition-index nav {
+  display: grid;
+  justify-items: start;
+  gap: 15px;
+  margin-top: 45px;
+}
+.composition-index nav button,
+.composition-index nav a {
+  padding: 5px 0;
+  font-size: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.index-note {
+  display: block;
+  max-width: 170px;
+  margin-top: 50px;
+  font:
+    italic 13px/1.8 Georgia,
+    serif;
+  color: var(--muted);
+}
+.profile-intro {
+  max-width: 930px;
+}
+.profile-intro > p:first-child {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.profile-intro h2 {
+  font:
+    400 clamp(36px, 4.5vw, 66px)/1.12 Georgia,
+    serif;
+  letter-spacing: -0.045em;
+  max-width: 950px;
+}
+.profile-intro > p:not(:first-child) {
+  max-width: 570px;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-top: 25px;
+}
+.profile-intro .text-link {
+  margin-top: 25px;
+}
+.composition-contact {
+  padding: 60px 0 20px;
+  border-top: 1px solid var(--line);
+}
+.composition-contact > p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 520px;
+}
+.composition-contact > p:first-child {
+  color: var(--muted);
+  font-size: 12px;
+}
+.composition-contact h2 {
+  font:
+    400 clamp(55px, 7vw, 100px)/1 Georgia,
+    serif;
+  letter-spacing: -0.05em;
+  margin: 25px 0;
+}
+.composition-contact a {
+  margin-top: 30px;
+}
+
+/* KHII: a chapter index stays beside a white, illustrated journal. */
+[data-theme="dearly"] .portfolio-composition {
+  --paper: #fff;
+}
+.composition-dearly {
+  grid-template-columns: 160px minmax(0, 1fr);
+  column-gap: 75px;
+  .composition-index {
+    display: block;
+    position: sticky;
+    top: 125px;
+    grid-column: 1;
+    grid-row: 1 / 6;
+  }
+  > :not(.composition-index) {
+    grid-column: 2;
+  }
+  .profile-intro h2 {
+    font-size: 48px;
+    max-width: 700px;
+    color: #405d70;
+  }
+  .biography-section {
+    grid-template-columns: 210px 1fr;
+    gap: 45px;
+  }
+  .biography-heading img {
+    width: 180px;
+    height: 215px;
+    object-fit: cover;
+    margin-top: 25px;
+    mask-image: linear-gradient(#000 85%, transparent);
+  }
+  .biography-heading h2 {
+    font-size: 34px;
+  }
+  .biography-summary {
+    font-size: 16px;
+  }
+  .poster-catalog {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px 24px;
+  }
+  .project-poster:first-child {
+    grid-column: span 2;
+  }
+  .project-poster:first-child .poster-image img {
+    aspect-ratio: 2.5;
+  }
+  .project-poster {
+    padding: 0 0 22px;
+    border-bottom: 1px solid #b7d1de;
+  }
+  .poster-image {
+    border: 0;
+    background: #eaf5f8;
+  }
+  .poster-image img {
+    aspect-ratio: 1.5;
+    border-radius: 0;
+  }
+  .poster-copy h3 {
+    font:
+      28px Georgia,
+      serif;
+    letter-spacing: -0.04em;
+  }
+  .poster-stamp {
+    background: #fff;
+    color: #4d7995;
+  }
+  .project-technologies {
+    gap: 7px;
+  }
+  .experience-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .experience-entry {
+    display: block;
+    border-top: 1px solid #c5dde9;
+  }
+  .experience-entry h3 {
+    margin-top: 17px;
+  }
+}
+
+/* Persona: an uneven poster wall, then a diagonal profile and bold career bands. */
+.composition-phantom {
+  .profile-intro {
+    margin-left: 20%;
+    max-width: 920px;
+    border-left: 10px solid #ed2939;
+    padding-left: 40px;
+  }
+  .profile-intro h2 {
+    font:
+      68px/1.05 "Bangers",
+      Impact,
+      sans-serif;
+    letter-spacing: 0;
+  }
+  .poster-catalog {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 50px 32px;
+    align-items: start;
+  }
+  .project-poster {
+    background: #eeeae0;
+    color: #151515;
+    padding: 10px 10px 25px;
+    box-shadow: 8px 8px 0 #ed2939;
+    transform: rotate(-1deg);
+  }
+  .project-poster:nth-child(3n + 2) {
+    transform: rotate(2deg);
+    margin-top: 40px;
+  }
+  .project-poster:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .project-poster:first-child .poster-image img {
+    aspect-ratio: 1;
+  }
+  .poster-copy {
+    padding-inline: 15px;
+  }
+  .poster-copy h3 {
+    font-size: 43px;
+  }
+  .project-poster:first-child .poster-copy h3 {
+    font-size: 65px;
+  }
+  .poster-image {
+    border: 0;
+  }
+  .biography-section {
+    background: #eeeae0;
+    color: #151515;
+    padding: 70px 65px;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 65px;
+    transform: rotate(-1deg);
+    --ink: #151515;
+    --muted: #55534d;
+    --line: #bcb8aa;
+  }
+  .biography-heading img {
+    clip-path: polygon(0 5%, 94% 0, 100% 94%, 5% 100%);
+    filter: grayscale(1) contrast(1.5);
+  }
+  .experience-entry {
+    grid-template-columns: 210px 1fr;
+    border-top: 6px solid #ed2939;
+    margin-top: 30px;
+  }
+  .experience-entry h3 {
+    font:
+      37px/1.1 "Bangers",
+      Impact,
+      sans-serif;
+  }
+  .toolkit-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Bloodborne: a portrait archive, narrow chronology, then a spacious inventory. */
+.composition-bloodborne {
+  grid-template-columns: 285px minmax(0, 1fr);
+  gap: 80px;
+  .profile-intro {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .profile-intro h2 {
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 56px;
+  }
+  > .biography-section {
+    display: block;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    border-right: 1px solid var(--line);
+    padding-right: 35px;
+  }
+  .biography-heading h2 {
+    font:
+      38px "IM Fell English",
+      Georgia,
+      serif;
+  }
+  .biography-heading img {
+    height: 270px;
+    object-fit: cover;
+    margin: 25px 0;
+    filter: grayscale(1) sepia(0.25);
+  }
+  .biography-summary {
+    font:
+      16px/1.9 Georgia,
+      serif;
+  }
+  .biography-copy {
+    padding-top: 25px;
+  }
+  .research-note {
+    display: block;
+  }
+  > .experience-section {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .experience-entry {
+    display: block;
+    margin-left: 16px;
+    padding: 25px 0 35px 30px;
+    border-left: 1px solid #9b8157;
+    border-top: 0;
+    position: relative;
+  }
+  .experience-entry::before {
+    content: "✥";
+    position: absolute;
+    left: -9px;
+    top: 22px;
+    background: var(--paper);
+    color: #c0a06d;
+  }
+  .experience-entry h3 {
+    margin-top: 17px;
+    font:
+      30px "IM Fell English",
+      Georgia,
+      serif;
+  }
+  > .projects-section,
+  > .composition-contact {
+    grid-column: 1 / -1;
+  }
+  .poster-catalog {
+    display: block;
+  }
+  .project-poster {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 28px 0;
+    border-block: 1px solid #635e4d;
+    margin-top: 12px;
+  }
+  .poster-image {
+    border: 7px double #68614c;
+    padding: 5px;
+    background: #050a0e;
+  }
+  .poster-image img {
+    aspect-ratio: 1.2;
+    filter: saturate(0.6);
+  }
+  .poster-copy {
+    padding: 0;
+    max-width: 680px;
+  }
+  .poster-copy h3 {
+    font:
+      44px "IM Fell English",
+      Georgia,
+      serif;
+  }
+  .toolkit-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Daydream: open gatefold, liner notes at left, sleeve and track list at right. */
+.composition-daydream {
+  grid-template-columns: 195px minmax(0, 1fr);
+  gap: 85px 65px;
+  .composition-index {
+    display: block;
+    grid-column: 1;
+    grid-row: 1 / 6;
+    position: sticky;
+    top: 120px;
+  }
+  > :not(.composition-index) {
+    grid-column: 2;
+  }
+  .profile-intro {
+    padding: 0 0 45px;
+    border-bottom: 4px double var(--line);
+  }
+  .profile-intro h2 {
+    font-size: 48px;
+    max-width: 740px;
+  }
+  .record-catalog {
+    gap: 35px;
+    grid-template-columns: 1.1fr 1fr;
+  }
+  .selected-project-note h3 {
+    font-size: 35px;
+  }
+  .record-stage {
+    top: 110px;
+  }
+  .project-track {
+    min-height: 145px;
+    padding-block: 24px;
+  }
+  .track-text > strong {
+    font-size: 29px;
+  }
+  .track-text > span:not(.track-tech) {
+    font-size: 12px;
+  }
+  .biography-section {
+    grid-template-columns: 230px 1fr;
+    gap: 40px;
+    padding-top: 60px;
+    border-top: 1px solid var(--line);
+  }
+  .biography-heading img {
+    height: 260px;
+    object-fit: cover;
+    filter: grayscale(0.9);
+  }
+  .biography-heading h2 {
+    font-size: 33px;
+  }
+  .biography-summary {
+    font-size: 16px;
+  }
+  .experience-entry {
+    grid-template-columns: 155px 1fr;
+    gap: 28px;
+  }
+}
+
+/* Animals: alternating illustrated features, four structural career columns. */
+.composition-animals {
+  width: min(1400px, calc(100% - 112px));
+  .profile-intro {
+    max-width: 1100px;
+  }
+  .profile-intro h2 {
+    font-size: 74px;
+  }
+  .poster-catalog {
+    display: block;
+  }
+  .project-poster {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 65px;
+    align-items: center;
+    padding-block: 60px;
+    border-top: 1px solid #8d7f69;
+  }
+  .project-poster:nth-child(even) {
+    grid-template-columns: 1fr 1.45fr;
+  }
+  .project-poster:nth-child(even) .poster-image {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .project-poster:nth-child(even) .poster-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .poster-image {
+    border: 0;
+  }
+  .poster-image img {
+    aspect-ratio: 1.7;
+    filter: saturate(0.7);
+  }
+  .poster-copy h3 {
+    font:
+      52px/1.05 Georgia,
+      serif;
+    letter-spacing: -0.05em;
+  }
+  .poster-copy > p {
+    max-width: 350px;
+    font-size: 17px;
+    margin-top: 22px;
+  }
+  .experience-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px;
+  }
+  .experience-entry {
+    display: block;
+    border-top: 12px solid #8d4026;
+  }
+  .experience-entry h3 {
+    margin-top: 25px;
+    font:
+      28px Georgia,
+      serif;
+  }
+  .experience-entry ul {
+    padding-left: 17px;
+  }
+  .biography-section {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 100px;
+    padding-top: 60px;
+    border-top: 1px solid var(--line);
+  }
+  .biography-heading img {
+    width: 300px;
+    height: 320px;
+    object-fit: cover;
+  }
+}
+
+/* Ferment: a loose illustrated essay with off-axis artwork and breathing space. */
+[data-theme="ferment"] {
+  --paper: #f0f6f3;
+  --accent: #b53238;
+}
+.composition-ferment {
+  width: min(1180px, calc(100% - 130px));
+  gap: 130px;
+  .profile-intro {
+    max-width: 750px;
+    margin-left: auto;
+  }
+  .profile-intro h2 {
+    font-size: 65px;
+    color: #263e4b;
+  }
+  .biography-section {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+  }
+  .biography-heading {
+    transform: rotate(-3deg);
+  }
+  .biography-heading img {
+    height: 380px;
+    width: 310px;
+    object-fit: cover;
+    box-shadow: 20px 20px 0 #a9c9d1;
+  }
+  .biography-summary {
+    font:
+      21px/1.85 Georgia,
+      serif;
+  }
+  .poster-catalog {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 95px;
+    padding-bottom: 40px;
+  }
+  .project-poster {
+    margin-top: 45px;
+  }
+  .project-poster:nth-child(even) {
+    margin-top: 170px;
+  }
+  .poster-image {
+    border: 0;
+    overflow: visible;
+  }
+  .poster-image img {
+    transform: rotate(-2deg);
+    box-shadow: 10px 12px 0 #b2ccd1;
+  }
+  .project-poster:nth-child(even) .poster-image img {
+    transform: rotate(2deg);
+    box-shadow: -12px 14px 0 #c9dfe1;
+  }
+  .poster-copy {
+    padding-top: 32px;
+  }
+  .poster-copy h3 {
+    font:
+      41px Georgia,
+      serif;
+    letter-spacing: -0.045em;
+  }
+  .experience-list {
+    max-width: 900px;
+    margin-left: auto;
+  }
+  .experience-entry {
+    grid-template-columns: 170px 1fr;
+  }
+  .composition-contact {
+    margin-right: 20%;
+  }
+}
+
+/* Twin Peaks: a quiet interlude, then uninterrupted widescreen frames. */
+.composition-redroom {
+  width: min(1320px, calc(100% - 112px));
+  .profile-intro {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 800px;
+  }
+  .profile-intro h2 {
+    font:
+      68px/1.1 "IM Fell English",
+      Georgia,
+      serif;
+  }
+  .profile-intro > p {
+    margin-inline: auto;
+  }
+  .biography-section {
+    max-width: 930px;
+    margin-inline: auto;
+    grid-template-columns: 230px 1fr;
+    gap: 65px;
+  }
+  .biography-heading img {
+    height: 290px;
+    object-fit: cover;
+    filter: sepia(0.3) grayscale(0.5);
+  }
+  .biography-heading h2 {
+    font-size: 31px;
+  }
+  .poster-catalog {
+    display: block;
+  }
+  .project-poster {
+    display: block;
+    margin-bottom: 100px;
+  }
+  .poster-image {
+    border: 0;
+    padding-block: 16px;
+    background: #020102;
+  }
+  .poster-image::before,
+  .poster-image::after {
+    content: "";
+    position: absolute;
+    height: 8px;
+    left: 8px;
+    right: 8px;
+    background: radial-gradient(ellipse, #52423d 0 35%, transparent 40%) 0 0 /
+      28px 8px;
+  }
+  .poster-image::before {
+    top: 3px;
+  }
+  .poster-image::after {
+    bottom: 3px;
+  }
+  .poster-image img {
+    aspect-ratio: 2.35;
+  }
+  .poster-copy {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 50px;
+    padding: 30px 0 0;
+  }
+  .poster-copy h3 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    font:
+      60px/1.02 "IM Fell English",
+      Georgia,
+      serif;
+  }
+  .poster-copy > .eyebrow {
+    display: none;
+  }
+  .poster-copy > p,
+  .poster-copy .project-technologies,
+  .project-status {
+    grid-column: 2;
+  }
+  .experience-section {
+    width: min(930px, 100%);
+    margin-inline: auto;
+  }
+  .experience-entry {
+    grid-template-columns: 180px 1fr;
+    gap: 35px;
+  }
+  .composition-contact {
+    text-align: center;
+  }
+  .composition-contact p {
+    margin-inline: auto;
+  }
+}
+
+/* Evangelion: a terminal dashboard with a persistent biographical sidebar. */
+.composition-eva {
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 65px 40px;
+  .profile-intro {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    border-block: 1px solid #fa6a39;
+    padding-block: 28px;
+  }
+  .profile-intro h2 {
+    font:
+      76px/1 "Bebas Neue",
+      Impact,
+      sans-serif;
+    letter-spacing: 0;
+    max-width: 1000px;
+  }
+  > .biography-section {
+    grid-column: 1;
+    grid-row: 2;
+    display: block;
+    border: 1px solid #435444;
+    padding: 20px;
+  }
+  .biography-heading h2 {
+    font:
+      38px "Bebas Neue",
+      Impact,
+      sans-serif;
+  }
+  .biography-heading img {
+    height: 225px;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(1) sepia(0.4);
+    margin-top: 20px;
+  }
+  .biography-summary {
+    font:
+      13px/1.9 Arial,
+      sans-serif;
+  }
+  .biography-copy {
+    padding-top: 25px;
+  }
+  .education-note,
+  .research-note {
+    margin-top: 30px;
+  }
+  .research-note {
+    display: block;
+    padding: 20px 0 0;
+  }
+  > .projects-section {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .poster-catalog {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .project-poster {
+    border: 1px solid #435444;
+    padding: 12px;
+    background: #162018;
+  }
+  .poster-image {
+    border: 0;
+  }
+  .poster-image img {
+    aspect-ratio: 2.4;
+    opacity: 0.8;
+  }
+  .poster-copy h3 {
+    font:
+      37px "Bebas Neue",
+      Impact,
+      sans-serif;
+  }
+  .poster-copy > .eyebrow {
+    display: none;
+  }
+  .poster-copy > p {
+    font:
+      12px/1.8 Arial,
+      sans-serif;
+  }
+  .poster-copy .project-technologies {
+    font-size: 9px;
+  }
+  > .experience-section,
+  > .composition-contact {
+    grid-column: 1 / -1;
+  }
+  .experience-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .experience-entry {
+    display: block;
+    padding: 25px;
+    border: 1px solid #435444;
+    border-top: 7px solid #fa6a39;
+  }
+  .experience-entry h3 {
+    font:
+      34px "Bebas Neue",
+      Impact,
+      sans-serif;
+    margin-top: 18px;
+  }
+  .experience-entry li {
+    font-family: Arial, sans-serif;
+  }
+  .composition-contact h2 {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    letter-spacing: 0;
+  }
+}
+
+/* Edgerunners: project names lead, the selected illustration stays to the right. */
+.composition-edgerunner {
+  .profile-intro h2 {
+    font:
+      85px/1 "Bebas Neue",
+      Impact,
+      sans-serif;
+    letter-spacing: 0;
+    color: #edfa37;
+  }
+  .record-catalog {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 60px;
+  }
+  .record-stage {
+    order: 2;
+    top: 110px;
+  }
+  .track-list {
+    order: 1;
+  }
+  .project-track {
+    min-height: 180px;
+    border-top: 1px solid #4adca155;
+  }
+  .track-text > strong {
+    font:
+      55px/1 "Bebas Neue",
+      Impact,
+      sans-serif;
+  }
+  .track-text > span:not(.track-tech) {
+    font-size: 13px;
+  }
+  .record-sleeve img {
+    aspect-ratio: 1.1;
+  }
+  .record-stage-controls {
+    border-color: #4adca1;
+  }
+  .selected-project-note h3 {
+    font:
+      47px "Bebas Neue",
+      Impact,
+      sans-serif;
+  }
+  .experience-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+  }
+  .experience-entry {
+    display: block;
+    border-top: 2px solid #4adca1;
+  }
+  .experience-entry h3 {
+    font:
+      38px "Bebas Neue",
+      Impact,
+      sans-serif;
+    margin-top: 20px;
+  }
+  .biography-section {
+    width: 90%;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+  }
+  .biography-heading img {
+    filter: grayscale(1);
+    border-left: 12px solid #edfa37;
+  }
+}
+
+/* Manga: ink frames and irregular panels, with Javier as the main character. */
+[data-theme="friend"] {
+  --paper: #f0eee5;
+  --ink: #242723;
+  --line: #77766b;
+}
+.composition-friend {
+  .profile-intro {
+    border: 3px solid var(--ink);
+    padding: 35px;
+    box-shadow: 7px 6px 0 var(--ink);
+    transform: rotate(-0.5deg);
+    max-width: 950px;
+  }
+  .profile-intro h2 {
+    font:
+      56px/1.05 "Bangers",
+      Impact,
+      sans-serif;
+    letter-spacing: 0;
+  }
+  .biography-section {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 30px;
+  }
+  .biography-heading {
+    border: 3px solid var(--ink);
+    padding: 20px;
+    background: #fff;
+    transform: rotate(-1deg);
+  }
+  .biography-heading img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    object-position: center 20%;
+    margin-top: 20px;
+  }
+  .biography-heading h2 {
+    font:
+      44px "Bangers",
+      Impact,
+      sans-serif;
+  }
+  .biography-copy {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .biography-copy > .eyebrow {
+    display: none;
+  }
+  .biography-summary {
+    grid-column: 1 / -1;
+    font:
+      18px/1.8 Georgia,
+      serif;
+    padding: 28px;
+    border: 3px solid var(--ink);
+    border-radius: 42% 35% 30% 25% / 12%;
+    background: #fff;
+  }
+  .interests-note {
+    grid-column: 1 / -1;
+    font-family: "Special Elite", monospace;
+  }
+  .education-note,
+  .research-note {
+    margin: 0;
+    border: 2px solid var(--ink);
+    padding: 22px;
+    background: repeating-linear-gradient(
+      135deg,
+      transparent 0 5px,
+      #24272308 6px 7px
+    );
+  }
+  .research-note {
+    display: block;
+  }
+  .poster-catalog {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+  }
+  .project-poster {
+    border: 3px solid var(--ink);
+    padding: 10px 10px 25px;
+    background: #fff;
+    position: relative;
+  }
+  .project-poster:first-child,
+  .project-poster:nth-child(6) {
+    grid-column: span 2;
+  }
+  .project-poster:nth-child(3n) {
+    transform: rotate(1deg);
+  }
+  .poster-image {
+    border: 2px solid var(--ink);
+    background: #fff;
+  }
+  .poster-image img {
+    filter: grayscale(1) contrast(1.6);
+    mix-blend-mode: multiply;
+  }
+  .project-poster:first-child .poster-image img,
+  .project-poster:nth-child(6) .poster-image img {
+    aspect-ratio: 2.5;
+  }
+  .poster-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(#24272333 0.5px, transparent 1px) 0 0 / 4px 4px;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+  .poster-copy {
+    padding-inline: 10px;
+  }
+  .poster-copy h3 {
+    font:
+      41px/1 "Bangers",
+      Impact,
+      sans-serif;
+    letter-spacing: 0;
+  }
+  .poster-copy > .eyebrow {
+    display: none;
+  }
+  .poster-stamp {
+    background: var(--ink);
+    color: #fff;
+    border: 2px solid #fff;
+    transform: rotate(-5deg);
+  }
+  .experience-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .experience-entry {
+    display: block;
+    padding: 30px;
+    border: 3px solid var(--ink);
+    background: #fff;
+  }
+  .experience-entry:nth-child(even) {
+    margin-top: 35px;
+  }
+  .experience-entry h3 {
+    font:
+      34px "Bangers",
+      Impact,
+      sans-serif;
+    margin-top: 20px;
+  }
+  .composition-contact {
+    border-top: 5px solid var(--ink);
+  }
+  .composition-contact h2 {
+    font-family: "Bangers", Impact, sans-serif;
+  }
+}
+
+.floating-language {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 95;
+}
+.immersive-home:not(.past-intro) .floating-language {
+  top: 24px;
+  bottom: auto;
+}
+.immersive-home:not(.past-intro) .language-menu {
+  top: calc(100% + 10px);
+  bottom: auto;
+}
+.language-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 3px 14px #0001;
+  font:
+    12px Arial,
+    sans-serif;
+}
+.language-menu {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  width: 190px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 8px;
+  box-shadow: 0 10px 40px #0002;
+}
+.language-menu button {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  font:
+    14px Arial,
+    sans-serif;
+}
+.language-menu button:hover,
+.language-menu button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}

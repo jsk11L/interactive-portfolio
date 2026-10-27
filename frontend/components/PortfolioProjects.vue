@@ -8,6 +8,7 @@ import {
   Search,
 } from "lucide-vue-next";
 import type { ProjectItem } from "~/stores/cvStore";
+import { compositions } from "~/data/compositions";
 const store = useCvStore();
 const { translateProject } = usePortfolioCopy();
 const { text } = useStudioCopy();
@@ -24,9 +25,7 @@ const view = ref<"record" | "gallery">("record");
 watch(
   theme,
   (value) => {
-    view.value = ["phantom", "eva", "edgerunner", "friend"].includes(value)
-      ? "gallery"
-      : "record";
+    view.value = compositions[value].catalog;
   },
   { immediate: true },
 );
@@ -92,11 +91,7 @@ const resultLabel = computed(() =>
   >
     <div class="section-heading">
       <div>
-        <span class="eyebrow">{{
-          ["daydream", "animals", "ferment"].includes(theme)
-            ? text.sideA
-            : text.collection
-        }}</span>
+        <span class="eyebrow">{{ text.collection }}</span>
         <h2>
           {{ text.projects
           }}<sup>({{ String(store.projects.length).padStart(2, "0") }})</sup>
@@ -124,6 +119,8 @@ const resultLabel = computed(() =>
           }}</span
           ><input
             v-model="query"
+            name="project-search"
+            autocomplete="off"
             type="search"
             :placeholder="
               spanish
@@ -142,14 +139,14 @@ const resultLabel = computed(() =>
             :aria-label="spanish ? 'Vista de pistas' : 'Track view'"
             @click="view = 'record'"
           >
-            <List :size="17" /></button
+            <List :size="17" aria-hidden="true" /></button
           ><button
             type="button"
             :aria-pressed="view === 'gallery'"
             :aria-label="spanish ? 'Vista de galería' : 'Gallery view'"
             @click="view = 'gallery'"
           >
-            <Grid2X2 :size="16" />
+            <Grid2X2 :size="16" aria-hidden="true" />
           </button>
         </div>
       </div>

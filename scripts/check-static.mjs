@@ -23,6 +23,14 @@ for (const route of routes) {
   const html = await readFile(resolve(root, route, "index.html"), "utf8");
   assert.ok(html.includes("Javier"), `${route}: missing rendered content`);
   assert.ok(
+    html.includes('lang="en"'),
+    `${route}: initial language must be English`,
+  );
+  assert.ok(
+    html.includes("Change language / Cambiar idioma"),
+    `${route}: floating language control missing`,
+  );
+  assert.ok(
     !html.includes("http://backend:8000") &&
       !html.includes("http://localhost:8000"),
     `${route}: backend dependency`,
@@ -50,6 +58,8 @@ for (const name of [
   "bloodborne-night",
   "animals-factory",
   "ferment-portrait",
+  "ferment-perspective-v3",
+  "javier-manga-v3",
   "redroom-curtains",
   "edgerunner-city",
 ]) {
@@ -71,15 +81,36 @@ const home = await readFile(resolve(root, "index.html"), "utf8");
 for (const project of data.projects)
   assert.ok(home.includes(project.title), `Missing project: ${project.id}`);
 assert.ok(
-  home.includes("marzo de 2026"),
+  home.includes("March 2026"),
   "Month-only dates must not shift in the Santiago timezone",
 );
 const cv = await readFile(resolve(root, "cv/index.html"), "utf8");
-for (const experience of data.experiences)
-  assert.ok(
-    cv.includes(experience.position),
-    `Missing CV experience: ${experience.id}`,
+const englishPositions = [
+  "Programming Assistant — SimulaPUCV",
+  "Research Assistant",
+  "Teaching Assistant",
+  "Security Guard — Monitoring Center",
+];
+for (const position of englishPositions)
+  assert.ok(cv.includes(position), `Missing CV experience: ${position}`);
+const { compositions } = await import("../frontend/data/compositions.ts");
+assert.equal(
+  new Set(Object.values(compositions).map((item) => item.layout)).size,
+  10,
+  "Each theme needs a distinct composition",
+);
+for (const item of Object.values(compositions)) {
+  assert.deepEqual(
+    [...item.order].sort(),
+    ["about", "experience", "projects"],
+    "Each composition must retain the complete CV sections",
   );
+  assert.ok(["record", "gallery"].includes(item.catalog));
+}
+assert.ok(
+  (await stat(resolve(root, "images/artwork/candle-flame-v3.png"))).size > 0,
+  "Photographic flame missing",
+);
 console.log(
   `Static verification passed: ${routes.length} pages, ${assets.size} rendered links/assets, ten universes, all project/scene images and CV experiences.`,
 );

@@ -3,15 +3,16 @@ import { ArrowRight } from "lucide-vue-next";
 const { text } = useStudioCopy();
 const { travel } = useJourney();
 const { spanish } = useUniverse();
+const { motionAllowed } = usePortfolioMotion();
 const activeItem = ref(0);
 const items = computed(() => [
-  spanish.value ? "Nueva historia" : "New story",
+  text.value.about,
   text.value.projects,
   text.value.cvTitle,
 ]);
 function activate(index: number) {
   if (index === 2) navigateTo("/cv");
-  else travel("projects");
+  else travel(index === 0 ? "about" : "projects");
 }
 function menuKey(event: KeyboardEvent) {
   if (event.key === "ArrowDown" || event.key === "ArrowUp") {
@@ -35,6 +36,42 @@ function menuKey(event: KeyboardEvent) {
       fetchpriority="high"
     />
     <div class="kh2-water-shimmer" aria-hidden="true" />
+    <svg
+      class="kh2-water-motion"
+      viewBox="0 0 1600 500"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <defs>
+        <filter id="kh-water">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency=".008 .045"
+            numOctaves="2"
+            seed="8"
+          >
+            <animate
+              v-if="motionAllowed"
+              attributeName="baseFrequency"
+              dur="16s"
+              values=".008 .045;.012 .055;.008 .045"
+              repeatCount="indefinite"
+            />
+          </feTurbulence>
+          <feDisplacementMap
+            in="SourceGraphic"
+            scale="22"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
+      <g filter="url(#kh-water)" fill="none" stroke="#fff" stroke-width="3">
+        <path
+          d="M-100 100Q350 30 800 110T1700 100M-100 190Q300 130 800 210T1700 180M-100 300Q350 220 850 290T1700 290M-100 420Q400 330 900 400T1700 420"
+        />
+      </g>
+    </svg>
     <div class="kh2-menu-layout">
       <div class="kh2-crest" aria-hidden="true">
         <svg viewBox="0 0 150 130">
@@ -50,8 +87,8 @@ function menuKey(event: KeyboardEvent) {
           /></svg
         ><span>II</span>
       </div>
-      <span class="kh2-above-title">JAVIER SEPÚLVEDA</span>
-      <h1>SECOND<br /><span>CHAPTER</span></h1>
+      <span class="kh2-above-title">{{ text.portfolio }}</span>
+      <h1>JAVIER<br /><span>SEPÚLVEDA</span></h1>
       <p class="kh2-role">{{ text.degree }}</p>
       <nav class="kh2-main-menu" :aria-label="text.select" @keydown="menuKey">
         <button
@@ -70,8 +107,8 @@ function menuKey(event: KeyboardEvent) {
       <p class="kh2-memory">
         {{
           spanish
-            ? "Elige una historia. Guarda un recuerdo."
-            : "Choose a story. Keep a memory."
+            ? "Estudiante de quinto año. Valparaíso, Chile."
+            : "Fifth-year student. Valparaíso, Chile."
         }}
       </p>
     </div>

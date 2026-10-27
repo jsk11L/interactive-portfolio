@@ -9,10 +9,10 @@ const { travel } = useJourney();
     <div class="phantom-star p5-star-one" aria-hidden="true">★</div>
     <div class="p5-star-two" aria-hidden="true">✦</div>
     <div class="phantom-copy">
-      <span class="phantom-kicker">JAVIER SEPÚLVEDA / PHANTOM DEVELOPER</span>
-      <h1>
-        {{ text.phantomTitle }}<br /><span>{{ text.phantomEnd }}</span>
-      </h1>
+      <span class="phantom-kicker"
+        >{{ text.degree }} / {{ text.location }}</span
+      >
+      <h1>JAVIER<br /><span>SEPÚLVEDA.</span></h1>
       <p>{{ text.description }}</p>
       <div class="hero-actions">
         <button type="button" class="button-solid" @click="travel('projects')">
@@ -40,7 +40,9 @@ const { travel } = useJourney();
           d="m42 48 75 14-33 20-36-14zm216 0-75 14 33 20 36-14z"
           fill="#171717"
         /></svg
-      ><span class="portrait-sticker">TAKE<br />YOUR TIME.</span>
+      ><span class="portrait-sticker"
+        >{{ text.skills }}<br />& {{ text.research }}</span
+      >
     </div>
     <div class="p5-calling-card" aria-hidden="true">
       <span>予告状</span><strong>TAKE YOUR<br />HEART.</strong
@@ -48,8 +50,8 @@ const { travel } = useJourney();
     </div>
     <div class="phantom-ticker" aria-hidden="true">
       <span
-        >SHOWTIME! / CODE / CREATE / TAKE YOUR TIME / SHOWTIME! / CODE / CREATE
-        / TAKE YOUR TIME /</span
+        >JAVIER SEPÚLVEDA / SOFTWARE / RESEARCH / PERSONAL PROJECTS / JAVIER
+        SEPÚLVEDA / SOFTWARE / RESEARCH / PERSONAL PROJECTS /</span
       >
     </div>
     <SceneCaption />

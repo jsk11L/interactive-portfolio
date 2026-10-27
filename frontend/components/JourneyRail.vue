@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { compositions } from "~/data/compositions";
 const { text } = useStudioCopy();
 const { active, progress, pastIntro, travel } = useJourney();
 const route = useRoute();
-const sections = ["intro", "projects", "about", "experience"] as const;
+const { theme } = usePortfolioTheme();
+const sections = computed(
+  () => ["intro", ...compositions[theme.value].order] as const,
+);
 </script>
 <template>
   <nav
