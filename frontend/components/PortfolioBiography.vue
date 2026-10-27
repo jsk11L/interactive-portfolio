@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const store = useCvStore();
-const { translateProfile } = usePortfolioCopy();
 const { text } = useStudioCopy();
 const { theme } = usePortfolioTheme();
-const profile = computed(() => translateProfile(store.profile));
+const { spanish } = useUniverse();
 </script>
 
 <template>
@@ -26,22 +24,16 @@ const profile = computed(() => translateProfile(store.profile));
       >
     </div>
     <div class="biography-copy">
-      <span class="eyebrow">{{ text.aboutLead }}</span>
-      <p class="biography-summary">{{ profile?.summary }}</p>
+      <p class="biography-summary">{{ text.description }}</p>
       <p class="interests-note">{{ text.interests }}</p>
-      <div class="education-note">
-        <span class="eyebrow">{{ text.background }}</span>
-        <h3>{{ text.degree }}</h3>
-        <p>{{ text.university }}</p>
-        <small>{{ text.educationStatus }}</small>
-      </div>
       <div class="research-note">
         <span aria-hidden="true">✳</span>
         <div>
           <h3>{{ text.researchTitle }}</h3>
-          <p>{{ text.researchBody }}</p>
+          <p>{{ spanish ? "Coautor de una publicación sobre optimización de cronogramas hospitalarios." : "Coauthor of a publication on hospital scheduling optimization." }}</p>
         </div>
       </div>
+      <NuxtLink to="/cv" class="text-link">{{ text.readCv }}</NuxtLink>
     </div>
   </section>
 </template>

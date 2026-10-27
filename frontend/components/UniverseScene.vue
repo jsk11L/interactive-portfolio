@@ -3,7 +3,7 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-vue-next";
 const { spanish } = useUniverse();
 const { theme } = usePortfolioTheme();
 const { text } = useStudioCopy();
-const { travel, progress } = useJourney();
+const { travel } = useJourney();
 const art = computed(
   () =>
     (
@@ -93,51 +93,7 @@ const art = computed(
       <div class="curtain-opening" aria-hidden="true"><i /><i /></div>
       <div class="velvet-light" aria-hidden="true" />
     </div>
-    <div v-else-if="theme === 'eva'" class="eva-scene">
-      <div class="eva-hazard" aria-hidden="true" />
-      <div class="eva-grid" aria-hidden="true" />
-      <div class="eva-episode">
-        <span>{{ text.portfolio }}</span
-        ><span>{{ text.location }}</span
-        ><span>CV / 2026</span>
-      </div>
-      <div class="eva-title">
-        <h1>JAVIER<br />SEPÚLVEDA</h1>
-        <p>
-          {{
-            spanish
-              ? "Desarrollo de software e investigación"
-              : "Software development and research"
-          }}
-        </p>
-      </div>
-      <div class="magi-system">
-        <div class="magi-caption">MAGI / {{ text.select }}</div>
-        <button
-          type="button"
-          class="magi-cell melchior"
-          @click="travel('projects')"
-        >
-          <span>MELCHIOR</span><strong>{{ text.projects }}</strong>
-        </button>
-        <button
-          type="button"
-          class="magi-cell balthasar"
-          @click="travel('experience')"
-        >
-          <span>BALTHASAR</span><strong>{{ text.experience }}</strong>
-        </button>
-        <button type="button" class="magi-cell casper" @click="travel('about')">
-          <span>CASPER</span><strong>{{ text.about }}</strong>
-        </button>
-        <div class="eva-sync">
-          <span>{{ spanish ? "Progreso de lectura" : "Reading progress" }}</span
-          ><strong>{{ Math.round(progress * 100) }}<small>%</small></strong
-          ><i :style="{ width: `${progress * 100}%` }" />
-        </div>
-      </div>
-      <div class="eva-acquisition" aria-hidden="true" />
-    </div>
+    <EvangelionOpening v-else-if="theme === 'eva'" />
     <div v-else-if="theme === 'edgerunner'" class="edgerunner-scene">
       <span class="scene-eyebrow">{{ text.degree }} / {{ text.location }}</span>
       <h1 data-title="JAVIER SEPÚLVEDA">JAVIER<br />SEPÚLVEDA</h1>

@@ -78,6 +78,25 @@ assert.equal(
   "The universe registry must contain ten themes",
 );
 const home = await readFile(resolve(root, "index.html"), "utf8");
+assert.ok(home.includes('id="skills"'), "Home needs a prominent skills section");
+assert.ok(home.indexOf('id="skills"') < home.indexOf('class="portfolio-composition'), "Skills must precede the longer portfolio composition");
+assert.ok(!home.includes('class="profile-intro"'), "Do not repeat the long introduction on home");
+const { technologyIcons } = await import("../frontend/data/technologyIcons.ts");
+for (const name of data.skills.filter(s => s.category !== "Habilidades Blandas").flatMap(s => s.items)) {
+  assert.ok(technologyIcons[name], `Missing skill logo mapping: ${name}`);
+  assert.ok(home.includes(`/images/technologies/${technologyIcons[name]}.svg`), `Missing visible skill icon: ${name}`);
+}
+for (const slug of new Set(Object.values(technologyIcons))) {
+  const svg = await readFile(resolve(root, `images/technologies/${slug}.svg`), "utf8");
+  assert.ok(svg.includes("<svg"), `Invalid technology SVG: ${slug}`);
+  assert.ok(!/<script|<foreignObject|onload=/i.test(svg), `Unsafe technology SVG: ${slug}`);
+}
+for (const project of data.projects) {
+  assert.equal(project.images[0], `/images/projects/marks/${project.id}.svg`);
+  const html = await readFile(resolve(root, `projects/${project.id}/index.html`), "utf8");
+  assert.ok(html.includes(`identity-${project.id}`), `Project identity missing: ${project.id}`);
+  assert.ok(html.includes('class="detail-highlights"'), `Detailed project evidence missing: ${project.id}`);
+}
 for (const project of data.projects)
   assert.ok(home.includes(project.title), `Missing project: ${project.id}`);
 assert.ok(

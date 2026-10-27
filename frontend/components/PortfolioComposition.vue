@@ -34,24 +34,7 @@ const sections = {
         </button>
         <NuxtLink to="/cv">{{ text.cvTitle }}</NuxtLink>
       </nav>
-      <span class="index-note">{{
-        spanish
-          ? "Software, investigación y proyectos personales."
-          : "Software, research and personal projects."
-      }}</span>
     </aside>
-    <section class="profile-intro">
-      <p>{{ text.portfolio }}</p>
-      <h2>
-        {{
-          spanish
-            ? "Desarrollo software. Investigo. Construyo proyectos propios."
-            : "I develop software. I research. I build personal projects."
-        }}
-      </h2>
-      <p>{{ text.description }}</p>
-      <NuxtLink to="/cv" class="text-link">{{ text.readCv }}</NuxtLink>
-    </section>
     <component
       v-for="section in composition.order"
       :is="sections[section]"

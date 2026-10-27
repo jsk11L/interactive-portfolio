@@ -16,7 +16,7 @@ function updateScroll() {
   );
   progress.value = Math.min(1, window.scrollY / max);
   pastIntro.value = window.scrollY > window.innerHeight * 0.7;
-  const positions = ["intro", "projects", "about", "experience"]
+  const positions = ["intro", "skills", "projects", "about", "experience"]
     .map((id) => ({
       id,
       top: document.getElementById(id)?.getBoundingClientRect().top ?? Infinity,
@@ -36,8 +36,8 @@ async function observeSections() {
   await nextTick();
   const anchor = route.hash.slice(1);
   if (
-    route.path === "/" &&
-    ["intro", "projects", "about", "experience", "contact"].includes(anchor)
+    (route.path === "/" || (route.path === "/cv" && anchor === "skills")) &&
+    ["intro", "skills", "projects", "about", "experience", "contact"].includes(anchor)
   ) {
     document.getElementById(anchor)?.scrollIntoView({ behavior: "instant" });
   }
@@ -96,6 +96,7 @@ watch(
         ><span>Javier<br />Sepúlveda</span></NuxtLink
       >
       <nav class="main-nav" :aria-label="text.select">
+        <NuxtLink to="/#skills" :class="{ active: route.hash === '#skills' }">{{ text.skillsNav }}</NuxtLink>
         <NuxtLink
           to="/#projects"
           :class="{ active: route.hash === '#projects' }"

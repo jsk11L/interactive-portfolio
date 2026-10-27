@@ -64,17 +64,13 @@ useSeoMeta({ title: () => `${text.value.cvTitle} — Javier Sepúlveda` });
           </ul>
         </article>
       </section>
-      <section>
+      <section id="skills">
         <h2>{{ text.skills }}</h2>
-        <p v-for="skill in store.skills" :key="skill.category">
-          <strong>{{ translateSkillCategory(skill.category) }}:</strong>
-          {{
-            (isSoftSkillsCategory(skill.category)
-              ? translateSoftSkills(skill.items)
-              : skill.items
-            ).join(", ")
-          }}
-        </p>
+        <div v-for="skill in store.skills" :key="skill.category" class="cv-skill-group">
+          <h3>{{ translateSkillCategory(skill.category) }}</h3>
+          <p v-if="isSoftSkillsCategory(skill.category)">{{ translateSoftSkills(skill.items).join(', ') }}</p>
+          <div v-else class="technology-list"><TechnologyBadge v-for="name in skill.items" :key="name" :name="name" /></div>
+        </div>
       </section>
       <section>
         <h2>{{ text.researchTitle }}</h2>

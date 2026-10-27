@@ -1,0 +1,332 @@
+/* Professional reading, visible skills and a shared project identity system. */
+.portfolio {
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  .text-link { font-size: 15px; }
+  .main-nav, .universe-trigger { font-size: 14px; }
+  .eyebrow, .scene-eyebrow, .photo-caption, .experience-date,
+  .project-status, .project-detail-art figcaption { font-size: 13px; }
+  .poster-copy > p, .selected-project-note > p, .research-note p,
+  .interests-note, .experience-company, .composition-index > p,
+  .composition-contact > p, .scene-caption, .scene-caption a,
+  .composition-signature + p { font-size: 16px; line-height: 1.65; }
+  .project-technologies { font-size: 13px; line-height: 1.5; }
+  .project-technologies span { font-size: 13px; }
+  .composition-index nav :is(a, button) { font-size: 15px; }
+  .project-search input, .project-filters button,
+  .catalog-result-count, .track-tech { font-size: 14px; }
+  .track-text > small { font-size: 13px; }
+  .biography-summary { font-size: 18px; line-height: 1.7; }
+  .biography-copy > .text-link { margin-top: 24px; }
+  .experience-entry h3 { line-height: 1.2; }
+  .experience-entry { padding-block: 22px; }
+  .project-detail-body aside h2 { font-size: 14px; }
+  .project-detail-body section > p { font-size: clamp(20px, 2vw, 26px); }
+  .detail-highlights { font-size: 17px; line-height: 1.7; }
+  .colophon { font-size: 13px; }
+  .scene-caption .inspiration-note summary, .scene-caption .scene-scroll {
+    font: 500 14px/1.5 "Source Sans 3", Arial, sans-serif;
+    letter-spacing: 0;
+    opacity: 1;
+  }
+  .ambient-controls > .theme-controls > .universe-trigger { opacity: 1; }
+  :is(.hunter-scene, .ferment-scene, .edgerunner-scene) > p {
+    font-family: "Source Sans 3", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 440px;
+  }
+  .cv-document > header, .cv-document > section { transform: none; }
+  .cv-document p, .cv-document li { font-size: 16px; line-height: 1.65; }
+  .cv-contact { font-size: 14px; }
+  .cv-document .eyebrow { font-size: 13px; }
+  .cv-document #skills { scroll-margin-top: 130px; }
+}
+.portfolio[data-theme="dearly"] { --accent: #3e6278; }
+.portfolio[data-theme="animals"] { --muted: #594a3d; --accent: #79351f; }
+.portfolio[data-theme="animals"] .cv-document .eyebrow { color: #594a3d; }
+
+/* The drawings can be angled; all text-bearing surfaces remain upright. */
+.portfolio {
+  .phantom-copy, .phantom-copy h1 > span, .main-nav a,
+  .phantom-copy .button-solid, .project-filters button,
+  .biography-heading, .biography-heading h2, .project-poster,
+  .project-poster:nth-child(n), .project-poster:hover,
+  .project-entry:hover, .biography-section, .poster-stamp,
+  .ferment-scene h1, .manga-title-block h1, .manga-portrait-panel,
+  .manga-city-panel, .phantom-ticker, .portrait-sticker,
+  .outro-link, .p5-calling-card, .phantom-transition > span {
+    transform: none;
+  }
+  .p5-calling-card { animation: none; }
+  .phantom-portrait { transform: none; }
+}
+.portfolio[data-theme="phantom"] {
+  .phantom-copy h1, .phantom-copy h1 > span,
+  .section-heading h2, .biography-heading h2, .poster-copy h3,
+  .experience-entry h3, .composition-contact h2,
+  .project-detail-heading h1, .cv-document h1, .cv-document h2 {
+    font-family: "Barlow Condensed", Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -.015em;
+  }
+  .phantom-copy h1 { font-size: clamp(90px, 10vw, 160px); line-height: .94; }
+  .phantom-copy h1 > span { font-size: .62em; padding: 10px 16px; }
+  .phantom-copy > p { font-size: 18px; line-height: 1.6; max-width: 440px; }
+  .phantom-kicker { font: 600 14px/1.4 "Source Sans 3", Arial, sans-serif; letter-spacing: 0; text-transform: none; }
+  .portrait-sticker { font: 700 24px/1.1 "Barlow Condensed", Arial, sans-serif; }
+  .p5-calling-card strong { font-family: "Barlow Condensed", Arial, sans-serif; }
+  .poster-stamp { background: #151515; color: #fff; }
+  .cv-document { --ink: #151515; --muted: #494944; color: #151515; }
+  .cv-document > header { color: #000; }
+  .cv-document > header :is(p, a, .eyebrow) { color: #000; }
+  .project-poster { --ink: #151515; --muted: #494944; --line: #bcb8aa; }
+  .poster-copy h3 { font-size: 38px; }
+  .project-poster:first-child .poster-copy h3 { font-size: 58px; }
+  .experience-entry h3 { font-size: 32px; }
+}
+.portfolio[data-theme="friend"] {
+  --paper: #f6f4ed;
+  --ink: #202320;
+  --muted: #50554e;
+  .manga-title-block h1, .section-heading h2, .biography-heading h2,
+  .poster-copy h3, .experience-entry h3, .composition-contact h2,
+  .project-detail-heading h1, .cv-document h1, .cv-document h2 {
+    font-family: "Source Sans 3", Arial, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: -.035em;
+    line-height: 1.03;
+  }
+  .manga-title-block h1 { font-size: clamp(64px, 7.3vw, 108px); }
+  .manga-title-block > p, .manga-city-panel > span,
+  .manga-introduction-panel a, .interests-note, .experience-date {
+    font-family: "Source Sans 3", Arial, sans-serif;
+    font-size: 14px;
+  }
+  .manga-speech, .manga-introduction-panel > p,
+  .biography-summary { font-family: "Source Sans 3", Arial, sans-serif; font-size: 18px; line-height: 1.6; }
+  .poster-copy h3 { font-size: 34px; }
+  .experience-entry h3 { font-size: 28px; }
+  .poster-image::after { display: none; }
+  .manga-title-block { align-self: center; }
+  .manga-portrait-panel { height: 490px; }
+}
+
+.skills-showcase {
+  padding-block: 70px 55px;
+  scroll-margin-top: 120px;
+  border-bottom: 1px solid var(--line);
+  .skills-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 34px; }
+  h2 { font-size: clamp(32px, 3.3vw, 48px); font-weight: 650; letter-spacing: -.04em; line-height: 1.1; }
+  .skills-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 44px; }
+  h3 { font-size: 17px; font-weight: 650; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  ul { display: flex; flex-wrap: wrap; gap: 12px 20px; list-style: none; padding: 0; margin: 0; }
+  li { min-width: 0; }
+}
+.technology-badge { display: inline-flex; gap: 10px; align-items: center; font: 500 16px/1.3 "Source Sans 3", Arial, sans-serif; }
+.technology-icon { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 42px; background: #fff; color: #242424; border: 1px solid #deded8; border-radius: 8px; }
+.technology-icon img { width: 28px; height: 28px; object-fit: contain; }
+.technology-list { display: flex; flex-wrap: wrap; gap: 14px 22px; }
+.cv-skill-group { margin-bottom: 20px; }
+.cv-skill-group h3 { margin-bottom: 12px; }
+[data-theme="phantom"] .skills-showcase {
+  h2 { font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; letter-spacing: -.01em; }
+  h3 { border-bottom: 3px solid #ed2939; }
+  .technology-icon { border-radius: 0; box-shadow: 3px 3px #ed2939; }
+}
+[data-theme="friend"] .skills-showcase {
+  h2 { font-weight: 800; }
+  .skills-group { padding: 20px; background: white; border: 2px solid #202320; box-shadow: 4px 4px #202320; }
+  .technology-icon { border-radius: 0; border-color: #202320; }
+  .technology-icon img { filter: grayscale(1); }
+}
+[data-theme="bloodborne"] .skills-showcase h2 { font-family: "IM Fell English", Georgia, serif; }
+[data-theme="redroom"] .skills-showcase h2 { font-family: "IM Fell English", Georgia, serif; }
+[data-theme="dearly"] .skills-showcase h2, [data-theme="daydream"] .skills-showcase h2 { font-family: Georgia, serif; font-weight: 400; }
+
+/* The shape is stable across themes; only its presentation follows the universe. */
+.project-artwork {
+  --mark-color: var(--accent);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1.55;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 32px 24px;
+  background: var(--paper);
+  color: var(--ink);
+  .project-mark { width: clamp(56px, 45%, 180px); max-width: 90%; aspect-ratio: 1; background: var(--mark-color); mask-size: contain; mask-position: center; mask-repeat: no-repeat; }
+  .project-artwork-signature { position: absolute; right: 18px; bottom: 16px; font: bold 22px/1 Georgia, serif; letter-spacing: -2px; opacity: .7; }
+  .project-artwork-orbit { position: absolute; z-index: -1; width: 62%; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; opacity: .45; }
+}
+.portfolio .poster-image > .project-artwork { height: 100%; }
+.portfolio .poster-image { background: transparent; }
+.portfolio .record-sleeve { background: var(--paper); }
+.portfolio .record-sleeve > a { display: block; }
+.portfolio .record-sleeve .project-artwork { aspect-ratio: 1.2; }
+[data-paused="true"] :is(.record-sleeve, .selected-project-note) { animation: none; opacity: 1; transform: none; }
+.portfolio .project-detail-art .project-artwork { aspect-ratio: 2.35; min-height: 320px; }
+.project-detail-art .project-mark { width: 20%; max-width: 220px; }
+[data-theme="dearly"] .project-artwork { --paper: #f0f8fc; --ink: #294f67; --mark-color: #366f91; --line: #a6cbdf; background: radial-gradient(ellipse at 65% 70%, #d8eaf5, #f9fdff 70%); }
+[data-theme="phantom"] .project-artwork {
+  --paper: #ed2939; --ink: #fff; --mark-color: #fff; --line: #fff;
+  background: #ed2939;
+  .project-artwork-orbit { border-radius: 0; border-width: 14px; transform: rotate(-15deg); }
+}
+.composition-phantom .project-poster:first-child .project-artwork { aspect-ratio: 1.2; }
+[data-theme="bloodborne"] .project-artwork { --paper: #171c1d; --ink: #dedac9; --mark-color: #c9b084; --line: #6d6652; border: 1px solid #615b4b; }
+[data-theme="daydream"] .project-artwork { --paper: #e2dccb; --ink: #39382e; --mark-color: #494a3e; --line: #777466; background: linear-gradient(115deg, #e9e5da, #d2cbb5); .project-artwork-orbit { border: 4px double #7f7a68; } }
+[data-theme="animals"] .project-artwork { --paper: #c8b18e; --ink: #362b25; --mark-color: #674332; --line: #7e644b; background: repeating-linear-gradient(90deg, #ffffff09 0 15px, #30261709 16px 17px), #c8b18e; .project-artwork-orbit { border-radius: 0; border-style: dashed; } }
+[data-theme="ferment"] .project-artwork { --paper: #d4e8ea; --ink: #203741; --mark-color: #2b5d6c; --line: #6a999f; background: radial-gradient(ellipse at 15% 80%, #b4d4d8, transparent 65%), #e6eff0; .project-artwork-orbit { border: 2px solid #bc3e3c; border-radius: 45% 55% 30% 60%; transform: rotate(15deg); } }
+[data-theme="redroom"] .project-artwork { --paper: #2f0e18; --ink: #eee0c6; --mark-color: #e6cfaa; --line: #a75a56; background: linear-gradient(100deg, #180b11, #501322 50%, #180b11); }
+[data-theme="edgerunner"] .project-artwork { --paper: #102332; --ink: #f1fa38; --mark-color: #f1fa38; --line: #4b91a0; background: linear-gradient(120deg, #16374b, #0b1723); .project-artwork-orbit { border-radius: 0; border-style: dashed; } }
+[data-theme="friend"] .project-artwork { --paper: #fff; --ink: #202320; --mark-color: #202320; --line: #202320; background: radial-gradient(#20232020 .65px, transparent .8px) 0 0 / 5px 5px, white; .project-artwork-orbit { border: 2px solid #202320; } }
+
+.portfolio .universe-palette {
+  width: 300px;
+  padding: 18px;
+  background: #171717;
+  color: #fff;
+  border: 1px solid #666;
+  box-shadow: 0 16px 48px #0005;
+  max-height: none;
+}
+.universe-swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.universe-swatch { width: 100%; aspect-ratio: 1; border-radius: 50%; background: var(--swatch); border: 3px solid #171717; outline: 1px solid #ffffff50; transition: scale .16s; }
+.universe-swatch:hover { scale: 1.1; }
+.universe-swatch[aria-pressed="true"] { outline: 2px solid white; outline-offset: 3px; }
+.palette-tools { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #535353; margin-top: 20px; padding-top: 10px; }
+.portfolio .palette-tools button { display: grid; place-items: center; width: 42px; height: 42px; padding: 8px; color: #fff; }
+.palette-tools button[aria-pressed="true"] { background: #454545; }
+
+/* Evangelion is a title card first, an amber instrument panel second. */
+.portfolio[data-theme="eva"] {
+  --paper: #000;
+  --ink: #fff;
+  --muted: #b8b8b8;
+  --accent: #ffb15c;
+  --line: #66503c;
+  font-family: "Source Sans 3", Arial, sans-serif;
+  .scene-eva { background: #000; color: white; height: auto; min-height: 100svh; }
+  .section-heading h2, .biography-heading h2, .composition-contact h2,
+  .skills-showcase h2, .project-detail-heading h1, .cv-document h1,
+  .cv-document h2 { font-family: "Times New Roman", Times, serif; font-weight: 700; letter-spacing: -.045em; }
+  .scene-caption { color: #bbb; }
+  .project-artwork { --paper: #080808; --ink: #fff; --mark-color: #ffb15c; --line: #b97942; background: #080808; .project-artwork-orbit { border-radius: 0; clip-path: polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%); background: #ffb15c0b; } }
+  .project-poster { background: #0c0b0a; border-color: #86613e; padding: 16px; }
+  .poster-copy h3 { font: 700 32px/1.1 "Source Sans 3", Arial, sans-serif; }
+  .biography-summary { font-family: "Source Sans 3", Arial, sans-serif; font-size: 18px; }
+  .experience-entry { background: transparent; border: 1px solid #86613e; }
+  .experience-entry h3 { font-family: "Source Sans 3", Arial, sans-serif; font-size: 24px; }
+  .technology-icon { border-color: #b97942; border-radius: 0; }
+  .cv-document { background: #000; color: white; border-color: #86613e; }
+}
+.eva-opening { min-height: 100svh; padding: 100px max(56px, 6vw) 150px; display: grid; grid-template-columns: 1.55fr 1fr; align-items: center; gap: 5vw; }
+.eva-title-card { min-width: 0; }
+.eva-card-caption { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 16px; border-bottom: 1px solid #777; font-size: 14px; }
+.eva-title-card h1 { margin-top: 36px; font: 700 clamp(100px, 12vw, 192px)/.83 "Times New Roman", Times, serif; letter-spacing: -.075em; }
+.eva-title-card h1 > span { display: block; }
+.eva-title-card h1 > span + span { font-size: .64em; margin-top: 16px; letter-spacing: -.07em; }
+.eva-profession { font: 700 clamp(25px, 2.8vw, 43px)/1.05 "Times New Roman", Times, serif; letter-spacing: -.035em; margin-top: 32px; max-width: 580px; }
+.eva-profile-line { font-size: 17px; line-height: 1.6; color: #c6c6c6; margin-top: 24px; max-width: 420px; }
+.eva-title-card > .text-link { margin-top: 28px; }
+.eva-magi-nav { color: #ffb15c; position: relative; margin-top: 60px; }
+.eva-magi-label { display: flex; justify-content: space-between; font: 600 13px/1.5 "Source Sans 3", Arial, sans-serif; border-block: 1px solid; padding: 10px 0; }
+.eva-magi-cells { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding-top: 28px; }
+.eva-magi-cell { position: relative; min-height: 132px; padding: 22px 16px; text-align: center; background: #ffb15c; color: #000; clip-path: polygon(16% 0, 84% 0, 100% 20%, 100% 80%, 84% 100%, 16% 100%, 0 80%, 0 20%); }
+.eva-magi-cell::before { content: ""; position: absolute; z-index: -1; inset: 1px; background: #100a04; clip-path: inherit; }
+.eva-magi-cell small { display: block; color: #ffb15c; font: 500 12px/1.5 "Source Sans 3", Arial, sans-serif; }
+.eva-magi-cell strong { display: block; color: #ffd2a3; font: 600 21px/1.15 "Source Sans 3", Arial, sans-serif; margin-top: 12px; }
+.eva-magi-cell:hover::before { background: #4c2b12; }
+.eva-magi-cell:focus-visible { clip-path: none; outline-color: white; }
+.eva-melchior { grid-column: 1 / -1; width: 62%; justify-self: center; }
+.eva-signal { display: block; width: 100%; height: 70px; margin-top: 30px; opacity: .7; animation: eva-signal-breathe 7s ease-in-out infinite; }
+@keyframes eva-signal-breathe { 50% { opacity: .3; } }
+
+@media (min-width: 851px) {
+  .composition-bloodborne > .experience-section { grid-row: 1; }
+  .composition-bloodborne > .biography-section { grid-row: 1; }
+  .composition-eva > .biography-section, .composition-eva > .projects-section { grid-row: 1; }
+}
+@media (max-width: 1100px) {
+  .skills-showcase .skills-groups { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .eva-opening { grid-template-columns: 1.3fr 1fr; padding-inline: 40px; gap: 35px; }
+  .eva-title-card h1 { font-size: 13vw; }
+  .eva-magi-cell strong { font-size: 18px; }
+  .portfolio[data-theme="friend"] .manga-title-block h1 { font-size: 8vw; }
+}
+@media (max-width: 850px) {
+  .skills-showcase { padding-top: 50px; }
+  .portfolio .project-detail-art .project-artwork { aspect-ratio: 1.7; min-height: 260px; }
+  .portfolio[data-theme="friend"] .manga-title-block h1 { font-size: 10vw; }
+  .portfolio[data-theme="phantom"] .phantom-copy h1 { font-size: 100px; }
+  .portfolio .scene-caption { font-size: 12px; }
+  .eva-opening { display: block; padding: 100px 30px 140px; min-height: 100svh; }
+  .eva-title-card h1 { font-size: 22vw; max-width: 100%; margin-top: 50px; }
+  .eva-magi-nav { max-width: 520px; margin-top: 55px; }
+  .eva-magi-cells { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .eva-melchior { grid-column: auto; width: 100%; }
+  .eva-magi-cell { min-height: 115px; padding: 20px 10px; }
+  .eva-magi-cell strong { font-size: 17px; }
+  .eva-signal { height: 40px; margin-top: 20px; }
+}
+@media (max-width: 600px) {
+  .skills-showcase { width: calc(100% - 40px); padding-block: 44px; }
+  .skills-showcase .skills-heading { display: block; margin-bottom: 28px; }
+  .skills-heading .text-link { margin-top: 16px; }
+  .skills-showcase .skills-groups { grid-template-columns: 1fr; gap: 28px; }
+  .skills-showcase ul { gap: 14px 20px; }
+  .technology-badge { font-size: 16px; }
+  .portfolio .main-nav { font-size: 13px; }
+  .portfolio .main-nav { gap: 12px; }
+  .portfolio .main-nav a[href="/#about"] { display: none; }
+  .portfolio .journey-rail .rail-label { font-size: 11px; }
+  .portfolio .journey-rail .rail-number { display: none; }
+  .portfolio .journey-rail button:first-of-type { display: none; }
+  .portfolio .journey-rail button { padding: 9px 6px; min-height: 40px; }
+  .portfolio .project-filters button { font-size: 13px; padding-inline: 8px; }
+  .portfolio .project-search input { width: 190px; }
+  .portfolio .biography-summary { font-size: 18px; }
+  .portfolio .project-artwork { min-height: 210px; }
+  .portfolio .project-detail-art .project-artwork { aspect-ratio: 1.2; }
+  .project-detail-art .project-mark { width: 40%; }
+  .portfolio[data-theme="phantom"] .phantom-copy h1 { font-size: clamp(70px, 22vw, 110px); }
+  .portfolio[data-theme="phantom"] .phantom-copy > p { font-size: 17px; }
+  .portfolio[data-theme="phantom"] .poster-copy h3,
+  .portfolio[data-theme="phantom"] .project-poster:first-child .poster-copy h3 { font-size: 36px; }
+  .portfolio[data-theme="friend"] .manga-title-block h1 { font-size: clamp(55px, 15vw, 90px); }
+  .portfolio[data-theme="friend"] .manga-portrait-panel { height: 400px; }
+  .portfolio[data-theme="friend"] .manga-introduction-panel > p { font-size: 17px; }
+  .portfolio[data-theme="friend"] .manga-city-panel > span { font-size: 12px; }
+  .portfolio[data-theme="friend"] .manga-opening { padding-bottom: 170px; }
+  .portfolio[data-theme="eva"] .poster-catalog { grid-template-columns: 1fr; }
+  .portfolio :is(.composition-phantom, .composition-friend) .poster-catalog { grid-template-columns: 1fr; }
+  .portfolio :is(.composition-phantom, .composition-friend) .project-poster:nth-child(n) { grid-column: auto; grid-row: auto; margin-top: 0; }
+  .eva-opening { padding: 90px 24px 130px; }
+  .eva-card-caption { font-size: 12px; }
+  .eva-card-caption > span { max-width: 80px; text-align: right; }
+  .eva-title-card h1 { font-size: 25vw; margin-top: 50px; }
+  .eva-profession { font-size: 30px; }
+  .eva-profile-line { font-size: 17px; }
+  .eva-magi-nav { margin-top: 40px; }
+  .eva-magi-cells { grid-template-columns: 1fr 1fr; }
+  .eva-melchior { grid-column: 1 / -1; width: 60%; }
+  .eva-magi-cell { min-height: 105px; }
+  .portfolio .universe-palette { width: min(300px, calc(100vw - 40px)); right: 0; }
+}
+@media print {
+  .technology-icon { width: 24px; height: 24px; flex-basis: 24px; border: 0; }
+  .technology-icon img { width: 20px; height: 20px; }
+  .technology-badge { color: #000; font-size: 11px; }
+  .cv-skill-group { break-inside: avoid; margin-bottom: 10px; }
+  .portfolio[data-theme="eva"] .cv-document { background: white; color: black; }
+}

@@ -11,6 +11,7 @@ useSeoMeta({
     <DaydreamHero v-if="theme === 'daydream'" /><PhantomHero
       v-else-if="theme === 'phantom'"
     /><DearlyHero v-else-if="theme === 'dearly'" /><UniverseScene v-else />
+    <PortfolioSkills />
     <PortfolioComposition />
   </div>
 </template>

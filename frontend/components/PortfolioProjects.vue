@@ -97,7 +97,6 @@ const resultLabel = computed(() =>
           }}<sup>({{ String(store.projects.length).padStart(2, "0") }})</sup>
         </h2>
       </div>
-      <p>{{ text.selected }}</p>
     </div>
     <div class="catalog-toolbar">
       <div class="project-filters" role="group" :aria-label="text.collection">
@@ -158,15 +157,7 @@ const resultLabel = computed(() =>
           <NuxtLink
             :to="`/projects/${selected.id}`"
             @click="openProject($event, selected)"
-            ><img
-              :src="selected.images[0]"
-              :alt="`${selected.title} — ${text.cover}`"
-              width="1200"
-              height="800"
-              loading="lazy" /><span class="record-art-caption">{{
-              text.cover
-            }}</span
-            ><span class="record-open"
+            ><ProjectArtwork :project="selected" /><span class="record-open"
               ><ArrowUpRight :size="24" aria-hidden="true" /></span
           ></NuxtLink>
         </div>
@@ -186,12 +177,7 @@ const resultLabel = computed(() =>
         </div>
         <div class="selected-project-note" :key="`note-${selected.id}`">
           <h3>{{ selected.title }}</h3>
-          <p>{{ selected.description }}</p>
-          <ul v-if="selected.highlights?.length">
-            <li v-for="line in selected.highlights.slice(0, 3)" :key="line">
-              {{ line }}
-            </li>
-          </ul>
+          <p>{{ selected.short_description }}</p>
           <NuxtLink
             :to="`/projects/${selected.id}`"
             class="text-link"
@@ -230,7 +216,6 @@ const resultLabel = computed(() =>
               ]
             }}</small
             ><strong>{{ project.title }}</strong
-            ><span>{{ project.short_description }}</span
             ><span class="track-tech">{{
               project.technologies.slice(0, 3).join(" / ")
             }}</span></span
@@ -248,13 +233,7 @@ const resultLabel = computed(() =>
         class="project-poster"
         @click="openProject($event, project)"
         ><div class="poster-image">
-          <img
-            :src="project.images[0]"
-            :alt="`${project.title} — ${text.cover}`"
-            width="1200"
-            height="800"
-            loading="lazy"
-          /><span class="poster-stamp">{{
+          <ProjectArtwork :project="project" /><span class="poster-stamp">{{
             String(index + 1).padStart(2, "0")
           }}</span
           ><span class="poster-open"
@@ -280,9 +259,6 @@ const resultLabel = computed(() =>
               >{{ tech }}</span
             >
           </div>
-          <span v-if="project.status" class="project-status">{{
-            project.status
-          }}</span>
         </div></NuxtLink
       >
     </div>

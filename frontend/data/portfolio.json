@@ -85,7 +85,9 @@
         "TypeScript",
         "Go",
         "Python",
-        "C / C# / C++",
+        "C",
+        "C#",
+        "C++",
         "Java",
         "Matlab"
       ],
@@ -161,7 +163,7 @@
       "short_description": "Simulación Monte Carlo para explorar trayectorias universitarias",
       "description": "SimulaPUCV modela la progresión académica de cohortes de Ingeniería Civil Eléctrica en la PUCV. Permite explorar titulación, retención y tiempo de egreso, editar mallas con prerrequisitos y observar trayectorias individuales. Combina una interfaz React con un motor de simulación en Go y dispone de almacenamiento SQLite portable o PostgreSQL para servidor.",
       "images": [
-        "/images/projects/v2/simulapucv.webp"
+        "/images/projects/marks/simulapucv.svg"
       ],
       "technologies": [
         "React",
@@ -196,7 +198,7 @@
       "short_description": "Calendarios, notas, tareas, colecciones y finanzas en un mismo espacio",
       "description": "OmniDesk reúne la organización cotidiana en una aplicación Angular con API NestJS y PostgreSQL. Incluye calendario y recordatorios, notas con autoguardado, tableros Kanban, colecciones con campos personalizados y finanzas con presupuestos y gráficos. Suma una paleta de comandos, temas y un proyecto Android con Capacitor.",
       "images": [
-        "/images/projects/v2/omnidesk.webp"
+        "/images/projects/marks/omnidesk.svg"
       ],
       "technologies": [
         "Angular",
@@ -229,7 +231,7 @@
       "short_description": "Un archivo creativo para el trabajo de una banda",
       "description": "JamSpace nace de una necesidad musical: reunir audios, ideas y letras de una banda en un espacio compartido. El proyecto conserva su enfoque en organizar material creativo y sesiones para facilitar el trabajo entre integrantes.",
       "images": [
-        "/images/projects/v2/jamspace.webp"
+        "/images/projects/marks/jamspace.svg"
       ],
       "technologies": [
         "Next.js",
@@ -253,7 +255,7 @@
       "short_description": "Exploración de interiores 3D con objetos del mundo real",
       "description": "InteriorTwin explora cómo incorporar objetos escaneados de la realidad a una escena interior en Unity. El proyecto incluye selección y manipulación de objetos, interacción táctil y arrastre con detección de colisiones. Se desarrolló en equipo durante la carrera universitaria.",
       "images": [
-        "/images/projects/v2/interiortwin.webp"
+        "/images/projects/marks/interiortwin.svg"
       ],
       "technologies": [
         "Unity",
@@ -285,7 +287,7 @@
       "short_description": "Aprender a programar construyendo secuencias de hechizos",
       "description": "LoopMania convierte secuencias, bucles y condicionales en piezas de un videojuego de puzles. El jugador arrastra comandos a un grimorio, los ejecuta y observa cómo su personaje recorre el nivel. El código incluye bloques anidados, tutoriales progresivos y evaluación de movimientos. Desarrollado con un compañero de universidad en Unity y C#.",
       "images": [
-        "/images/projects/v2/loopmania.webp"
+        "/images/projects/marks/loopmania.svg"
       ],
       "technologies": [
         "Unity",
@@ -316,7 +318,7 @@
       "short_description": "Elecciones de administradores con votos ponderados en Discord",
       "description": "Judge Bot organiza elecciones públicas mediante comandos slash de Discord. Los votos a favor suman dos puntos, los votos en contra restan uno y una votación adicional resuelve empates. La persistencia activa utiliza PostgreSQL; comandos, eventos y tareas programadas están separados en módulos.",
       "images": [
-        "/images/projects/v2/judge-bot.webp"
+        "/images/projects/marks/judge-bot.svg"
       ],
       "technologies": [
         "JavaScript",
@@ -349,7 +351,7 @@
       "short_description": "Horarios universitarios entre restricciones y algoritmos",
       "description": "Prototipo académico que explora la asignación de asignaturas, docentes y salas a bloques horarios. Combina una heurística greedy para distribuir clases con backtracking para construir horarios de estudiantes sin choques y reducir ventanas. Incluye generación de instancias sintéticas y reportes CSV, Excel y gráficos. Se conserva como una exploración incompleta del problema, no como un producto terminado.",
       "images": [
-        "/images/projects/v2/university-timetabling.webp"
+        "/images/projects/marks/university-timetabling.svg"
       ],
       "technologies": [
         "Python",
@@ -383,7 +385,7 @@
       "short_description": "Un arcade para poner en juego los patrones de diseño",
       "description": "Juego académico de romper bloques, inspirado en Breakout y Arkanoid, desarrollado en Java con LibGDX. Incluye tres dificultades, bloques con distinta resistencia, potenciadores de velocidad, puntuación, vidas y pausa. Usa Strategy para los comportamientos de la pelota, Template Method y Builder para los niveles, y Singleton para recursos y sonido.",
       "images": [
-        "/images/projects/v2/block-breaker.webp"
+        "/images/projects/marks/block-breaker.svg"
       ],
       "technologies": [
         "Java",

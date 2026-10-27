@@ -2,9 +2,6 @@
 const store = useCvStore();
 const {
   translateExperience,
-  translateSkillCategory,
-  translateSoftSkills,
-  isSoftSkillsCategory,
   formatRange,
 } = usePortfolioCopy();
 const { text } = useStudioCopy();
@@ -36,32 +33,8 @@ const experiences = computed(() => store.experiences.map(translateExperience));
         <div>
           <h3>{{ item.position }}</h3>
           <p class="experience-company">{{ item.company }}</p>
-          <ul>
-            <li v-for="line in item.description" :key="line">{{ line }}</li>
-          </ul>
-          <div class="project-technologies">
-            <span v-for="tech in item.technologies" :key="tech">{{
-              tech
-            }}</span>
-          </div>
         </div>
       </article>
-    </div>
-    <div class="toolkit">
-      <h2>{{ text.skills }}<span aria-hidden="true">↘</span></h2>
-      <div class="toolkit-grid">
-        <article v-for="skill in store.skills" :key="skill.category">
-          <h3>{{ translateSkillCategory(skill.category) }}</h3>
-          <p>
-            {{
-              (isSoftSkillsCategory(skill.category)
-                ? translateSoftSkills(skill.items)
-                : skill.items
-              ).join(" · ")
-            }}
-          </p>
-        </article>
-      </div>
     </div>
   </section>
 </template>

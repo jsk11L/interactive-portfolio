@@ -41,7 +41,7 @@ const { travel } = useJourney();
           fill="#171717"
         /></svg
       ><span class="portrait-sticker"
-        >{{ text.skills }}<br />& {{ text.research }}</span
+        >Software<br />& {{ text.research }}</span
       >
     </div>
     <div class="p5-calling-card" aria-hidden="true">

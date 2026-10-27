@@ -47,13 +47,7 @@ useSeoMeta({
       }}</span>
     </header>
     <figure class="project-detail-art">
-      <img
-        :src="localized.images[0]"
-        :alt="`${localized.title} — ${text.cover}`"
-        width="1400"
-        height="800"
-        fetchpriority="high"
-      />
+      <ProjectArtwork :project="localized" />
       <figcaption>{{ text.cover }}</figcaption>
     </figure>
     <div class="project-detail-body">
@@ -74,10 +68,8 @@ useSeoMeta({
           <p class="project-role">{{ localized.role }}</p></template
         >
         <h2>{{ text.tech }}</h2>
-        <div class="project-technologies">
-          <span v-for="tech in localized.technologies" :key="tech">{{
-            tech
-          }}</span>
+        <div class="technology-list">
+          <TechnologyBadge v-for="tech in localized.technologies" :key="tech" :name="tech" />
         </div>
         <h2>{{ text.links }}</h2>
         <a

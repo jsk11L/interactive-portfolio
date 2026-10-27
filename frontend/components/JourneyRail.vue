@@ -5,7 +5,7 @@ const { active, progress, pastIntro, travel } = useJourney();
 const route = useRoute();
 const { theme } = usePortfolioTheme();
 const sections = computed(
-  () => ["intro", ...compositions[theme.value].order] as const,
+  () => ["intro", "skills", ...compositions[theme.value].order] as const,
 );
 </script>
 <template>
@@ -23,13 +23,13 @@ const sections = computed(
       :key="id"
       type="button"
       :aria-current="active === id ? 'location' : undefined"
-      :aria-label="id === 'intro' ? text.portfolio : text[id]"
+      :aria-label="id === 'intro' ? text.portfolio : id === 'skills' ? text.skillsNav : text[id]"
       :class="{ selected: active === id }"
       @click="travel(id)"
     >
       <span class="rail-number">0{{ index + 1 }}</span
       ><span class="rail-label">{{
-        id === "intro" ? text.portfolio : text[id]
+        id === "intro" ? text.portfolio : id === 'skills' ? text.skillsNav : text[id]
       }}</span>
     </button>
     <NuxtLink to="/contact" class="rail-contact" :aria-label="text.contact"
