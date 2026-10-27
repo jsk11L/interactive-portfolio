@@ -1,0 +1,881 @@
+/* Recompose at each size; artwork never becomes a desktop-sized fixed canvas. */
+@media (min-width: 1600px) {
+  .daydream-hero {
+    gap: 115px;
+  }
+  .daydream-intro h1 {
+    font-size: 86px;
+  }
+}
+@media (max-width: 1150px) {
+  .masthead,
+  .content-shell,
+  .daydream-hero,
+  .colophon {
+    width: calc(100% - 72px);
+  }
+  .masthead {
+    gap: 15px;
+  }
+  .main-nav {
+    gap: 22px;
+  }
+  .masthead-tools {
+    gap: 13px;
+  }
+  .locale-control {
+    padding-right: 12px;
+  }
+  .daydream-hero {
+    gap: 40px;
+    padding-block: 65px;
+  }
+  .daydream-intro h1 {
+    font-size: 64px;
+  }
+  .hero-kicker {
+    font-size: 9px;
+  }
+  .kicker-year {
+    font-size: 8px;
+  }
+  .hero-footnote {
+    margin-top: 45px;
+  }
+  .project-entry {
+    grid-template-columns: 25px 225px 1fr 20px;
+    gap: 22px;
+  }
+  .biography-section {
+    gap: 60px;
+  }
+  .phantom-hero {
+    padding-inline: 36px;
+  }
+  .phantom-copy h1 {
+    font-size: 82px;
+  }
+  .phantom-portrait img {
+    height: 360px;
+  }
+  .phantom-portrait {
+    min-height: 360px;
+  }
+  .dearly-title {
+    width: 80%;
+  }
+  .project-detail-body {
+    gap: 60px;
+  }
+}
+@media (max-width: 850px) {
+  .masthead {
+    flex-wrap: wrap;
+    min-height: 118px;
+    padding-block: 20px;
+    row-gap: 18px;
+  }
+  .wordmark {
+    font-size: 10px;
+  }
+  .wordmark-monogram {
+    font-size: 39px;
+  }
+  .main-nav {
+    order: 3;
+    justify-content: center;
+    flex-basis: 100%;
+    gap: 45px;
+    border-top: 1px solid var(--line);
+    padding-top: 8px;
+  }
+  .main-nav a {
+    padding: 5px 0;
+  }
+  .masthead-tools {
+    margin-left: auto;
+  }
+  .daydream-hero {
+    gap: 30px;
+    grid-template-columns: 1.1fr 1fr;
+    padding-block: 50px;
+  }
+  .daydream-intro h1 {
+    font-size: 51px;
+  }
+  .hero-kicker {
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+  }
+  .kicker-year {
+    display: none;
+  }
+  .hero-description {
+    font-size: 12px;
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+  }
+  .button-solid {
+    padding: 14px 17px;
+    font-size: 11px;
+    gap: 12px;
+  }
+  .hero-footnote {
+    font-size: 8px;
+    margin-top: 30px;
+  }
+  .hero-footnote > span:last-child {
+    display: none;
+  }
+  .section-heading h2 {
+    font-size: 40px;
+  }
+  .project-entry {
+    grid-template-columns: 20px 175px 1fr 20px;
+    gap: 16px;
+  }
+  .project-entry h3 {
+    font-size: 26px;
+  }
+  .project-entry-copy > p {
+    font-size: 10px;
+  }
+  .project-technologies {
+    gap: 5px 9px;
+    margin-top: 12px;
+  }
+  .project-technologies span {
+    font-size: 8px;
+  }
+  .biography-section {
+    gap: 35px;
+  }
+  .biography-heading h2 {
+    font-size: 38px;
+  }
+  .biography-summary {
+    font-size: 19px;
+  }
+  .experience-entry {
+    grid-template-columns: 160px 1fr;
+    gap: 25px;
+  }
+  .experience-date {
+    font-size: 9px;
+  }
+  .experience-entry h3 {
+    font-size: 22px;
+  }
+  .toolkit-grid {
+    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .phantom-hero {
+    min-height: 590px;
+    gap: 10px;
+    padding-top: 50px;
+    grid-template-columns: 1.25fr 1fr;
+  }
+  .phantom-copy h1 {
+    font-size: 67px;
+  }
+  .phantom-portrait {
+    min-height: 310px;
+    padding: 13px;
+  }
+  .phantom-portrait img {
+    height: 300px;
+  }
+  .phantom-copy > p {
+    font-size: 12px;
+  }
+  .phantom-copy .hero-actions {
+    gap: 14px;
+  }
+  .portrait-sticker {
+    font-size: 17px;
+    right: 15px;
+    bottom: 32px;
+  }
+  .phantom-star {
+    font-size: 480px;
+    right: -100px;
+    top: 0;
+  }
+  [data-theme="phantom"] .main-nav a {
+    padding: 5px 13px;
+  }
+  [data-theme="dearly"] .project-collection {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dearly-hero {
+    height: 700px;
+    min-height: 620px;
+  }
+  .dearly-title {
+    top: 11%;
+    width: 83%;
+  }
+  .dearly-title h1 {
+    font-size: 64px;
+  }
+  .dearly-title-menu {
+    bottom: 15%;
+  }
+  .dearly-emblem {
+    left: -27px;
+    font-size: 50px;
+  }
+  .dearly-landscape {
+    width: 145%;
+    max-width: none;
+    left: -20%;
+  }
+  .project-detail-body {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 35px;
+  }
+  .project-detail-body section > p {
+    font-size: 21px;
+  }
+  .cv-document {
+    padding: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .content-shell,
+  .masthead,
+  .daydream-hero,
+  .colophon {
+    width: calc(100% - 40px);
+  }
+  .masthead {
+    min-height: 130px;
+    padding-top: 22px;
+    row-gap: 20px;
+  }
+  .wordmark {
+    gap: 10px;
+  }
+  .wordmark-monogram {
+    font-size: 37px;
+  }
+  .masthead-tools {
+    gap: 10px;
+  }
+  .universe-trigger {
+    gap: 7px;
+    font-size: 9px;
+  }
+  .universe-trigger > svg {
+    display: none;
+  }
+  .locale-control {
+    padding-right: 9px;
+  }
+  .locale-control select {
+    font-size: 9px;
+  }
+  .main-nav {
+    font-size: 10px;
+    gap: 35px;
+  }
+  .universe-panel {
+    position: fixed;
+    top: 90px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    max-width: 390px;
+    margin-left: auto;
+  }
+  .daydream-hero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding: 45px 0 50px;
+  }
+  .hero-kicker {
+    font-size: 9px;
+    margin-bottom: 27px;
+  }
+  .kicker-year {
+    display: block;
+  }
+  .daydream-intro h1 {
+    font-size: clamp(48px, 12.5vw, 74px);
+  }
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 340px;
+    margin-top: 24px;
+  }
+  .hero-actions {
+    gap: 24px;
+    margin-top: 26px;
+  }
+  .hero-footnote {
+    display: none;
+  }
+  .candle-artwork {
+    max-width: 100%;
+    width: 100%;
+    transform: rotate(0.7deg);
+  }
+  .candle-artwork figcaption {
+    font-size: 8px;
+  }
+  .section-block {
+    padding: 40px 0 45px;
+  }
+  .section-heading {
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 23px;
+  }
+  .section-heading > p {
+    max-width: 110px;
+    font-size: 10px;
+    line-height: 1.7;
+    padding-top: 27px;
+  }
+  .section-heading h2 {
+    font-size: 39px;
+  }
+  .section-heading .eyebrow {
+    font-size: 9px;
+    margin-bottom: 13px;
+  }
+  .project-filters {
+    gap: 2px;
+    flex-wrap: nowrap;
+    overflow: auto;
+    margin-right: -10px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+  }
+  .project-filters button {
+    font-size: 9px;
+    padding: 7px 9px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .project-entry {
+    grid-template-columns: 20px 1fr 20px;
+    gap: 13px;
+    padding: 22px 0;
+  }
+  .project-number {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .project-image {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .project-arrow {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    width: 18px;
+  }
+  .project-entry-copy {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    padding-top: 5px;
+  }
+  .project-entry h3 {
+    font-size: 30px;
+    margin: 9px 0;
+  }
+  .project-entry-copy > p {
+    font-size: 12px;
+  }
+  .project-technologies span {
+    font-size: 9px;
+  }
+  .project-image-label {
+    display: none;
+  }
+  .project-technologies {
+    margin-top: 15px;
+  }
+  .github-index {
+    font-size: 11px;
+    float: none;
+    margin-top: 25px;
+  }
+  .biography-section {
+    display: block;
+  }
+  .biography-heading h2 {
+    max-width: 320px;
+    font-size: 43px;
+  }
+  .biography-heading img {
+    width: 180px;
+    height: 210px;
+  }
+  .biography-copy {
+    padding-top: 40px;
+  }
+  .biography-summary {
+    font-size: 22px;
+  }
+  .biography-copy > .eyebrow {
+    font-size: 9px;
+  }
+  .education-note h3 {
+    font-size: 20px;
+  }
+  .research-note h3 {
+    font-size: 20px;
+  }
+  .experience-entry {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding-block: 25px;
+  }
+  .experience-date {
+    font-size: 10px;
+  }
+  .experience-entry h3 {
+    font-size: 24px;
+  }
+  .experience-entry ul {
+    font-size: 12px;
+  }
+  .toolkit-grid {
+    gap: 25px 20px;
+  }
+  .toolkit-grid article:last-child {
+    grid-column: 1 / -1;
+  }
+  .toolkit p {
+    font-size: 11px;
+  }
+  .toolkit > h2 {
+    font-size: 30px;
+  }
+  .contact-outro {
+    padding: 45px 0 50px;
+  }
+  .contact-outro h2 {
+    font-size: 48px;
+  }
+  .contact-outro > div {
+    gap: 15px;
+  }
+  .outro-link {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+  }
+  .outro-link svg {
+    width: 32px;
+    height: 32px;
+  }
+  .colophon {
+    font-size: 8px;
+    gap: 15px;
+    padding-block: 24px;
+    flex-wrap: wrap;
+  }
+  .colophon > span:nth-child(2) {
+    margin-left: auto;
+  }
+  .colophon > a {
+    display: none;
+  }
+  .phantom-hero {
+    padding: 35px 23px 80px;
+    display: block;
+    min-height: 0;
+  }
+  .phantom-copy h1 {
+    font-size: 78px;
+    margin-block: 25px;
+  }
+  .phantom-copy h1 > span {
+    font-size: 0.53em;
+  }
+  .phantom-copy > p {
+    font-size: 12px;
+    max-width: 290px;
+  }
+  .phantom-copy .hero-actions {
+    gap: 25px;
+  }
+  .phantom-star {
+    top: 380px;
+    font-size: 520px;
+    right: -130px;
+  }
+  .phantom-portrait {
+    max-width: 270px;
+    min-height: 0;
+    margin: 35px 0 20px auto;
+    padding: 12px;
+  }
+  .phantom-portrait img {
+    height: 270px;
+    max-width: none;
+  }
+  .portrait-sticker {
+    font-size: 21px;
+  }
+  .phantom-ticker {
+    bottom: 12px;
+    font-size: 20px;
+  }
+  [data-theme="phantom"] .content-shell {
+    padding-top: 0;
+  }
+  [data-theme="phantom"] .section-heading h2 {
+    font-size: 35px;
+  }
+  [data-theme="phantom"] .project-collection {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  [data-theme="phantom"] .project-entry-copy {
+    padding: 22px 20px 0;
+  }
+  [data-theme="phantom"] .project-entry h3 {
+    font-size: 33px;
+  }
+  [data-theme="phantom"] .project-number {
+    padding: 5px 7px;
+  }
+  [data-theme="phantom"] .project-filters button {
+    font-size: 8px;
+  }
+  [data-theme="phantom"] .biography-heading h2 {
+    font-size: 41px;
+  }
+  [data-theme="phantom"] .contact-outro h2 {
+    font-size: 43px;
+  }
+  .dearly-hero {
+    height: calc(100svh - 135px);
+    min-height: 650px;
+    max-height: 850px;
+  }
+  .dearly-title {
+    left: 9%;
+    width: 84%;
+    top: 9%;
+  }
+  .dearly-kicker {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+  .dearly-title h1 {
+    font-size: clamp(46px, 12vw, 68px);
+    line-height: 1.07;
+    margin-top: 45px;
+  }
+  .dearly-title > p {
+    font-size: 14px;
+    max-width: 250px;
+    margin-top: 15px;
+  }
+  .dearly-emblem {
+    font-size: 40px;
+    left: -20px;
+    top: 35px;
+  }
+  .dearly-start {
+    font-size: 12px;
+    margin-top: 25px;
+  }
+  .dearly-title-menu {
+    bottom: 14%;
+    left: 9%;
+    gap: 3px;
+  }
+  .dearly-title-menu a {
+    font-size: 19px;
+    padding-block: 7px;
+  }
+  .dearly-landscape {
+    width: 195%;
+    left: -55%;
+  }
+  .dearly-edition {
+    font-size: 8px;
+    left: 9%;
+    bottom: 17px;
+  }
+  .chapter-nav {
+    gap: 15px;
+    padding: 25px 0;
+    margin-bottom: 5px;
+  }
+  .chapter-nav a {
+    font-size: 14px;
+    padding-inline: 7px;
+  }
+  [data-theme="dearly"] .project-collection {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  [data-theme="dearly"] .project-filters {
+    justify-content: flex-start;
+    margin-block: 25px;
+  }
+  [data-theme="dearly"] .project-number {
+    font-size: 11px;
+  }
+  [data-theme="dearly"] .section-heading h2 {
+    font-size: 40px;
+  }
+  [data-theme="dearly"] .section-heading > p {
+    font-size: 12px;
+  }
+  [data-theme="dearly"] .contact-outro h2 {
+    font-size: 42px;
+  }
+  [data-theme="dearly"] .outro-link {
+    width: 45px;
+    height: 45px;
+  }
+  .project-detail {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .back-link {
+    margin-bottom: 45px;
+    font-size: 11px;
+  }
+  .project-detail-heading h1 {
+    font-size: 55px;
+    overflow-wrap: anywhere;
+  }
+  .project-detail-heading > p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .project-detail-art {
+    margin-inline: -20px;
+    margin-bottom: 35px;
+  }
+  .project-detail-art figcaption {
+    padding-inline: 20px;
+    font-size: 8px;
+  }
+  .project-detail-body {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-bottom: 40px;
+  }
+  .project-detail-body section > p {
+    font-size: 22px;
+  }
+  .project-detail-body aside {
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+  }
+  .project-detail-body aside h2:not(:first-child) {
+    margin-top: 30px;
+  }
+  .next-project strong {
+    font-size: 30px;
+  }
+  .contact-page {
+    padding-top: 30px;
+    padding-bottom: 85px;
+    min-height: calc(100svh - 210px);
+  }
+  .contact-page h1 {
+    font-size: 64px;
+    margin-top: 25px;
+  }
+  .contact-page-lead {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .contact-asterisk {
+    font-size: 140px;
+    top: 100px;
+    right: -5px;
+  }
+  .contact-email {
+    font-size: 23px;
+    letter-spacing: -0.04em;
+    gap: 12px;
+  }
+  .contact-email svg {
+    width: 18px;
+  }
+  .contact-socials {
+    gap: 20px;
+    font-size: 11px;
+  }
+  .contact-socials button {
+    margin-left: 0;
+    flex-basis: 100%;
+    margin-top: 5px;
+  }
+  .contact-note {
+    font-size: 10px;
+    max-width: 280px;
+  }
+  .cv-page {
+    padding-block: 25px 40px;
+  }
+  .cv-toolbar {
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .cv-toolbar > .text-link {
+    max-width: 110px;
+    font-size: 10px;
+  }
+  .cv-toolbar > .button-solid {
+    font-size: 10px;
+    padding: 11px 13px;
+    gap: 8px;
+  }
+  .cv-document {
+    padding: 25px 20px;
+    margin-inline: -8px;
+  }
+  .cv-document h1 {
+    font-size: 35px;
+  }
+  .cv-document p,
+  .cv-document li {
+    font-size: 11px;
+  }
+  .cv-contact {
+    gap: 8px 15px;
+    font-size: 9px;
+  }
+  .cv-document h2 {
+    font-size: 25px;
+  }
+}
+/* Longer translated titles must remain fully readable on narrow screens. */
+@media (max-width: 600px) {
+  [data-theme="phantom"] .contact-page h1 {
+    font-size: clamp(40px, 13vw, 56px);
+    overflow-wrap: anywhere;
+  }
+  [data-theme="phantom"] .project-detail-heading h1 {
+    font-size: clamp(36px, 10vw, 55px);
+  }
+  html[lang="de"] .phantom-copy h1 {
+    font-size: clamp(38px, 11vw, 60px);
+  }
+  html[lang="ru"] .phantom-copy h1 {
+    font-size: clamp(42px, 14vw, 64px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .candle-flame {
+    transform: translate(-50%, -100%) !important;
+  }
+}
+[data-paused="true"] *,
+[data-paused="true"] *::before,
+[data-paused="true"] *::after {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  html,
+  body,
+  .portfolio {
+    background: #fff !important;
+    color: #000 !important;
+    overflow: visible !important;
+  }
+  .no-print,
+  .colophon,
+  .masthead,
+  .skip-link {
+    display: none !important;
+  }
+  .content-shell {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .cv-document {
+    max-width: none;
+    border: 0;
+    padding: 0;
+    background: white !important;
+    color: #000 !important;
+  }
+  .cv-document h1 {
+    font-size: 27pt;
+  }
+  .cv-document h2 {
+    font-size: 16pt;
+    margin-bottom: 9pt;
+  }
+  .cv-document h3 {
+    font-size: 10pt;
+  }
+  .cv-document p,
+  .cv-document li {
+    font-size: 9pt;
+    line-height: 1.5;
+  }
+  .cv-document section {
+    margin-top: 15pt;
+    padding-top: 12pt;
+  }
+  .cv-document header,
+  .cv-experience,
+  .cv-project,
+  .cv-document h2,
+  .cv-document h3 {
+    break-inside: avoid;
+  }
+  .cv-document h2,
+  .cv-document h3 {
+    break-after: avoid;
+  }
+  .cv-experience + .cv-experience,
+  .cv-project + .cv-project {
+    margin-top: 13pt;
+  }
+  .cv-document a {
+    text-decoration: none;
+    color: #000;
+  }
+  .cv-document .cv-project > a {
+    font-size: 8pt;
+  }
+  .cv-document .cv-contact {
+    font-size: 8pt;
+    gap: 12pt;
+  }
+  * {
+    animation: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}

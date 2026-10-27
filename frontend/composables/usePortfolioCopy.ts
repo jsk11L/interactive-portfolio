@@ -1,4 +1,5 @@
 import { computed } from 'vue'
+import { projectEditorial, type ProjectEditorial } from '~/data/projectEditorial'
 import type { ExperienceItem, PersonalInfo, ProjectItem } from '~/stores/cvStore'
 
 export type Locale = 'es' | 'en' | 'de' | 'ru'
@@ -86,7 +87,7 @@ type LocaleCopy = {
       softSkillsItems: string[]
       chartLabel: string
     }
-    projects: Record<string, { shortDescription: string; description: string }>
+    projects: Record<string, ProjectEditorial>
   }
 }
 
@@ -167,7 +168,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       profile: {
         title: 'Estudiante de 5to año de Ingeniería Civil Informática',
         summary:
-          'Soy Javier, tengo 22 años y soy chileno. Estudiante de 5to año de Ingeniería Civil Informática apasionado por construir software y herramientas que voy viendo necesario en mi vida y que pueden ser útil a más gente. Tengo experiencia en investigación y soy co-autor de una publicación de optimización de cronogramas hospitalarios. Me apasionan la música y los videojuegos.',
+          "Soy Javier, estudiante chileno de quinto año de Ingeniería Civil Informática. Construyo herramientas que nacen de necesidades cotidianas y conecto el desarrollo de software con la investigación, la música y los videojuegos. Tengo experiencia en investigación y soy coautor de una publicación sobre optimización de cronogramas hospitalarios.",
       },
       experiences: {
         'exp-programming': {
@@ -224,33 +225,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
         ],
         chartLabel: 'Competencia',
       },
-      projects: {
-        simulapucv: {
-          shortDescription: 'Herramienta de análisis y simulación de generaciones universitarias',
-          description:
-            'SimulaPUCV es una plataforma interactiva de simulación diseñada para analizar y simular generaciones universitarias completas. Permite visualizar el comportamiento de cohortes estudiantiles a lo largo del tiempo, modelando inscripción, rendimiento académico y tasas de graduación. Construida con React y Go para máximo rendimiento, con PostgreSQL como motor de datos.',
-        },
-        omnidesk: {
-          shortDescription: 'Organizador personal multiplataforma con sincronización en la nube',
-          description:
-            'OmniDesk es un organizador personal disponible como página web y aplicación móvil. Ofrece gestión de tareas, listas, notas, calendario y notificaciones personalizables con sincronización en tiempo real entre dispositivos. Stack moderno con arquitectura escalable diseñada para productividad real.',
-        },
-        jamspace: {
-          shortDescription: 'Aplicación para gestionar datos de banda musical',
-          description:
-            'JamSpace es una aplicación diseñada para bandas musicales que permite gestionar audios, ideas, letras y material creativo de forma centralizada. Incluye grabación, organización de sesiones y colaboración entre miembros de la banda.',
-        },
-        interiortwin: {
-          shortDescription: 'Aplicación AR para diseño de interiores con objetos escaneados',
-          description:
-            'InteriorTwin es una aplicación desarrollada en Unity que permite mover, reescalar y colocar objetos en entornos interiores con simulación de físicas realistas. La característica distintiva es que los objetos son modelos escaneados de la realidad, permitiendo una experiencia de diseño de interiores auténtica. Proyecto desarrollado en equipo durante la carrera universitaria.',
-        },
-        loopmania: {
-          shortDescription: 'Videojuego educativo que enseña programación mediante gameplay',
-          description:
-            'LoopMania es un videojuego educativo desarrollado en Unity donde el jugador avanza colocando órdenes de forma similar a escribir código. El juego enseña el uso de loops, secuencias y lógica de programación de forma interactiva y entretenida. Desarrollado en colaboración con un compañero de universidad.',
-        },
-      },
+      projects: {},
     },
   },
   en: {
@@ -321,7 +296,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       profile: {
         title: '5th-year Computer Engineering student',
         summary:
-          'I\'m Javier, 22 years old and Chilean. A 5th-year Computer Engineering student passionate about building software and tools that I find useful in my own life and that can help more people. I have research experience and I am a co-author of a paper on hospital schedule optimization. I am passionate about music and video games.',
+          "I am Javier, a Chilean fifth-year Computer Engineering student. I build tools inspired by everyday needs, connecting software development with research, music and video games. I have research experience and co-authored a publication on hospital schedule optimization.",
       },
       experiences: {
         'exp-programming': {
@@ -378,33 +353,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
         ],
         chartLabel: 'Proficiency',
       },
-      projects: {
-        simulapucv: {
-          shortDescription: 'Analytics and simulation tool for university cohorts',
-          description:
-            'SimulaPUCV is an interactive simulation platform designed to analyze and simulate full university cohorts. It visualizes student cohort behavior over time, modeling enrollment, academic performance, and graduation rates. Built with React and Go for maximum performance, using PostgreSQL as the data engine.',
-        },
-        omnidesk: {
-          shortDescription: 'Cross-platform personal organizer with cloud sync',
-          description:
-            'OmniDesk is a personal organizer available as both a web app and a mobile app. It offers task, list, note, and calendar management with customizable notifications and real-time synchronization across devices. A modern stack with scalable architecture designed for real productivity.',
-        },
-        jamspace: {
-          shortDescription: 'Band data management application',
-          description:
-            'JamSpace is an application designed for music bands that centralizes audio, ideas, lyrics, and creative materials. It includes recording, session organization, and collaboration between band members.',
-        },
-        interiortwin: {
-          shortDescription: 'AR interior design app with scanned objects',
-          description:
-            'InteriorTwin is an application built in Unity that lets users move, resize, and place objects in interior environments with realistic physics simulation. Its distinctive feature is that the objects are scanned real-world models, enabling an authentic interior design experience. The project was developed as a team during university studies.',
-        },
-        loopmania: {
-          shortDescription: 'Educational video game that teaches programming through gameplay',
-          description:
-            'LoopMania is an educational video game built in Unity where the player progresses by placing commands in a way similar to writing code. The game teaches loops, sequences, and programming logic in an interactive and entertaining way. Developed in collaboration with a university colleague.',
-        },
-      },
+      projects: {},
     },
   },
   de: {
@@ -476,7 +425,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       profile: {
         title: 'Student im 5. Jahr der Computertechnik',
         summary:
-          'Ich bin Javier, 22 Jahre alt und Chilene. Student im 5. Jahr der Computertechnik mit Leidenschaft für Software und Werkzeuge, die ich in meinem eigenen Alltag nützlich finde und die auch anderen helfen können. Ich habe Forschungserfahrung und bin Mitautor einer Veröffentlichung zur Optimierung von Krankenhausplänen. Musik und Videospiele begeistern mich.',
+          "Ich bin Javier, ein chilenischer Student der Computertechnik im fünften Jahr. Ich entwickle Werkzeuge aus alltäglichen Bedürfnissen und verbinde Softwareentwicklung mit Forschung, Musik und Videospielen. Ich habe Forschungserfahrung und bin Mitautor einer Veröffentlichung zur Optimierung von Krankenhausplänen.",
       },
       experiences: {
         'exp-programming': {
@@ -533,33 +482,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
         ],
         chartLabel: 'Kompetenz',
       },
-      projects: {
-        simulapucv: {
-          shortDescription: 'Analyse- und Simulationswerkzeug für universitäre Kohorten',
-          description:
-            'SimulaPUCV ist eine interaktive Simulationsplattform zur Analyse und Simulation kompletter universitärer Kohorten. Sie visualisiert das Verhalten von Studierendengruppen über die Zeit und modelliert Einschreibung, akademische Leistung und Abschlussraten. Entwickelt mit React und Go für maximale Performance, mit PostgreSQL als Datenbasis.',
-        },
-        omnidesk: {
-          shortDescription: 'Plattformübergreifender persönlicher Organizer mit Cloud-Synchronisierung',
-          description:
-            'OmniDesk ist ein persönlicher Organizer als Webanwendung und mobile App. Er bietet Aufgaben-, Listen-, Notiz- und Kalenderverwaltung mit anpassbaren Benachrichtigungen und Echtzeit-Synchronisierung zwischen Geräten. Ein moderner Stack mit skalierbarer Architektur für echte Produktivität.',
-        },
-        jamspace: {
-          shortDescription: 'Anwendung zur Verwaltung von Banddaten',
-          description:
-            'JamSpace ist eine Anwendung für Musikbands, die Audio, Ideen, Texte und kreative Materialien zentral verwaltet. Sie enthält Aufnahmefunktionen, Sitzungsorganisation und Zusammenarbeit zwischen Bandmitgliedern.',
-        },
-        interiortwin: {
-          shortDescription: 'AR-App für Interior Design mit gescannten Objekten',
-          description:
-            'InteriorTwin ist eine in Unity entwickelte Anwendung, mit der Objekte in Innenräumen bewegt, skaliert und platziert werden können, inklusive realistischer Physiksimulation. Das besondere Merkmal sind gescannte reale Modelle, die ein authentisches Interior-Design-Erlebnis ermöglichen. Das Projekt wurde im Team während des Studiums entwickelt.',
-        },
-        loopmania: {
-          shortDescription: 'Lernspiel, das Programmieren über Gameplay vermittelt',
-          description:
-            'LoopMania ist ein in Unity entwickeltes Lernspiel, in dem der Spieler voranschreitet, indem er Befehle ähnlich wie Code schreibt. Das Spiel vermittelt Schleifen, Sequenzen und Programmierlogik auf interaktive und unterhaltsame Weise. Entwickelt in Zusammenarbeit mit einem Kommilitonen.',
-        },
-      },
+      projects: {},
     },
   },
   ru: {
@@ -631,7 +554,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       profile: {
         title: 'Студент 5-го курса компьютерной инженерии',
         summary:
-          'Я Хавьер, мне 22 года и я из Чили. Студент 5-го курса компьютерной инженерии, увлеченный созданием полезного программного обеспечения и инструментов, которые я сам использую в жизни и которые могут помочь другим. У меня есть опыт в исследованиях, и я являюсь соавтором публикации по оптимизации расписаний в больницах. Меня вдохновляют музыка и видеоигры.',
+          "Я Хавьер, студент пятого курса компьютерной инженерии из Чили. Создаю инструменты для повседневных задач, соединяя разработку программ с исследованиями, музыкой и видеоиграми. У меня есть исследовательский опыт; я соавтор публикации об оптимизации больничных расписаний.",
       },
       experiences: {
         'exp-programming': {
@@ -688,43 +611,22 @@ const localeCopies: Record<Locale, LocaleCopy> = {
         ],
         chartLabel: 'Компетенция',
       },
-      projects: {
-        simulapucv: {
-          shortDescription: 'Инструмент анализа и моделирования университетских потоков',
-          description:
-            'SimulaPUCV — это интерактивная платформа моделирования, созданная для анализа и симуляции полных университетских потоков. Она визуализирует поведение студенческих когорт во времени, моделируя зачисление, академическую успеваемость и показатели выпуска. Построена на React и Go для максимальной производительности, с PostgreSQL в качестве движка данных.',
-        },
-        omnidesk: {
-          shortDescription: 'Кроссплатформенный персональный органайзер с облачной синхронизацией',
-          description:
-            'OmniDesk — персональный органайзер, доступный как веб-приложение и мобильное приложение. Он предлагает управление задачами, списками, заметками и календарем с настраиваемыми уведомлениями и синхронизацией между устройствами в реальном времени. Современный стек со масштабируемой архитектурой для реальной продуктивности.',
-        },
-        jamspace: {
-          shortDescription: 'Приложение для управления данными музыкальной группы',
-          description:
-            'JamSpace — это приложение для музыкальных групп, которое централизует аудио, идеи, тексты и творческие материалы. Оно включает запись, организацию сессий и совместную работу между участниками группы.',
-        },
-        interiortwin: {
-          shortDescription: 'AR-приложение для дизайна интерьеров со сканированными объектами',
-          description:
-            'InteriorTwin — это приложение, разработанное в Unity, которое позволяет перемещать, изменять размер и размещать объекты в интерьерах с реалистичной физической симуляцией. Его особенность в том, что объекты представляют собой отсканированные модели реального мира, что создает подлинный опыт проектирования интерьеров. Проект был создан командой во время учебы в университете.',
-        },
-        loopmania: {
-          shortDescription: 'Образовательная игра, обучающая программированию через геймплей',
-          description:
-            'LoopMania — это образовательная игра, созданная в Unity, в которой игрок продвигается, размещая команды подобно написанию кода. Игра обучает циклам, последовательностям и логике программирования в интерактивной и увлекательной форме. Разработана совместно с университетским коллегой.',
-        },
-      },
+      projects: {},
     },
   },
 }
 
 export function usePortfolioCopy() {
-  const locale = useCookie<Locale>('portfolio-locale', { default: () => 'es' })
+  // A deterministic initial locale keeps pre-rendered HTML and hydration identical.
+  const locale = useState<Locale>('portfolio-locale', () => 'es')
   const copy = computed(() => localeCopies[locale.value] ?? localeCopies.es)
 
   const setLocale = (nextLocale: Locale) => {
+    if (!localeOptions.some(option => option.code === nextLocale)) return
     locale.value = nextLocale
+    if (import.meta.client) {
+      try { localStorage.setItem('portfolio-locale', nextLocale) } catch { /* Storage may be disabled. */ }
+    }
   }
 
   const formatDate = (dateStr: string): string => {
@@ -736,6 +638,7 @@ export function usePortfolioCopy() {
     return parsedDate.toLocaleDateString(localeTags[locale.value] ?? localeTags.es, {
       year: 'numeric',
       month: 'long',
+      timeZone: 'UTC',
     })
   }
 
@@ -863,13 +766,16 @@ export function usePortfolioCopy() {
   }
 
   const translateProject = (project: ProjectItem): ProjectItem => {
-    const localized = copy.value.content.projects[project.id]
+    const localized = projectEditorial[project.id]?.[locale.value] ?? copy.value.content.projects[project.id]
     if (!localized) return project
 
     return {
       ...project,
       short_description: localized.shortDescription,
       description: localized.description,
+      highlights: localized.highlights ?? project.highlights,
+      role: localized.role ?? project.role,
+      status: localized.status ?? project.status,
       technologies: project.technologies ? project.technologies.map((t: string) => translateTechnology(t)) : project.technologies,
     }
   }

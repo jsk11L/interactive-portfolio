@@ -1,0 +1,274 @@
+/* 02 — Phantom. Cut-paper typography, angular portraits, poster grid. */
+[data-theme="phantom"] {
+  --paper: #161616;
+  --ink: #f1eee5;
+  --muted: #bab5ab;
+  --line: #43413d;
+  --accent: #ff4d51;
+}
+[data-theme="phantom"] .masthead {
+  border-bottom: 0;
+}
+[data-theme="phantom"] .wordmark-monogram {
+  color: var(--accent);
+  font-weight: 700;
+}
+[data-theme="phantom"] .main-nav a {
+  transform: skew(-8deg);
+  padding: 8px 14px;
+  background: #efebe1;
+  color: #151515;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+[data-theme="phantom"] .main-nav a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+[data-theme="phantom"] .universe-trigger {
+  color: #eeeae0;
+}
+.phantom-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 630px;
+  padding: 70px max(56px, calc((100% - 1280px) / 2)) 105px;
+  background: #e82c3a;
+  color: #151515;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 35px;
+  overflow: hidden;
+}
+.phantom-copy {
+  position: relative;
+  z-index: 2;
+  transform: rotate(-2deg);
+  align-self: center;
+}
+.phantom-kicker {
+  background: #151515;
+  color: #fff;
+  padding: 8px 14px;
+  font:
+    bold 10px "Courier New",
+    monospace;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 0.08em;
+}
+.phantom-copy h1 {
+  font:
+    900 clamp(64px, 7.3vw, 108px)/0.92 Arial,
+    Helvetica,
+    sans-serif;
+  letter-spacing: -0.08em;
+  margin: 30px 0;
+}
+.phantom-copy h1 > span {
+  display: inline-block;
+  font-size: 0.57em;
+  max-width: 640px;
+  background: #ece9df;
+  padding: 12px 17px;
+  line-height: 1.05;
+  box-shadow: 9px 8px 0 #151515;
+  letter-spacing: -0.065em;
+  transform: rotate(1deg);
+}
+.phantom-copy > p {
+  max-width: 370px;
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.phantom-copy .button-solid {
+  background: #151515;
+  color: #fff;
+  box-shadow: 4px 4px 0 #eeeae0;
+  font-weight: 700;
+  transform: skew(-8deg);
+}
+.phantom-copy .text-link {
+  color: #161616;
+  font-weight: 700;
+}
+.phantom-star {
+  position: absolute;
+  z-index: 0;
+  font-size: 620px;
+  color: #151515;
+  right: -80px;
+  top: -40px;
+  transform: rotate(15deg);
+  line-height: 1;
+}
+.phantom-portrait {
+  position: relative;
+  z-index: 1;
+  min-height: 400px;
+  align-self: center;
+  transform: rotate(5deg);
+  background: #eeeae0;
+  clip-path: polygon(8% 0, 100% 6%, 90% 100%, 0 90%);
+  padding: 20px;
+  max-width: 440px;
+}
+.phantom-portrait img {
+  height: 410px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: grayscale(1) contrast(1.3);
+  mix-blend-mode: multiply;
+}
+.portrait-target {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  z-index: 3;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+.portrait-sticker {
+  position: absolute;
+  right: 27px;
+  bottom: 46px;
+  background: #e82c3a;
+  color: #fff;
+  padding: 14px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 0.95;
+  transform: rotate(-11deg);
+  box-shadow: 4px 4px 0 #171717;
+}
+.phantom-ticker {
+  position: absolute;
+  bottom: 22px;
+  left: -2%;
+  right: -2%;
+  background: #eeeae0;
+  color: #161616;
+  white-space: nowrap;
+  transform: rotate(-2deg);
+  font: 900 22px/1.7 Arial;
+  letter-spacing: -0.03em;
+  overflow: hidden;
+  border-block: 4px solid #171717;
+}
+.phantom-ticker span {
+  display: block;
+  animation: ticker 18s linear infinite;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(-30%);
+  }
+}
+[data-theme="phantom"] .content-shell {
+  padding-top: 25px;
+}
+[data-theme="phantom"] .section-heading h2,
+[data-theme="phantom"] .contact-outro h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.065em;
+}
+[data-theme="phantom"] .section-heading .eyebrow {
+  color: var(--accent);
+}
+[data-theme="phantom"] .project-filters button {
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  transform: skew(-7deg);
+}
+[data-theme="phantom"] .project-filters button.selected {
+  background: var(--accent);
+  color: #151515;
+  border-color: var(--accent);
+}
+[data-theme="phantom"] .project-collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+[data-theme="phantom"] .project-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 0 25px;
+  border: 1px solid var(--line);
+  background: #1b1b1b;
+  gap: 0;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+[data-theme="phantom"] .project-entry:hover {
+  transform: translate(-3px, -5px) rotate(-0.6deg);
+  box-shadow: 7px 7px 0 var(--accent);
+}
+[data-theme="phantom"] .project-number {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  z-index: 3;
+  padding: 5px 7px;
+  background: #eeeae0;
+  color: #151515;
+  font-weight: 700;
+}
+[data-theme="phantom"] .track-mark {
+  display: none;
+}
+[data-theme="phantom"] .project-entry-copy {
+  padding: 23px 25px 0;
+}
+[data-theme="phantom"] .project-entry h3 {
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+[data-theme="phantom"] .project-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 25px;
+  color: var(--accent);
+}
+[data-theme="phantom"] .project-technologies {
+  padding-right: 15px;
+}
+[data-theme="phantom"] .project-entry-copy > p {
+  max-width: 90%;
+}
+[data-theme="phantom"] .biography-heading h2 {
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  transform: rotate(-2deg);
+}
+[data-theme="phantom"] .biography-heading img {
+  border-color: var(--accent);
+  transform: rotate(-4deg);
+}
+[data-theme="phantom"] .experience-entry h3,
+[data-theme="phantom"] .toolkit h2 {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+}
+[data-theme="phantom"] .outro-link {
+  border-radius: 0;
+  transform: skew(-7deg);
+  background: var(--accent);
+  color: #151515;
+}

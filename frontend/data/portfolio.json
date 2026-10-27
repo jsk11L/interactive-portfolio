@@ -1,0 +1,413 @@
+{
+  "profile": {
+    "name": "Javier Sepúlveda",
+    "title": "Estudiante de 5to año de Ingeniería Civil Informática",
+    "summary": "Soy Javier, estudiante chileno de quinto año de Ingeniería Civil Informática. Construyo herramientas que nacen de necesidades cotidianas y conecto el desarrollo de software con la investigación, la música y los videojuegos. Tengo experiencia en investigación y soy coautor de una publicación sobre optimización de cronogramas hospitalarios.",
+    "github_url": "https://github.com/jsk11L",
+    "linkedin_url": "https://www.linkedin.com/in/jasepulvedaca/",
+    "email": "jasepulvedaca@gmail.com"
+  },
+  "experiences": [
+    {
+      "id": "exp-programming",
+      "company": "Pontificia Universidad Católica de Valparaíso",
+      "position": "Ayudante de Programación — SimulaPUCV",
+      "start_date": "2026-03",
+      "end_date": "Present",
+      "description": [
+        "Desarrollo y programación de SimulaPUCV, herramienta de simulación de generaciones universitarias, bajo la dirección de profesor.",
+        "Implementación de módulos de simulación, análisis de datos y visualización de resultados. Traslado de código de MatLab a Go."
+      ],
+      "technologies": [
+        "React",
+        "Go",
+        "PostgreSQL",
+        "Docker"
+      ]
+    },
+    {
+      "id": "exp-research",
+      "company": "Pontificia Universidad Católica de Valparaíso",
+      "position": "Ayudante de Investigación",
+      "start_date": "2024-11",
+      "end_date": "2025-08",
+      "description": [
+        "Investigación en metaheurísticas aplicadas a problemas NP-hard como Set Covering Problem y Roman Domination Problem.",
+        "Co-autor de paper publicado en optimización de cronogramas hospitalarios.",
+        "Desarrollo de soluciones algorítmicas y análisis de rendimiento de diferentes enfoques de optimización."
+      ],
+      "technologies": [
+        "Python",
+        "Matlab",
+        "Go",
+        "Metaheurísticas"
+      ]
+    },
+    {
+      "id": "exp-teaching",
+      "company": "Pontificia Universidad Católica de Valparaíso",
+      "position": "Ayudante de Asignaturas",
+      "start_date": "2023-03",
+      "end_date": "2025-12",
+      "description": [
+        "Ayudantías en Fundamentos de Algoritmos, Fundamentos de Programación, Estructuras de Datos, Análisis y Diseño de Algoritmos y Programación Avanzada.",
+        "Preparación de material didáctico, evaluación de trabajos y apoyo a estudiantes en resolución de problemas de programación.",
+        "Liderazgo de sesiones prácticas con grupos de 20+ estudiantes."
+      ],
+      "technologies": [
+        "Python",
+        "C",
+        "C++",
+        "Java",
+        "Algoritmos"
+      ]
+    },
+    {
+      "id": "exp-security",
+      "company": "Empresa de Seguridad Privada",
+      "position": "Guardia de Seguridad — Central de Monitoreo",
+      "start_date": "2025-10",
+      "end_date": "2026-01",
+      "description": [
+        "Monitoreo de cámaras de vigilancia en central de seguridad.",
+        "Gestión de incidencias y coordinación con equipos en terreno."
+      ],
+      "technologies": [
+        "Monitoreo CCTV",
+        "Gestión de incidencias"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Lenguajes",
+      "items": [
+        "TypeScript",
+        "Go",
+        "Python",
+        "C / C# / C++",
+        "Java",
+        "Matlab"
+      ],
+      "proficiency": 85
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "React",
+        "React Native",
+        "Vue 3",
+        "Nuxt 3",
+        "Angular",
+        "Next.js"
+      ],
+      "proficiency": 88
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "Node.js",
+        "NestJS",
+        "FastAPI"
+      ],
+      "proficiency": 82
+    },
+    {
+      "category": "Datos",
+      "items": [
+        "PostgreSQL",
+        "MongoDB",
+        "Supabase"
+      ],
+      "proficiency": 78
+    },
+    {
+      "category": "DevOps",
+      "items": [
+        "Docker",
+        "Docker Compose",
+        "Git",
+        "GitHub"
+      ],
+      "proficiency": 80
+    },
+    {
+      "category": "Otros",
+      "items": [
+        "Unity",
+        "TailwindCSS"
+      ],
+      "proficiency": 75
+    },
+    {
+      "category": "Habilidades Blandas",
+      "items": [
+        "Adaptabilidad tecnológica",
+        "Aprendizaje autónomo",
+        "Trabajo en equipo",
+        "Resolución de problemas",
+        "Pensamiento analítico",
+        "Comunicación efectiva",
+        "Gestión y planificación de proyectos",
+        "Responsabilidad"
+      ],
+      "proficiency": 90
+    }
+  ],
+  "projects": [
+    {
+      "id": "simulapucv",
+      "title": "SimulaPUCV",
+      "short_description": "Simulación Monte Carlo para explorar trayectorias universitarias",
+      "description": "SimulaPUCV modela la progresión académica de cohortes de Ingeniería Civil Eléctrica en la PUCV. Permite explorar titulación, retención y tiempo de egreso, editar mallas con prerrequisitos y observar trayectorias individuales. Combina una interfaz React con un motor de simulación en Go y dispone de almacenamiento SQLite portable o PostgreSQL para servidor.",
+      "images": [
+        "/images/projects/v2/simulapucv.webp"
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Go",
+        "Gin",
+        "SQLite",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/jsk11L/simulapucv",
+          "label": "GitHub"
+        }
+      ],
+      "created_at": "2026-03-29",
+      "category": "research",
+      "highlights": [
+        "Simulación Monte Carlo de cohortes y trayectorias",
+        "Edición de mallas y prerrequisitos",
+        "Modo portable con SQLite y servidor con PostgreSQL"
+      ],
+      "role": "Desarrollo y simulación académica",
+      "status": "Proyecto académico",
+      "source_note": "Funciones y stack contrastados con el README público de SimulaPUCV. El rol proviene del currículum existente."
+    },
+    {
+      "id": "omnidesk",
+      "title": "OmniDesk",
+      "short_description": "Calendarios, notas, tareas, colecciones y finanzas en un mismo espacio",
+      "description": "OmniDesk reúne la organización cotidiana en una aplicación Angular con API NestJS y PostgreSQL. Incluye calendario y recordatorios, notas con autoguardado, tableros Kanban, colecciones con campos personalizados y finanzas con presupuestos y gráficos. Suma una paleta de comandos, temas y un proyecto Android con Capacitor.",
+      "images": [
+        "/images/projects/v2/omnidesk.webp"
+      ],
+      "technologies": [
+        "Angular",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "Capacitor"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/jsk11L/omnidesk",
+          "label": "GitHub"
+        }
+      ],
+      "created_at": "",
+      "category": "web",
+      "highlights": [
+        "Calendario, notas, Kanban y colecciones personalizables",
+        "Finanzas con presupuestos y gráficos",
+        "Paleta de comandos, temas y proyecto Android"
+      ],
+      "role": "Desarrollo de aplicación y API",
+      "status": "Proyecto personal",
+      "source_note": "Funciones y stack contrastados con el README público y el README local de OmniDesk."
+    },
+    {
+      "id": "jamspace",
+      "title": "JamSpace",
+      "short_description": "Un archivo creativo para el trabajo de una banda",
+      "description": "JamSpace nace de una necesidad musical: reunir audios, ideas y letras de una banda en un espacio compartido. El proyecto conserva su enfoque en organizar material creativo y sesiones para facilitar el trabajo entre integrantes.",
+      "images": [
+        "/images/projects/v2/jamspace.webp"
+      ],
+      "technologies": [
+        "Next.js",
+        "Supabase",
+        "Web Audio API"
+      ],
+      "links": [],
+      "created_at": "",
+      "category": "web",
+      "highlights": [
+        "Organización de audios, ideas y letras",
+        "Material creativo y sesiones de una banda"
+      ],
+      "role": "Desarrollo de herramienta musical",
+      "status": "Proyecto personal",
+      "source_note": "Descripción conservada y reformulada a partir del currículum existente. Los repositorios enlazados no estuvieron accesibles durante esta revisión."
+    },
+    {
+      "id": "interiortwin",
+      "title": "InteriorTwin",
+      "short_description": "Exploración de interiores 3D con objetos del mundo real",
+      "description": "InteriorTwin explora cómo incorporar objetos escaneados de la realidad a una escena interior en Unity. El proyecto incluye selección y manipulación de objetos, interacción táctil y arrastre con detección de colisiones. Se desarrolló en equipo durante la carrera universitaria.",
+      "images": [
+        "/images/projects/v2/interiortwin.webp"
+      ],
+      "technologies": [
+        "Unity",
+        "C#",
+        "3D Scanning",
+        "Input System"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/jsk11L/interior-twin",
+          "label": "GitHub"
+        }
+      ],
+      "created_at": "2025-06-22",
+      "category": "games",
+      "highlights": [
+        "Objetos escaneados integrados en un interior 3D",
+        "Selección y arrastre táctil con comprobación de colisiones",
+        "Escenas y recursos inspeccionables en Unity"
+      ],
+      "role": "Desarrollo en equipo · Unity",
+      "status": "Proyecto universitario",
+      "source_note": "Escena y objetos escaneados documentados en README; selección y arrastre contrastados con TouchObjectDragger.cs. Trabajo en equipo según el currículum existente."
+    },
+    {
+      "id": "loopmania",
+      "title": "LoopMania",
+      "short_description": "Aprender a programar construyendo secuencias de hechizos",
+      "description": "LoopMania convierte secuencias, bucles y condicionales en piezas de un videojuego de puzles. El jugador arrastra comandos a un grimorio, los ejecuta y observa cómo su personaje recorre el nivel. El código incluye bloques anidados, tutoriales progresivos y evaluación de movimientos. Desarrollado con un compañero de universidad en Unity y C#.",
+      "images": [
+        "/images/projects/v2/loopmania.webp"
+      ],
+      "technologies": [
+        "Unity",
+        "C#",
+        "Game Design"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/Kiziio1/Loop-Mania.git",
+          "label": "GitHub"
+        }
+      ],
+      "created_at": "2025-11-17",
+      "category": "games",
+      "highlights": [
+        "Comandos arrastrables con bucles y condicionales anidados",
+        "Tutoriales que introducen conceptos de forma progresiva",
+        "Puzles con evaluación de movimientos"
+      ],
+      "role": "Desarrollo colaborativo · Unity",
+      "status": "Proyecto universitario",
+      "source_note": "Funciones contrastadas con GameManager.cs y bloqueDeComando.cs. Colaboración según el currículum existente."
+    },
+    {
+      "id": "judge-bot",
+      "title": "Judge Bot",
+      "short_description": "Elecciones de administradores con votos ponderados en Discord",
+      "description": "Judge Bot organiza elecciones públicas mediante comandos slash de Discord. Los votos a favor suman dos puntos, los votos en contra restan uno y una votación adicional resuelve empates. La persistencia activa utiliza PostgreSQL; comandos, eventos y tareas programadas están separados en módulos.",
+      "images": [
+        "/images/projects/v2/judge-bot.webp"
+      ],
+      "technologies": [
+        "JavaScript",
+        "Node.js",
+        "Discord.js",
+        "PostgreSQL",
+        "node-cron"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/jsk11L/judge-bot",
+          "label": "GitHub"
+        }
+      ],
+      "created_at": "",
+      "category": "tools",
+      "highlights": [
+        "Votos ponderados y desempates mediante comandos slash",
+        "Resultados persistentes en PostgreSQL",
+        "Comandos, eventos y programación de tareas modulares"
+      ],
+      "role": "Desarrollo de bot y automatización",
+      "status": "Proyecto personal",
+      "source_note": "Comandos documentados en README; PostgreSQL comprobado en database.js."
+    },
+    {
+      "id": "university-timetabling",
+      "title": "University Timetabling",
+      "short_description": "Horarios universitarios entre restricciones y algoritmos",
+      "description": "Prototipo académico que explora la asignación de asignaturas, docentes y salas a bloques horarios. Combina una heurística greedy para distribuir clases con backtracking para construir horarios de estudiantes sin choques y reducir ventanas. Incluye generación de instancias sintéticas y reportes CSV, Excel y gráficos. Se conserva como una exploración incompleta del problema, no como un producto terminado.",
+      "images": [
+        "/images/projects/v2/university-timetabling.webp"
+      ],
+      "technologies": [
+        "Python",
+        "pandas",
+        "Matplotlib",
+        "Seaborn",
+        "openpyxl",
+        "Backtracking"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/jsk11L/university-timetabling",
+          "label": "GitHub"
+        }
+      ],
+      "created_at": "",
+      "category": "research",
+      "highlights": [
+        "Asignación greedy de bloques y backtracking por estudiante",
+        "Evaluación de choques, ventanas y balance",
+        "Instancias sintéticas, reportes CSV/Excel y gráficos"
+      ],
+      "role": "Experimentación algorítmica",
+      "status": "Prototipo académico incompleto",
+      "source_note": "README y código de los asignadores greedy y backtracking. El repositorio declara que es un prototipo incompleto."
+    },
+    {
+      "id": "block-breaker",
+      "title": "Block Breaker",
+      "short_description": "Un arcade para poner en juego los patrones de diseño",
+      "description": "Juego académico de romper bloques, inspirado en Breakout y Arkanoid, desarrollado en Java con LibGDX. Incluye tres dificultades, bloques con distinta resistencia, potenciadores de velocidad, puntuación, vidas y pausa. Usa Strategy para los comportamientos de la pelota, Template Method y Builder para los niveles, y Singleton para recursos y sonido.",
+      "images": [
+        "/images/projects/v2/block-breaker.webp"
+      ],
+      "technologies": [
+        "Java",
+        "LibGDX",
+        "Gradle",
+        "Design Patterns"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/jsk11L/block-breaker",
+          "label": "GitHub"
+        }
+      ],
+      "created_at": "",
+      "category": "games",
+      "highlights": [
+        "Tres dificultades, potenciadores, vidas y puntuación",
+        "Strategy, Builder, Template Method y Singleton",
+        "Lógica reutilizable con Java y LibGDX"
+      ],
+      "role": "Desarrollo de videojuego · Java",
+      "status": "Proyecto académico",
+      "source_note": "README y estructura Java; Strategy y Template Method contrastados con BallBehavior.java y LevelTemplate.java."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M60 0H0V60" fill="none" stroke="#c0c1ff" stroke-opacity=".07"/></pattern><radialGradient id="light"><stop stop-color="#5555aa"/><stop offset="1" stop-color="#1b1b31"/></radialGradient></defs>
+  <path fill="url(#light)" d="M0 0h1400v800H0z"/><path fill="url(#grid)" d="M0 0h1400v800H0z"/>
+  <g stroke="#d9d7f5" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M700 175v235m-155-155h310M570 255l-70 115h140zm260 0-70 115h140zM625 410h150m-125 0-40 45h180l-40-45"/><path d="m660 180 40-30 40 30"/></g>
+  <text x="700" y="565" font-family="Georgia,serif" font-size="92" text-anchor="middle" fill="#eeedf5">Judge Bot</text><text x="700" y="625" font-family="monospace" font-size="20" letter-spacing="7" text-anchor="middle" fill="#b1accd">VOTES. VOICES. DECISIONS.</text>
+</svg>

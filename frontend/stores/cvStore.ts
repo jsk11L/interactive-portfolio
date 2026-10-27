@@ -1,97 +1,88 @@
 /**
  * Centralized client state for CV data.
  *
- * Uses $fetch (not useFetch) so requests work identically in SSR and CSR.
- * The store is the single source of truth — all components read from here.
+ * Content is bundled at build time: no backend or database is required.
  */
-import { defineStore } from "pinia"
+import { defineStore } from "pinia";
+import portfolio from "~/data/portfolio.json";
 
 export interface PersonalInfo {
-  name: string
-  title: string
-  summary: string
-  github_url: string
-  linkedin_url: string
-  email: string
+  name: string;
+  title: string;
+  summary: string;
+  github_url: string;
+  linkedin_url: string;
+  email: string;
 }
 
 export interface ExperienceItem {
-  id: string
-  company: string
-  position: string
-  start_date: string
-  end_date: string
-  description: string[]
-  technologies: string[]
+  id: string;
+  company: string;
+  position: string;
+  start_date: string;
+  end_date: string;
+  description: string[];
+  technologies: string[];
 }
 
 export interface SkillItem {
-  category: string
-  items: string[]
-  proficiency: number
+  category: string;
+  items: string[];
+  proficiency: number;
 }
 
 export interface ProjectLink {
-  type: string
-  url: string
-  label: string
+  type: string;
+  url: string;
+  label: string;
 }
 
 export interface ProjectItem {
-  id: string
-  title: string
-  short_description: string
-  description: string
-  images: string[]
-  technologies: string[]
-  links: ProjectLink[]
-  created_at: string
-}
-
-export interface ContactPayload {
-  name: string
-  email: string
-  content: string
-}
-
-interface ContactResponse {
-  status: string
+  id: string;
+  title: string;
+  short_description: string;
+  description: string;
+  images: string[];
+  technologies: string[];
+  links: ProjectLink[];
+  created_at: string;
+  category?: string;
+  highlights?: string[];
+  role?: string;
+  status?: string;
+  source_note?: string;
 }
 
 export const useCvStore = defineStore("cv", {
   state: () => ({
-    profile: null as PersonalInfo | null,
-    experiences: [] as ExperienceItem[],
-    skills: [] as SkillItem[],
-    projects: [] as ProjectItem[],
-    loading: true,
+    profile: portfolio.profile as PersonalInfo | null,
+    experiences: portfolio.experiences as ExperienceItem[],
+    skills: portfolio.skills as SkillItem[],
+    projects: portfolio.projects as ProjectItem[],
+    loading: false,
     error: null as string | null,
   }),
   actions: {
-    /** Resolve the API base URL depending on server vs client context. */
-    getBaseUrl(): string {
-      const config = useRuntimeConfig()
-      return import.meta.server
-        ? (config.apiUrl as string)
-        : (config.public.apiUrl as string)
-    },
-
     async fetchProfile() {
-      this.profile = await $fetch<PersonalInfo>(`${this.getBaseUrl()}/profile`)
+      this.profile = portfolio.profile;
     },
 
     async fetchExperiences(tech?: string) {
-      const url = new URL(`${this.getBaseUrl()}/experience`)
-      if (tech) url.searchParams.set("tech", tech)
-      this.experiences = await $fetch<ExperienceItem[]>(url.toString())
+      this.experiences = portfolio.experiences.filter(
+        (item) =>
+          !tech ||
+          item.technologies.some((value) =>
+            value.toLowerCase().includes(tech.toLowerCase()),
+          ),
+      );
     },
 
     async fetchSkills() {
-      this.skills = await $fetch<SkillItem[]>(`${this.getBaseUrl()}/skills`)
+      this.skills = portfolio.skills;
     },
 
     async fetchProjects() {
-      this.projects = await $fetch<ProjectItem[]>(`${this.getBaseUrl()}/projects`)
+      this.projects = portfolio.projects;
     },
 
     /**
@@ -99,8 +90,8 @@ export const useCvStore = defineStore("cv", {
      * Sets loading=true while fetching, catches errors gracefully.
      */
     async loadAll() {
-      this.loading = true
-      this.error = null
+      this.loading = true;
+      this.error = null;
 
       try {
         await Promise.all([
@@ -108,20 +99,13 @@ export const useCvStore = defineStore("cv", {
           this.fetchExperiences(),
           this.fetchSkills(),
           this.fetchProjects(),
-        ])
+        ]);
       } catch (err) {
         this.error =
-          err instanceof Error ? err.message : "Unable to load curriculum data"
+          err instanceof Error ? err.message : "Unable to load curriculum data";
       } finally {
-        this.loading = false
+        this.loading = false;
       }
     },
-
-    async submitContact(payload: ContactPayload) {
-      return await $fetch<ContactResponse>(`${this.getBaseUrl()}/contact`, {
-        method: "POST",
-        body: payload,
-      })
-    },
   },
-})
+});

@@ -1,12 +1,19 @@
+import portfolio from "./data/portfolio.json";
+
 export default defineNuxtConfig({
   ssr: true,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ["@pinia/nuxt"],
-  css: ["~/assets/scss/main.scss"],
-  runtimeConfig: {
-    apiUrl: `${process.env.API_URL ?? "http://backend:8000"}/api/v1`,
-    public: {
-      apiUrl: process.env.NUXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1",
+  css: ["~/assets/scss/portfolio.scss"],
+  nitro: {
+    prerender: {
+      routes: [
+        "/",
+        "/contact",
+        "/cv",
+        ...portfolio.projects.map((project) => `/projects/${project.id}`),
+      ],
+      failOnError: true,
     },
   },
   build: {
@@ -14,14 +21,18 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Javier Sepúlveda Dev",
+      title: "Javier Sepúlveda — Software, música & otras ideas",
+      htmlAttrs: { lang: "es" },
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "description", content: "Curriculum interactivo built with Nuxt, FastAPI, and MongoDB." },
+        {
+          name: "description",
+          content:
+            "El portafolio de Javier Sepúlveda. Desarrollo de software, investigación y proyectos personales. Diez universos de música, videojuegos, cine y manga para explorar la misma historia.",
+        },
+        { name: "theme-color", content: "#eeeae0" },
       ],
-      link: [
-        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      ],
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
     },
   },
-})
+});

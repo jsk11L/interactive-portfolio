@@ -1,0 +1,261 @@
+.project-detail {
+  padding-top: 45px;
+  padding-bottom: 65px;
+}
+.project-detail-heading h1 {
+  font:
+    400 clamp(52px, 7vw, 100px)/1.1 Georgia,
+    serif;
+  letter-spacing: -0.06em;
+  margin: 20px 0;
+}
+.project-detail-heading > p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 45px;
+}
+.project-detail-art {
+  margin-bottom: 55px;
+}
+.project-detail-art img {
+  width: 100%;
+  max-height: 620px;
+  object-fit: cover;
+}
+.project-detail-art figcaption {
+  font:
+    9px "Courier New",
+    monospace;
+  color: var(--muted);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.project-detail-body {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 100px;
+  margin-bottom: 65px;
+}
+.project-detail-body section > p {
+  font:
+    24px/1.65 Georgia,
+    serif;
+  margin-top: 20px;
+}
+.project-detail-body aside h2 {
+  font:
+    10px "Courier New",
+    monospace;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+.project-detail-body aside h2:not(:first-child) {
+  margin-top: 40px;
+}
+.project-external {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.project-date {
+  margin-top: 25px;
+  font:
+    10px "Courier New",
+    monospace;
+  color: var(--muted);
+}
+.detail-gallery {
+  display: grid;
+  gap: 25px;
+  margin-block: 50px;
+}
+.next-project {
+  border-top: 1px solid var(--line);
+  padding: 35px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font:
+    10px "Courier New",
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.next-project strong {
+  display: block;
+  font:
+    400 34px Georgia,
+    serif;
+  text-transform: none;
+  letter-spacing: -0.04em;
+  margin-top: 15px;
+}
+[data-theme="phantom"] .project-detail-heading h1 {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.contact-page {
+  padding-top: 45px;
+  padding-bottom: 150px;
+  position: relative;
+  min-height: calc(100svh - 190px);
+}
+.contact-page > .eyebrow {
+  display: block;
+}
+.contact-page h1 {
+  font:
+    400 clamp(55px, 8vw, 116px)/1.1 Georgia,
+    serif;
+  letter-spacing: -0.06em;
+  margin-top: 30px;
+  max-width: 900px;
+}
+.contact-page-lead {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 25px 0 65px;
+  max-width: 440px;
+}
+.contact-links {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+.contact-email {
+  font:
+    400 clamp(17px, 2.8vw, 39px)/1.5 Georgia,
+    serif;
+  letter-spacing: -0.02em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.contact-email svg {
+  flex-shrink: 0;
+}
+.contact-socials {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 23px;
+  font-size: 12px;
+}
+.contact-socials a,
+.contact-socials button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 0;
+}
+.contact-socials button {
+  margin-left: auto;
+}
+.contact-note {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 20px;
+}
+.contact-asterisk {
+  position: absolute;
+  right: 0;
+  top: 90px;
+  font: 190px Georgia;
+  color: var(--accent);
+  opacity: 0.1;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+[data-theme="phantom"] .contact-page h1 {
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  max-width: 1000px;
+}
+.cv-page {
+  padding: 40px 0 80px;
+}
+.cv-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+.cv-document {
+  max-width: 950px;
+  margin: auto;
+  padding: 65px;
+  background: #faf9f5;
+  color: #292923;
+  border: 1px solid #d8d5cd;
+}
+.cv-document h1 {
+  font:
+    400 46px Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  margin: 15px 0;
+}
+.cv-document p,
+.cv-document li {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.cv-document h2 {
+  font:
+    400 25px Georgia,
+    serif;
+  margin-bottom: 18px;
+}
+.cv-document h3 {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+.cv-document section {
+  border-top: 1px solid #d8d5cd;
+  padding-top: 25px;
+  margin-top: 28px;
+}
+.cv-contact {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  margin-top: 20px;
+}
+.cv-contact a {
+  text-decoration: underline;
+}
+.cv-experience + .cv-experience,
+.cv-project + .cv-project {
+  margin-top: 25px;
+}
+.cv-project > a {
+  font-size: 10px;
+  display: block;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.cv-document .eyebrow {
+  color: #66635a;
+}
+.cv-experience ul {
+  padding-left: 17px;
+  margin-top: 8px;
+}

@@ -1,0 +1,485 @@
+/* An inspectable catalogue: choose a track, browse its sleeve, then read the case. */
+.catalog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-top: 35px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.catalog-toolbar .project-filters {
+  margin: 0;
+  flex-wrap: wrap;
+}
+.catalog-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.project-search {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 9px 0;
+  color: var(--muted);
+}
+.project-search input {
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font:
+    10px "Courier New",
+    monospace;
+  width: 185px;
+  min-width: 0;
+}
+.project-search input::placeholder {
+  color: var(--muted);
+  opacity: 0.85;
+}
+.project-search:focus-within {
+  border-color: var(--accent);
+}
+.catalog-view-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.catalog-view-controls button {
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  padding: 9px;
+  color: var(--muted);
+}
+.catalog-view-controls button[aria-pressed="true"] {
+  border-color: var(--line);
+  color: var(--ink);
+  background: #ffffff0a;
+}
+.catalog-result-count {
+  font:
+    9px "Courier New",
+    monospace;
+  color: var(--muted);
+  margin: 18px 0 30px;
+}
+.record-catalog {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+}
+.record-stage {
+  position: sticky;
+  top: 105px;
+  align-self: start;
+}
+.record-sleeve {
+  position: relative;
+  background: #161c1c;
+  animation: sleeve-reveal 0.5s ease-out both;
+  overflow: hidden;
+}
+.record-sleeve > a {
+  position: relative;
+  display: block;
+}
+.record-sleeve img {
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+.record-sleeve:hover img {
+  transform: scale(1.025);
+}
+.record-art-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  background: #142025b3;
+  color: #f5f0e5;
+  font:
+    8px "Courier New",
+    monospace;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(8px);
+}
+.record-open {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  display: grid;
+  place-items: center;
+  background: #eee9df;
+  color: #252923;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.record-sleeve:hover .record-open {
+  transform: rotate(8deg);
+}
+.record-stage-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+  color: var(--muted);
+}
+.record-stage-controls button {
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  color: var(--ink);
+}
+.record-stage-controls > span {
+  font:
+    9px "Courier New",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.selected-project-note {
+  animation: sleeve-reveal 0.45s ease-out both;
+}
+.selected-project-note h3 {
+  font:
+    400 36px/1.2 Georgia,
+    serif;
+  letter-spacing: -0.035em;
+  margin-top: 25px;
+}
+.selected-project-note > p {
+  font:
+    12px/1.85 Arial,
+    sans-serif;
+  color: var(--muted);
+  margin-top: 15px;
+}
+.selected-project-note > ul {
+  font:
+    11px/1.8 Arial,
+    sans-serif;
+  padding-left: 16px;
+  color: var(--muted);
+  margin: 15px 0 20px;
+}
+.selected-project-note > .text-link {
+  font-size: 11px;
+}
+.track-list {
+  border-top: 1px solid var(--line);
+}
+.project-track {
+  display: grid;
+  grid-template-columns: 25px 1fr 20px;
+  gap: 18px;
+  text-align: left;
+  width: 100%;
+  padding: 24px 16px 24px 5px;
+  border-bottom: 1px solid var(--line);
+  transition:
+    background 0.25s,
+    padding 0.25s,
+    box-shadow 0.25s;
+  position: relative;
+  min-height: 135px;
+}
+.project-track.selected {
+  background: linear-gradient(90deg, #9c6d3614, transparent);
+  padding-left: 15px;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+.project-track:hover {
+  background: #88816a0b;
+}
+.track-index {
+  font:
+    10px "Courier New",
+    monospace;
+  color: var(--muted);
+  padding-top: 3px;
+}
+.track-text {
+  display: block;
+}
+.track-text > small {
+  font:
+    8px "Courier New",
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+.track-text > strong {
+  display: block;
+  font:
+    400 27px/1.2 Georgia,
+    serif;
+  letter-spacing: -0.03em;
+}
+.track-text > span:not(.track-tech) {
+  display: block;
+  font:
+    11px/1.75 Arial,
+    sans-serif;
+  color: var(--muted);
+  max-width: 360px;
+  margin-top: 10px;
+}
+.track-text > .track-tech {
+  font:
+    8px "Courier New",
+    monospace;
+  color: var(--muted);
+  display: block;
+  margin-top: 13px;
+  line-height: 1.7;
+}
+.track-play {
+  font-size: 15px;
+  color: var(--accent);
+  padding-top: 2px;
+}
+.poster-catalog {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px;
+}
+.project-poster {
+  display: block;
+  min-width: 0;
+  transition: transform 0.3s;
+}
+.poster-image {
+  position: relative;
+  overflow: hidden;
+}
+.poster-image img {
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  transition:
+    transform 0.6s,
+    filter 0.6s;
+}
+.project-poster:hover .poster-image img {
+  transform: scale(1.035);
+}
+.poster-stamp {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font:
+    10px "Courier New",
+    monospace;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 7px 9px;
+}
+.poster-open {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  color: #fff;
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  background: #101d23bb;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+.project-poster:hover .poster-open,
+.project-poster:focus-visible .poster-open {
+  opacity: 1;
+  transform: none;
+}
+.poster-copy {
+  padding: 22px 0;
+}
+.poster-copy > .eyebrow {
+  font-size: 8px;
+}
+.poster-copy h3 {
+  font:
+    400 32px/1.2 Georgia,
+    serif;
+  letter-spacing: -0.035em;
+  margin: 12px 0;
+}
+.poster-copy > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 440px;
+}
+.project-status {
+  display: inline-block;
+  font:
+    8px "Courier New",
+    monospace;
+  color: var(--muted);
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  padding: 5px 7px;
+  line-height: 1.5;
+}
+.detail-highlights {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+  padding-left: 18px;
+  margin-top: 28px;
+}
+.detail-highlights li + li {
+  margin-top: 9px;
+}
+.project-role {
+  font:
+    14px/1.8 Georgia,
+    serif;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+.project-detail-heading > .project-status {
+  margin: -20px 0 32px;
+}
+.journey-rail {
+  position: fixed;
+  right: 15px;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 60;
+  padding: 18px 7px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s;
+  isolation: isolate;
+}
+.journey-rail.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.journey-line {
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  bottom: 55px;
+  width: 1px;
+  background: var(--line);
+  z-index: -1;
+}
+.journey-line i {
+  display: block;
+  background: var(--accent);
+  height: 100%;
+  transform-origin: top;
+  transition: transform 0.1s;
+}
+.journey-rail button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--muted);
+  font:
+    8px "Courier New",
+    monospace;
+  border-radius: 50%;
+}
+.journey-rail button.selected {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.rail-label {
+  position: absolute;
+  right: 40px;
+  white-space: nowrap;
+  padding: 7px 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 9px;
+  opacity: 0;
+  transform: translateX(5px);
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  pointer-events: none;
+}
+.journey-rail button:hover .rail-label,
+.journey-rail button:focus-visible .rail-label {
+  opacity: 1;
+  transform: none;
+}
+.rail-contact {
+  display: grid;
+  place-items: center;
+  margin-top: 7px;
+  width: 27px;
+  height: 27px;
+  color: var(--accent);
+  font-size: 21px;
+}
+.journey-reveal {
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.journey-reveal:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.journey-reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+@keyframes sleeve-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-height: 850px) and (min-width: 851px) {
+  .selected-project-note > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .selected-project-note > ul {
+    font-size: 10px;
+    margin-block: 12px;
+  }
+  .selected-project-note h3 {
+    font-size: 30px;
+    margin-top: 18px;
+  }
+  .record-stage {
+    top: 95px;
+  }
+}

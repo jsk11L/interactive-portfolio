@@ -1,359 +1,115 @@
 <script setup lang="ts">
-import { useCvStore } from '~/stores/cvStore'
-
-const { copy, formatDate, translateProject } = usePortfolioCopy()
-
-const route = useRoute()
-const cvStore = useCvStore()
-
-const projectId = route.params.id as string
-const project = computed(() => cvStore.projects.find((p) => p.id === projectId))
-const localizedProject = computed(() => (project.value ? translateProject(project.value) : null))
-
-if (!project.value && cvStore.projects.length === 0) {
-  await cvStore.fetchProjects()
-}
-
-if (!project.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Project not found' })
-}
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-vue-next";
+const route = useRoute();
+const store = useCvStore();
+const { translateProject, formatDate, locale } = usePortfolioCopy();
+const { text } = useStudioCopy();
+const project = computed(() =>
+  store.projects.find((item) => item.id === route.params.id),
+);
+if (!project.value)
+  throw createError({ statusCode: 404, statusMessage: "Project not found" });
+const localized = computed(() =>
+  project.value ? translateProject(project.value) : null,
+);
+const nextProject = computed(
+  () =>
+    store.projects[
+      (store.projects.findIndex((item) => item.id === project.value?.id) + 1) %
+        store.projects.length
+    ],
+);
+useSeoMeta({
+  title: () => `${localized.value?.title} — Javier Sepúlveda`,
+  description: () => localized.value?.short_description,
+  ogImage: () => localized.value?.images[0],
+});
 </script>
 
 <template>
-  <div v-if="localizedProject" class="project-detail">
-    <div class="project-nav">
-      <NuxtLink to="/" class="back-link">{{ copy.ui.projectDetail.backLink }}</NuxtLink>
-    </div>
-
-    <div class="project-hero-banner" v-if="localizedProject.images.length">
-      <img :src="localizedProject.images[0]" :alt="localizedProject.title" />
-    </div>
-
-    <header class="project-header">
-      <span class="project-date">{{ formatDate(localizedProject.created_at) }}</span>
-      <h1>{{ localizedProject.title }}</h1>
-      <p class="project-short">{{ localizedProject.short_description }}</p>
+  <article v-if="localized" class="project-detail content-shell">
+    <NuxtLink to="/#projects" class="text-link back-link"
+      ><ArrowLeft :size="16" aria-hidden="true" />{{ text.back }}</NuxtLink
+    >
+    <header class="project-detail-heading">
+      <span class="eyebrow"
+        >{{ text.projects }} /
+        {{
+          String(
+            store.projects.findIndex((item) => item.id === localized.id) + 1,
+          ).padStart(2, "0")
+        }}</span
+      >
+      <h1>{{ localized.title }}</h1>
+      <p>{{ localized.short_description }}</p>
+      <span v-if="localized.status" class="project-status">{{
+        localized.status
+      }}</span>
     </header>
-
-    <div class="project-body">
-      <div class="project-description">
-        <h2>{{ copy.ui.projectDetail.descriptionTitle }}</h2>
-        <p>{{ localizedProject.description }}</p>
-      </div>
-
-      <aside class="project-sidebar">
-        <div class="sidebar-block">
-          <h3>{{ copy.ui.projectDetail.technologiesTitle }}</h3>
-          <div class="tech-list">
-            <span v-for="tech in localizedProject.technologies" :key="tech" class="tech-tag">
-              {{ tech }}
-            </span>
-          </div>
+    <figure class="project-detail-art">
+      <img
+        :src="localized.images[0]"
+        :alt="`${localized.title} — ${text.cover}`"
+        width="1400"
+        height="800"
+        fetchpriority="high"
+      />
+      <figcaption>{{ text.cover }}</figcaption>
+    </figure>
+    <div class="project-detail-body">
+      <section>
+        <span class="eyebrow">{{ text.projectNotes }}</span>
+        <p>{{ localized.description }}</p>
+        <ul v-if="localized.highlights?.length" class="detail-highlights">
+          <li v-for="line in localized.highlights" :key="line">{{ line }}</li>
+        </ul>
+      </section>
+      <aside>
+        <template v-if="localized.role"
+          ><h2>
+            {{
+              locale === "es" ? "Participación / contexto" : "Role / context"
+            }}
+          </h2>
+          <p class="project-role">{{ localized.role }}</p></template
+        >
+        <h2>{{ text.tech }}</h2>
+        <div class="project-technologies">
+          <span v-for="tech in localized.technologies" :key="tech">{{
+            tech
+          }}</span>
         </div>
-
-        <div v-if="localizedProject.links.length" class="sidebar-block">
-          <h3>{{ copy.ui.projectDetail.linksTitle }}</h3>
-          <div class="links-list">
-            <a
-              v-for="link in localizedProject.links"
-              :key="link.type"
-              :href="String(link.url)"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-button"
-            >
-              {{ copy.ui.projectDetail.openLink }} {{ link.label.toLowerCase() }}
-            </a>
-          </div>
-        </div>
-
-        <div class="sidebar-block">
-          <h3>{{ copy.ui.projectDetail.dateTitle }}</h3>
-          <p class="date-value">{{ formatDate(localizedProject.created_at) }}</p>
-        </div>
+        <h2>{{ text.links }}</h2>
+        <a
+          v-for="link in localized.links"
+          :key="link.url"
+          :href="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-external"
+          >{{ link.label }}<ArrowUpRight :size="17" aria-hidden="true"
+        /></a>
+        <p v-if="localized.created_at" class="project-date">
+          {{ formatDate(localized.created_at) }}
+        </p>
       </aside>
     </div>
-
-    <div v-if="localizedProject.images.length > 1" class="gallery">
-      <h2>{{ copy.ui.projectDetail.galleryTitle }}</h2>
-      <div class="gallery-grid">
-        <img
-          v-for="(image, index) in localizedProject.images"
-          :key="index"
-          :src="image"
-          :alt="`${localizedProject.title} - ${index + 1}`"
-          class="gallery-image"
-        />
-      </div>
+    <div v-if="localized.images.length > 1" class="detail-gallery">
+      <img
+        v-for="image in localized.images.slice(1)"
+        :key="image"
+        :src="image"
+        :alt="localized.title"
+        loading="lazy"
+      />
     </div>
-
-    <div class="contact-cta">
-      <h2>{{ copy.ui.projectDetail.collaborateTitle }}</h2>
-      <p>{{ copy.ui.projectDetail.collaborateBody }}</p>
-      <NuxtLink to="/contact" class="btn-contact">{{ copy.ui.projectDetail.collaborateButton }}</NuxtLink>
-    </div>
-  </div>
+    <NuxtLink
+      v-if="nextProject"
+      :to="`/projects/${nextProject.id}`"
+      class="next-project"
+      ><span
+        >{{ text.next }}<strong>{{ nextProject.title }}</strong></span
+      ><ArrowRight :size="32" aria-hidden="true"
+    /></NuxtLink>
+  </article>
 </template>
-
-<style scoped lang="scss">
-.project-detail {
-  padding: 40px 0 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.project-nav {
-  .back-link {
-    display: inline-block;
-    color: var(--accent-red);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: 'Fira Code', monospace;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    padding: 8px 0;
-
-    &:hover {
-      color: var(--text-primary);
-      transform: translateX(-4px);
-    }
-  }
-}
-
-.project-hero-banner {
-  width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-  border: 2px solid var(--border-dark);
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.project-header {
-  .project-date {
-    display: inline-block;
-    margin-bottom: 12px;
-    font-size: 12px;
-    color: var(--accent-red);
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    margin: 0 0 12px;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.1;
-  }
-
-  .project-short {
-    margin: 0;
-    font-size: 18px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-}
-
-.project-body {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-
-  .project-description {
-    h2 {
-      margin: 0 0 16px;
-      font-size: 1.2rem;
-      color: var(--accent-red);
-      letter-spacing: 0.5px;
-    }
-
-    p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-primary);
-    }
-  }
-}
-
-.project-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-
-  .sidebar-block {
-    padding: 20px;
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-dark);
-
-    h3 {
-      margin: 0 0 14px;
-      font-size: 13px;
-      color: var(--accent-red);
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-.tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  .tech-tag {
-    background: transparent;
-    color: var(--accent-red);
-    border: 1px solid var(--accent-red);
-    padding: 6px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'Fira Code', monospace;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: var(--accent-red);
-      color: var(--bg-primary);
-    }
-  }
-}
-
-.links-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  .link-button {
-    display: block;
-    padding: 12px 16px;
-    background: transparent;
-    border: 2px solid var(--accent-red);
-    color: var(--accent-red);
-    text-decoration: none;
-    font-family: 'Fira Code', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: var(--accent-red);
-      color: var(--bg-primary);
-      box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
-    }
-  }
-}
-
-.date-value {
-  margin: 0;
-  font-size: 15px;
-  color: var(--text-primary);
-}
-
-.gallery {
-  h2 {
-    margin: 0 0 20px;
-    font-size: 1.2rem;
-    color: var(--accent-red);
-    letter-spacing: 0.5px;
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 16px;
-
-    .gallery-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border: 2px solid var(--border-dark);
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        border-color: var(--accent-red);
-        box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
-      }
-    }
-  }
-}
-
-.contact-cta {
-  padding: 48px;
-  border: 2px solid var(--accent-red);
-  background: rgba(220, 38, 38, 0.05);
-  text-align: center;
-
-  h2 {
-    margin: 0 0 12px;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 700;
-    color: var(--text-primary);
-  }
-
-  p {
-    margin: 0 0 28px;
-    font-size: 16px;
-    color: var(--text-secondary);
-  }
-
-  .btn-contact {
-    display: inline-block;
-    padding: 16px 36px;
-    background: var(--accent-red);
-    color: var(--bg-primary);
-    text-decoration: none;
-    font-family: 'Fira Code', monospace;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: transparent;
-      color: var(--accent-red);
-      border: 2px solid var(--accent-red);
-      box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .project-body {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .project-header .project-short { font-size: 16px; }
-
-  .contact-cta {
-    padding: 32px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-detail {
-    padding: 24px 0 48px;
-    gap: 28px;
-  }
-
-  .contact-cta {
-    padding: 24px 16px;
-
-    .btn-contact {
-      padding: 12px 24px;
-      font-size: 12px;
-    }
-  }
-}
-</style>

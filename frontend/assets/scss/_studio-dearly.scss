@@ -1,0 +1,222 @@
+/* 03 — Dearly. Title screen, shoreline, and chapter navigation. */
+[data-theme="dearly"] {
+  --paper: #f0f3ef;
+  --ink: #354a54;
+  --muted: #60717a;
+  --line: #c9d3d2;
+  --accent: #4c748b;
+}
+[data-theme="dearly"] .masthead {
+  border-bottom: 1px solid #d9e0db;
+}
+.dearly-hero {
+  position: relative;
+  min-height: 650px;
+  height: calc(100svh - 106px);
+  max-height: 940px;
+  isolation: isolate;
+  overflow: hidden;
+}
+.dearly-landscape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.dearly-title {
+  position: absolute;
+  left: max(8%, calc((100% - 1200px) / 2));
+  top: 13%;
+  width: 65%;
+  max-width: 800px;
+}
+.dearly-kicker {
+  font:
+    10px "Courier New",
+    monospace;
+  letter-spacing: 0.27em;
+}
+.dearly-emblem {
+  font:
+    70px Georgia,
+    serif;
+  color: #6c8c98;
+  position: absolute;
+  left: -48px;
+  top: 36px;
+  opacity: 0.55;
+}
+.dearly-title h1 {
+  font:
+    400 clamp(46px, 5.6vw, 82px)/1.15 Georgia,
+    serif;
+  letter-spacing: -0.055em;
+  margin-top: 40px;
+  text-shadow: 0 2px 0 #fffffe;
+}
+.dearly-title > p {
+  font:
+    italic 16px/1.8 Georgia,
+    serif;
+  margin-top: 17px;
+  color: #556d77;
+}
+.dearly-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font:
+    12px Georgia,
+    serif;
+  letter-spacing: 0.04em;
+  margin-top: 35px;
+  border-bottom: 1px solid #869a9e;
+  padding-bottom: 10px;
+}
+.dearly-title-menu {
+  position: absolute;
+  left: max(8%, calc((100% - 1200px) / 2));
+  bottom: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.dearly-title-menu a {
+  font:
+    19px Georgia,
+    serif;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 7px 24px 7px 0;
+  transition:
+    color 0.2s,
+    transform 0.2s;
+}
+.dearly-title-menu a > svg {
+  opacity: 0;
+}
+.dearly-title-menu a:hover {
+  color: #284b63;
+  transform: translateX(9px);
+}
+.dearly-title-menu a:hover > svg,
+.dearly-title-menu a:focus-visible > svg {
+  opacity: 1;
+}
+.dearly-edition {
+  position: absolute;
+  bottom: 25px;
+  left: 8%;
+  font:
+    9px "Courier New",
+    monospace;
+  letter-spacing: 0.09em;
+  color: #667e83;
+}
+.dearly-waves {
+  animation: waves 7s ease-in-out infinite alternate;
+}
+@keyframes waves {
+  to {
+    transform: translate(15px, 6px);
+    opacity: 0.3;
+  }
+}
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.chapter-nav a {
+  font:
+    16px Georgia,
+    serif;
+  padding: 8px 10px;
+  border-bottom: 1px solid transparent;
+}
+.chapter-nav a.selected {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+[data-theme="dearly"] .section-block {
+  border-top: 0;
+  padding-top: 35px;
+}
+[data-theme="dearly"] .section-heading h2 {
+  font-size: 46px;
+}
+[data-theme="dearly"] .section-heading > p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+}
+[data-theme="dearly"] .project-filters {
+  justify-content: center;
+  margin-block: 40px;
+}
+[data-theme="dearly"] .project-filters button.selected {
+  background: #dce6e5;
+  border-color: transparent;
+}
+[data-theme="dearly"] .project-collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px 25px;
+}
+[data-theme="dearly"] .project-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 0;
+  padding: 0 0 28px;
+  gap: 0;
+  box-shadow: 0 1px 0 var(--line);
+}
+[data-theme="dearly"] .project-number {
+  font-family: Georgia, serif;
+  font-style: italic;
+  padding: 0;
+  margin-bottom: 12px;
+  letter-spacing: 0.15em;
+}
+[data-theme="dearly"] .track-mark {
+  display: none;
+}
+[data-theme="dearly"] .project-entry-copy {
+  padding: 20px 0 0;
+}
+[data-theme="dearly"] .project-entry h3 {
+  font-size: 27px;
+}
+[data-theme="dearly"] .project-arrow {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  width: 15px;
+}
+[data-theme="dearly"] .project-entry-copy > p {
+  font-size: 12px;
+}
+[data-theme="dearly"] .biography-summary {
+  font-size: 21px;
+}
+[data-theme="dearly"] .contact-outro {
+  text-align: center;
+  margin-top: 30px;
+}
+[data-theme="dearly"] .contact-outro > div {
+  justify-content: center;
+}
+[data-theme="dearly"] .outro-link {
+  width: 65px;
+  height: 65px;
+}
+[data-theme="dearly"] .outro-link svg {
+  width: 32px;
+}
