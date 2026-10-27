@@ -1,0 +1,526 @@
+{
+  "date": "2026-10-27",
+  "desktop": [
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "dearly",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "phantom",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "bloodborne",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "daydream",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "animals",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "ferment",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "redroom",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "eva",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "edgerunner",
+      "width": 1280
+    },
+    {
+      "broken": 0,
+      "clippedTitles": [],
+      "overflow": false,
+      "projects": 8,
+      "skills": 26,
+      "theme": "friend",
+      "width": 1280
+    }
+  ],
+  "mobile": [
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "dearly",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "phantom",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 174,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "bloodborne",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "daydream",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "animals",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "ferment",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "redroom",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "eva",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "edgerunner",
+      "width": 390
+    },
+    {
+      "clippedTitles": [],
+      "overflow": false,
+      "projectTop": 172,
+      "projects": 8,
+      "smallTech": 0,
+      "theme": "friend",
+      "width": 390
+    }
+  ],
+  "openingsMobile": [
+    {
+      "captionTop": 769,
+      "contentBottom": 508,
+      "overflow": false,
+      "theme": "dearly"
+    },
+    {
+      "captionTop": 908,
+      "contentBottom": 548,
+      "overflow": false,
+      "theme": "phantom"
+    },
+    {
+      "captionTop": 790,
+      "contentBottom": 422,
+      "overflow": false,
+      "theme": "bloodborne"
+    },
+    {
+      "captionTop": 769,
+      "contentBottom": 0,
+      "overflow": false,
+      "theme": "daydream"
+    },
+    {
+      "captionTop": 769,
+      "contentBottom": 354,
+      "overflow": false,
+      "theme": "animals"
+    },
+    {
+      "captionTop": 754,
+      "contentBottom": 711,
+      "overflow": false,
+      "theme": "ferment"
+    },
+    {
+      "captionTop": 769,
+      "contentBottom": 440,
+      "overflow": false,
+      "theme": "redroom"
+    },
+    {
+      "captionTop": 1021,
+      "contentBottom": 966,
+      "overflow": false,
+      "theme": "eva"
+    },
+    {
+      "captionTop": 769,
+      "contentBottom": 420,
+      "overflow": false,
+      "theme": "edgerunner"
+    },
+    {
+      "captionTop": 1136,
+      "contentBottom": 1081,
+      "overflow": false,
+      "theme": "friend"
+    }
+  ],
+  "resumes": [
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "dearly",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "phantom",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "bloodborne",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "daydream",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "animals",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "ferment",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "redroom",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "eva",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "edgerunner",
+      "tilted": false
+    },
+    {
+      "experience": 4,
+      "overflow": false,
+      "projects": 8,
+      "sections": 6,
+      "skillsTop": 162,
+      "small": 0,
+      "theme": "friend",
+      "tilted": false
+    }
+  ],
+  "rotation": [
+    {
+      "theme": "dearly",
+      "rotated": []
+    },
+    {
+      "theme": "phantom",
+      "rotated": []
+    },
+    {
+      "theme": "bloodborne",
+      "rotated": []
+    },
+    {
+      "theme": "daydream",
+      "rotated": []
+    },
+    {
+      "theme": "animals",
+      "rotated": []
+    },
+    {
+      "theme": "ferment",
+      "rotated": []
+    },
+    {
+      "theme": "redroom",
+      "rotated": []
+    },
+    {
+      "theme": "eva",
+      "rotated": []
+    },
+    {
+      "theme": "edgerunner",
+      "rotated": []
+    },
+    {
+      "theme": "friend",
+      "rotated": []
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "dearly",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "dearly",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "phantom",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "phantom",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "bloodborne",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "bloodborne",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "daydream",
+      "page": "home",
+      "checked": 35,
+      "failures": []
+    },
+    {
+      "theme": "daydream",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "animals",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "animals",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "ferment",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "ferment",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "redroom",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "redroom",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "eva",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "eva",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "edgerunner",
+      "page": "home",
+      "checked": 35,
+      "failures": []
+    },
+    {
+      "theme": "edgerunner",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    },
+    {
+      "theme": "friend",
+      "page": "home",
+      "checked": 73,
+      "failures": []
+    },
+    {
+      "theme": "friend",
+      "page": "cv",
+      "checked": 76,
+      "failures": []
+    }
+  ],
+  "interactions": {
+    "paletteSwatches": 10,
+    "paletteVisibleText": "",
+    "escapeRestoresFocus": true,
+    "languages": [
+      "en",
+      "es",
+      "en"
+    ],
+    "pause": true
+  }
+}
