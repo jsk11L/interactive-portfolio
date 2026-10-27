@@ -1,0 +1,410 @@
+{
+  "mobile": [
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "journal",
+      "theme": "dearly",
+      "titleBox": 263,
+      "titleWidth": 263,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "poster-wall",
+      "theme": "phantom",
+      "titleBox": 325,
+      "titleWidth": 325,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "archive",
+      "theme": "bloodborne",
+      "titleBox": 320,
+      "titleWidth": 320,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "gatefold",
+      "theme": "daydream",
+      "titleBox": 1,
+      "titleWidth": 836,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "industrial-stories",
+      "theme": "animals",
+      "titleBox": 323,
+      "titleWidth": 323,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "print-essay",
+      "theme": "ferment",
+      "titleBox": 323,
+      "titleWidth": 323,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "cinema",
+      "theme": "redroom",
+      "titleBox": 323,
+      "titleWidth": 323,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "terminal-grid",
+      "theme": "eva",
+      "titleBox": 323,
+      "titleWidth": 323,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "reversed-split",
+      "theme": "edgerunner",
+      "titleBox": 323,
+      "titleWidth": 323,
+      "viewport": 390,
+      "width": 375
+    },
+    {
+      "brokenImages": 0,
+      "lang": "en",
+      "layout": "manga-storyboard",
+      "theme": "friend",
+      "titleBox": 325,
+      "titleWidth": 325,
+      "viewport": 390,
+      "width": 375
+    }
+  ],
+  "mobileProjects": [
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "about",
+        "projects",
+        "experience",
+        "contact"
+      ],
+      "theme": "dearly"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "projects",
+        "about",
+        "experience",
+        "contact"
+      ],
+      "theme": "phantom"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "about",
+        "experience",
+        "projects",
+        "contact"
+      ],
+      "theme": "bloodborne"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "projects",
+        "about",
+        "experience",
+        "contact"
+      ],
+      "theme": "daydream"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "projects",
+        "experience",
+        "about",
+        "contact"
+      ],
+      "theme": "animals"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "about",
+        "projects",
+        "experience",
+        "contact"
+      ],
+      "theme": "ferment"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "about",
+        "projects",
+        "experience",
+        "contact"
+      ],
+      "theme": "redroom"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "about",
+        "projects",
+        "experience",
+        "contact"
+      ],
+      "theme": "eva"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 172,
+      "sectionOrder": [
+        "projects",
+        "experience",
+        "about",
+        "contact"
+      ],
+      "theme": "edgerunner"
+    },
+    {
+      "cards": 8,
+      "overflow": 0,
+      "projectTop": 173,
+      "sectionOrder": [
+        "about",
+        "projects",
+        "experience",
+        "contact"
+      ],
+      "theme": "friend"
+    }
+  ],
+  "desktop": [
+    {
+      "brokenImages": 0,
+      "catalogColumns": "343.328px 343.328px 343.344px",
+      "layout": "journal",
+      "projectTop": 132,
+      "projectWidth": 1078,
+      "theme": "dearly"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "416.328px 416.328px 416.344px",
+      "layout": "poster-wall",
+      "projectTop": 130,
+      "projectWidth": 1313,
+      "theme": "phantom"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "repeat(2, 1fr)",
+      "layout": "archive",
+      "projectTop": 130,
+      "projectWidth": 1313,
+      "theme": "bloodborne"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "533.234px 484.766px",
+      "layout": "gatefold",
+      "projectTop": 130,
+      "projectWidth": 1053,
+      "theme": "daydream"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "repeat(2, 1fr)",
+      "layout": "industrial-stories",
+      "projectTop": 130,
+      "projectWidth": 1313,
+      "theme": "animals"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "542.5px 542.5px",
+      "layout": "print-essay",
+      "projectTop": 130,
+      "projectWidth": 1180,
+      "theme": "ferment"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "repeat(2, 1fr)",
+      "layout": "cinema",
+      "projectTop": 130,
+      "projectWidth": 1313,
+      "theme": "redroom"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "502.5px 502.5px",
+      "layout": "terminal-grid",
+      "projectTop": 132,
+      "projectWidth": 1023,
+      "theme": "eva"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "582.781px 670.203px",
+      "layout": "reversed-split",
+      "projectTop": 130,
+      "projectWidth": 1313,
+      "theme": "edgerunner"
+    },
+    {
+      "brokenImages": 0,
+      "catalogColumns": "421px 421px 421px",
+      "layout": "manga-storyboard",
+      "projectTop": 132,
+      "projectWidth": 1313,
+      "theme": "friend"
+    }
+  ],
+  "resume": [
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-dearly",
+      "sections": 6,
+      "theme": "dearly",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-phantom",
+      "sections": 6,
+      "theme": "phantom",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-bloodborne",
+      "sections": 6,
+      "theme": "bloodborne",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-daydream cv-document",
+      "sections": 6,
+      "theme": "daydream",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-animals",
+      "sections": 6,
+      "theme": "animals",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-ferment",
+      "sections": 6,
+      "theme": "ferment",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-redroom",
+      "sections": 6,
+      "theme": "redroom",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-eva",
+      "sections": 6,
+      "theme": "eva",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-edgerunner",
+      "sections": 6,
+      "theme": "edgerunner",
+      "viewport": 1440,
+      "width": 1425
+    },
+    {
+      "experiences": 4,
+      "language": "en",
+      "projects": 8,
+      "resume": "cv-document cv-friend",
+      "sections": 6,
+      "theme": "friend",
+      "viewport": 1440,
+      "width": 1425
+    }
+  ]
+}
