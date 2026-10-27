@@ -1,4 +1,15 @@
 /* Motion belongs to the illustration rather than to repeated content reveals. */
+.portfolio .masthead {
+  transition: none;
+}
+[data-paused="true"] .manga-title-block,
+[data-paused="true"] .manga-portrait-panel,
+[data-paused="true"] .manga-city-panel {
+  animation: none !important;
+}
+[data-paused="true"] .eva-acquisition {
+  display: none;
+}
 [data-theme="ferment"] .ambient-controls > .theme-controls > .universe-trigger {
   background: #f0f6f3df;
   opacity: 1;
