@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ArrowUpRight } from "lucide-vue-next";
 import type { Locale } from "~/composables/usePortfolioCopy";
-import type { PortfolioTheme } from "~/composables/usePortfolioTheme";
 
 const { theme, paused, initialize } = usePortfolioTheme();
 const { locale, localeOptions, setLocale } = usePortfolioCopy();
@@ -47,15 +46,15 @@ onMounted(() => {
   window.addEventListener("scroll", handleScroll, { passive: true });
   observeSections();
 });
-watch(() => route.fullPath, observeSections);
-watch(theme, observeSections);
+watch(() => route.path + route.hash, observeSections);
+watch(theme, updateScroll, { flush: "post" });
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
   cancelAnimationFrame(scrollFrame);
 });
 useHead({ htmlAttrs: { lang: () => locale.value } });
 onNuxtReady(async () => {
-  initialize();
+  await initialize();
   try {
     const stored = localStorage.getItem("portfolio-language");
     if (localeOptions.some((item) => item.code === stored))
@@ -66,19 +65,6 @@ onNuxtReady(async () => {
   await observeSections();
 });
 
-// Query changes can arrive after the pre-rendered payload has hydrated.
-watch(
-  () => route.query.theme,
-  (requested) => {
-    if (
-      typeof requested === "string" &&
-      portfolioThemes.includes(requested as PortfolioTheme)
-    ) {
-      theme.value = requested as PortfolioTheme;
-    }
-  },
-  { flush: "post" },
-);
 </script>
 
 <template>

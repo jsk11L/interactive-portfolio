@@ -79,6 +79,8 @@ assert.equal(
 );
 const home = await readFile(resolve(root, "index.html"), "utf8");
 assert.ok(home.includes('id="skills"'), "Home needs a prominent skills section");
+assert.ok(home.includes('class="reading-world"'), "The universe treatment must continue below the title scene");
+assert.ok(home.includes('class="universe-shuffle"'), "Random universe needs a direct button beside the palette");
 assert.ok(home.includes('class="home-summary content-shell"'), "Home needs a short professional introduction");
 assert.ok(home.indexOf('class="home-summary') < home.indexOf('id="skills"'), "The introduction must precede skills");
 assert.ok(home.indexOf('id="skills"') < home.indexOf('class="portfolio-composition'), "Skills must precede the longer portfolio composition");
@@ -128,6 +130,11 @@ for (const item of Object.values(compositions)) {
     "Each composition must retain the complete CV sections",
   );
   assert.ok(["record", "gallery"].includes(item.catalog));
+}
+for (const theme of Object.keys(compositions)) {
+  const svg = await readFile(resolve(root, `images/reading/${theme}.svg`), "utf8");
+  assert.ok(svg.includes("<svg"), `Missing reading ornament: ${theme}`);
+  assert.ok(!/<script|<foreignObject|onload=/i.test(svg), `Unsafe reading ornament: ${theme}`);
 }
 assert.ok((await readFile(resolve(root, "images/cursors/friend-eye.svg"), "utf8")).includes('<svg'), "Manga cursor missing");
 assert.ok((await stat(resolve(root, "images/artwork/eva-hangar-v5.webp"))).size > 0, "Evangelion backdrop missing");

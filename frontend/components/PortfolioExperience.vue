@@ -26,6 +26,7 @@ const experiences = computed(() => store.experiences.map(translateExperience));
         v-for="item in experiences"
         :key="item.id"
         class="experience-entry"
+        :data-reading-anchor="`experience-${item.id}`"
       >
         <span class="experience-date">{{
           formatRange(item.start_date, item.end_date)

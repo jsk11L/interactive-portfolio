@@ -198,6 +198,7 @@ const resultLabel = computed(() =>
           :key="project.id"
           type="button"
           class="project-track"
+          :data-reading-anchor="`project-${project.id}`"
           :aria-pressed="selected.id === project.id"
           :class="{ selected: selected.id === project.id }"
           @click="selectedId = project.id"

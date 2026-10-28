@@ -2,7 +2,7 @@
 
 Start with the [current design plan](design-v4.md), [current screenshot comparison](previews/v4/index.md), [project identity audit](project-identities-v4.md) and [verification report](verification-v4.md).
 
-The latest changes are documented in [visual refinement v5](visual-refinement-v5.md): project lists, themed section indexes, larger controls, scene motion and the new Evangelion background. The v4 screenshots document the preceding version.
+The latest changes are documented in [visual refinement v6](visual-refinement-v6.md): illustrated reading areas, random openings, a direct shuffle control and preserved reading position. [Revision v5](visual-refinement-v5.md) covers project lists, themed section indexes, larger controls, scene motion and the Evangelion background. The v4 screenshots document the earlier version.
 
 - Hosting proposal: [free hosting research](hosting-research.md).
 - GitHub profile: [ready-to-use README](github-profile/README.md) and [setup/link verification notes](github-profile/SETUP.md).

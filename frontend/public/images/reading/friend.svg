@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000">
+  <defs><pattern id="ink" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#202320"/></pattern><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="m0 8 8-8m-2 10 4-4" stroke="#202320" stroke-width=".7"/></pattern></defs>
+  <path d="M0 0h150L0 240Zm1440 430-145 80 145 130ZM0 745l140 55L0 1000Z" fill="url(#ink)" opacity=".35"/>
+  <g fill="none" stroke="#202320" opacity=".38">
+    <path d="M16 24 155 0M20 42 145 15M20 60l115-30M20 78 125 45M1280 825l160 90m-143-105 143 80m-125-95 125 70"/>
+    <path d="M0 590V470l40-20v127m0-127 35 17v120m0-75 35-15v103m0-103 28 14v98m1170-470v-110l35-15v108m0-108 36 20v105m0-65 35-17v97m0-97 26 18v84" stroke-width="2"/>
+    <path d="m40 450 35 17v120l-35-10Zm1303-216 36 20v105l-36-17Z" fill="url(#hatch)"/>
+  </g>
+</svg>
