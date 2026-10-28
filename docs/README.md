@@ -2,6 +2,9 @@
 
 Start with the [current design plan](design-v4.md), [current screenshot comparison](previews/v4/index.md), [project identity audit](project-identities-v4.md) and [verification report](verification-v4.md).
 
+- Hosting proposal: [free hosting research](hosting-research.md).
+- GitHub profile: [ready-to-use README](github-profile/README.md) and [setup/link verification notes](github-profile/SETUP.md).
+
 - Content evidence: [project sources](project-sources.md).
 - Inspiration research: [visual references](visual-references.md).
 - Original artwork: [scene prompts](universe-artwork.md), [project covers](project-artwork.md), [original candle](artwork.md).
