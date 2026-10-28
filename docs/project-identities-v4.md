@@ -11,9 +11,11 @@ Reviewed public GitHub trees, source assets and existing project documentation t
 | Judge Bot | [Reviewed tree](https://github.com/jsk11L/judge-bot/tree/b9c47ceb0729532b837a467dbe3c1b58af46ed05) | No project icon found outside dependencies. New proposal: balanced scales with a node. |
 | University Timetabling | [Reviewed tree](https://github.com/jsk11L/university-timetabling/tree/b59e0660c1b3e51271b6474fdfc471f045a94bbb) | No dedicated mark found. New proposal: timetable grid with connected slots. |
 | Block Breaker | [Reviewed tree](https://github.com/jsk11L/block-breaker/tree/28b86873125ce87586d623a0a628d15d385b7d9e) | No dedicated mark found. New proposal: bricks, ball trajectory and paddle. |
-| JamSpace | Historical `JamSpace-App` and `JamSpace-Web` repositories remain inaccessible; a user-scoped public repository search returned no results. | No icon could be verified. New proposal based on the existing CV description: waveform and open orbit. No new product facts added. |
+| JamSpace | Follow-up review of the owner's private repository and local planning documents found no logo asset or defined visual identity. The documented concept is a collaborative musical workspace for bands. | Owner-authorized provisional mark: a rounded J containing an audio waveform, with a separate node consistent with the portfolio's personal identity. The monochrome SVG inherits each theme's color. This is a portfolio placeholder, not an upstream product logo. |
 
 All eight marks live in `frontend/public/images/projects/marks/`. Shared line weight, circles/open orbits and a small `js.` signature form the personal identity. Project titles stay outside the artwork to avoid repetition. `ProjectArtwork.vue` uses the same silhouette in home gallery/list views and project detail pages, with ten separate theme treatments. Original reference PNGs are retained under `docs/references/v4/`. The old conceptual covers are kept as historical assets but are no longer displayed as project imagery.
+
+The revised JamSpace placeholder is rendered for inspection in [`references/v4/jamspace-placeholder.png`](references/v4/jamspace-placeholder.png). It adds no external assets, fonts or runtime dependencies.
 
 ## Technology marks and fonts
 
