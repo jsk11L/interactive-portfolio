@@ -17,7 +17,7 @@ Open the local address printed by the preview command. For live development, use
 
 ## Ten compositions
 
-The selector keeps the same verified content while changing its structure and visual language. Open a specific direction with `/?theme=<id>`.
+The selector keeps the same verified content while changing its structure and visual language. Each full opening draws a random universe; use the palette to select a direction or the adjacent shuffle button to discover another. The URL reflects the current selection but does not pin the theme after a reload.
 
 | ID           | Inspiration                  | Reading structure                                                         |
 | ------------ | ---------------------------- | ------------------------------------------------------------------------- |
@@ -36,7 +36,7 @@ The references stay in the artwork, small visual details and the inspiration cap
 
 Home keeps a short introduction and career overview. The full résumé and project case studies retain the detail. A prominent skills section follows each opening, with 26 technology labels and locally bundled SVGs. The universe button opens ten color swatches without visible theme names; accessible numbered names, random selection and motion controls remain available.
 
-English is the initial language. The floating language button is available from the first screen and on every route. Explicit choices are remembered under `portfolio-language`; Spanish, English, German and Russian content is available, with newer creative copy currently using Spanish or English. Theme selection and motion preferences are remembered separately. Decorative animation respects reduced-motion settings and the pause control.
+English is the initial language. The floating language button is available from the first screen and on every route. Explicit choices are remembered under `portfolio-language`; Spanish, English, German and Russian content is available, with newer creative copy currently using Spanish or English. The last universe is stored only to avoid repeating it at the next opening; motion preferences are remembered separately. Decorative animation respects reduced-motion settings and the pause control.
 
 ## Source map
 
@@ -78,7 +78,7 @@ Project imagery now uses existing or proposed vector identities. Historical conc
 
 ## Static hosting
 
-For Cloudflare Pages, use root `frontend`, build command `npm run generate`, output `.output/public`, and a compatible Node.js 22+ runtime. No API or database environment variables are required. The generated output can also be served by other static hosts. A GitHub Pages project path requires the appropriate Nuxt `app.baseURL` before generation.
+Cloudflare Pages Free is the recommended host for the approved static build. Use root `frontend`, output `.output/public`, `NODE_VERSION=22`, and build command `npm run generate && npm run check:static && node --test ../scripts/theme-navigation.test.mjs`. No API or database environment variables are required. See the [deployment settings, source checks and rollout steps](docs/hosting-research.md) before creating the hosting project. The generated output can also be served by other static hosts. A GitHub Pages project path requires the appropriate Nuxt `app.baseURL` before generation.
 
 Building or committing does not deploy the site or change existing Google Cloud resources.
 
