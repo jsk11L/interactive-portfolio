@@ -36,6 +36,7 @@ function menuKey(event: KeyboardEvent) {
       fetchpriority="high"
     />
     <div class="kh2-water-shimmer" aria-hidden="true" />
+    <SceneAtmosphere />
     <svg
       class="kh2-water-motion"
       viewBox="0 0 1600 500"

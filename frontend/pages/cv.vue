@@ -14,7 +14,7 @@ const {
 const { text } = useStudioCopy();
 const profile = computed(() => translateProfile(store.profile));
 const printCv = () => window.print();
-useSeoMeta({ title: () => `${text.value.cvTitle} — Javier Sepúlveda` });
+useSeoMeta({ title: () => `${text.value.cvTitle} · Javier Sepúlveda` });
 </script>
 
 <template>

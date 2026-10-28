@@ -128,7 +128,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       contactGithubLabel: 'github',
       contactLinkedinLabel: 'linkedin',
       contactButton: '$ contacto --nuevo',
-      footer: (year: number) => `// ${year} — javier sepúlveda — hecho con nuxt 3 + fastapi`,
+      footer: (year: number) => `// ${year} · javier sepúlveda · hecho con nuxt 3 + fastapi`,
       dates: {
         present: 'Actualidad',
         inProgress: 'En desarrollo',
@@ -172,7 +172,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       },
       experiences: {
         'exp-programming': {
-          position: 'Ayudante de Programación — SimulaPUCV',
+          position: 'Ayudante de Programación · SimulaPUCV',
           description: [
             'Desarrollo y programación de SimulaPUCV, herramienta de simulación de generaciones universitarias, bajo la dirección de profesor.',
             'Implementación de módulos de simulación, análisis de datos y visualización de resultados. Traslado de código de MatLab a Go.',
@@ -195,7 +195,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
           ],
         },
         'exp-security': {
-          position: 'Guardia de Seguridad — Central de Monitoreo',
+          position: 'Guardia de Seguridad · Central de Monitoreo',
           description: [
             'Monitoreo de cámaras de vigilancia en central de seguridad.',
             'Gestión de incidencias y coordinación con equipos en terreno.',
@@ -256,7 +256,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       contactGithubLabel: 'github',
       contactLinkedinLabel: 'linkedin',
       contactButton: '$ contact --new',
-      footer: (year: number) => `// ${year} — javier sepúlveda — built with nuxt 3 + fastapi`,
+      footer: (year: number) => `// ${year} · javier sepúlveda · built with nuxt 3 + fastapi`,
       dates: {
         present: 'Present',
         inProgress: 'In progress',
@@ -300,7 +300,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       },
       experiences: {
         'exp-programming': {
-          position: 'Programming Assistant — SimulaPUCV',
+          position: 'Programming Assistant · SimulaPUCV',
           description: [
             'Development and programming of SimulaPUCV, a university cohort simulation tool, under faculty supervision.',
             'Implementation of simulation modules, data analysis, and result visualization. Migration of code from MatLab to Go.',
@@ -323,7 +323,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
           ],
         },
         'exp-security': {
-          position: 'Security Guard — Monitoring Center',
+          position: 'Security Guard · Monitoring Center',
           description: [
             'Surveillance camera monitoring in a security control center.',
             'Incident handling and coordination with field teams.',
@@ -385,7 +385,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       contactGithubLabel: 'github',
       contactLinkedinLabel: 'linkedin',
       contactButton: '$ kontakt --neu',
-      footer: (year: number) => `// ${year} — javier sepúlveda — erstellt mit nuxt 3 + fastapi`,
+      footer: (year: number) => `// ${year} · javier sepúlveda · erstellt mit nuxt 3 + fastapi`,
       dates: {
         present: 'Aktuell',
         inProgress: 'In Bearbeitung',
@@ -429,7 +429,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       },
       experiences: {
         'exp-programming': {
-          position: 'Programmierungsassistent — SimulaPUCV',
+          position: 'Programmierungsassistent · SimulaPUCV',
           description: [
             'Entwicklung und Programmierung von SimulaPUCV, einem Simulationswerkzeug für universitäre Jahrgänge, unter Anleitung eines Professors.',
             'Implementierung von Simulationsmodulen, Datenanalyse und Ergebnisvisualisierung. Überführung des Codes von MatLab nach Go.',
@@ -452,7 +452,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
           ],
         },
         'exp-security': {
-          position: 'Sicherheitsdienst — Überwachungszentrum',
+          position: 'Sicherheitsdienst · Überwachungszentrum',
           description: [
             'Überwachung von Sicherheitskameras in einem Kontrollzentrum.',
             'Bearbeitung von Vorfällen und Koordination mit Außenteams.',
@@ -514,7 +514,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       contactGithubLabel: 'github',
       contactLinkedinLabel: 'linkedin',
       contactButton: '$ контакт --новый',
-      footer: (year: number) => `// ${year} — javier sepúlveda — сделано с nuxt 3 + fastapi`,
+      footer: (year: number) => `// ${year} · javier sepúlveda · сделано с nuxt 3 + fastapi`,
       dates: {
         present: 'Сейчас',
         inProgress: 'В разработке',
@@ -558,7 +558,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
       },
       experiences: {
         'exp-programming': {
-          position: 'Ассистент по программированию — SimulaPUCV',
+          position: 'Ассистент по программированию · SimulaPUCV',
           description: [
             'Разработка и программирование SimulaPUCV, инструмента для моделирования университетских потоков, под руководством преподавателя.',
             'Реализация модулей симуляции, анализа данных и визуализации результатов. Перенос кода с MatLab на Go.',
@@ -581,7 +581,7 @@ const localeCopies: Record<Locale, LocaleCopy> = {
           ],
         },
         'exp-security': {
-          position: 'Охранник — центр мониторинга',
+          position: 'Охранник · центр мониторинга',
           description: [
             'Мониторинг камер наблюдения в центре безопасности.',
             'Обработка инцидентов и координация с полевыми командами.',

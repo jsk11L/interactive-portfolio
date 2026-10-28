@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { text } = useStudioCopy();
-useSeoMeta({ title: () => `${text.value.contact} — Javier Sepúlveda` });
+useSeoMeta({ title: () => `${text.value.contact} · Javier Sepúlveda` });
 </script>
 
 <template>
@@ -9,6 +9,6 @@ useSeoMeta({ title: () => `${text.value.contact} — Javier Sepúlveda` });
     ><span class="eyebrow">{{ text.contact }} / JAVIER SEPÚLVEDA</span>
     <h1>{{ text.contactTitle }}</h1>
     <p class="contact-page-lead">{{ text.contactBody }}</p>
-    <ContactLinks /><span class="contact-asterisk" aria-hidden="true">✳</span>
+    <ContactLinks />
   </div>
 </template>

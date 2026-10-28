@@ -8,7 +8,7 @@ const { text } = useStudioCopy();
     aria-label="Daydream Nation"
   >
     <h1 class="sr-only">
-      Javier Sepúlveda — {{ text.intro }} {{ text.introEnd }}
+      Javier Sepúlveda · {{ text.intro }} {{ text.introEnd }}
     </h1>
     <div class="daydream-negative-space" aria-hidden="true" />
     <div class="cover-candle" aria-hidden="true">

@@ -5,7 +5,7 @@ import PortfolioExperience from "./PortfolioExperience.vue";
 import { compositions } from "~/data/compositions";
 const { theme } = usePortfolioTheme();
 const { text } = useStudioCopy();
-const { travel } = useJourney();
+const { active, travel } = useJourney();
 const { spanish } = useUniverse();
 const composition = computed(() => compositions[theme.value]);
 const sections = {
@@ -24,10 +24,12 @@ const sections = {
       <span class="composition-signature">Javier<br />Sepúlveda.</span>
       <p>{{ text.degree }}<br />{{ text.location }}</p>
       <nav>
+        <button type="button" :aria-current="active === 'skills' ? 'location' : undefined" @click="travel('skills')">{{ text.skillsNav }}</button>
         <button
           v-for="section in composition.order"
           :key="section"
           type="button"
+          :aria-current="active === section ? 'location' : undefined"
           @click="travel(section)"
         >
           {{ text[section] }}

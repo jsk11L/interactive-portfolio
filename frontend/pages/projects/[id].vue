@@ -20,7 +20,7 @@ const nextProject = computed(
     ],
 );
 useSeoMeta({
-  title: () => `${localized.value?.title} — Javier Sepúlveda`,
+  title: () => `${localized.value?.title} · Javier Sepúlveda`,
   description: () => localized.value?.short_description,
   ogImage: () => localized.value?.images[0],
 });

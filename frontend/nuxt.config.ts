@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Javier Sepúlveda — Software & research",
+      title: "Javier Sepúlveda · Software & research",
       htmlAttrs: { lang: "en" },
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },

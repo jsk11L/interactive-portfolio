@@ -68,7 +68,7 @@ onBeforeUnmount(() => {
 <template>
   <section class="hero-section">
     <div class="hero-layout">
-      <!-- Photo window — floats above the terminal, top-right -->
+      <!-- Photo window · floats above the terminal, top-right -->
       <div class="photo-terminal">
         <div class="terminal-header">
           <div class="terminal-buttons">
@@ -83,7 +83,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <!-- Main terminal — large, covers full height -->
+      <!-- Main terminal · large, covers full height -->
       <div class="hero-terminal">
         <div class="terminal-header">
           <div class="terminal-buttons">
@@ -138,7 +138,7 @@ onBeforeUnmount(() => {
   padding-top: 60px; /* space for the photo to peek above */
 }
 
-/* Photo terminal — positioned above and right of the main terminal */
+/* Photo terminal · positioned above and right of the main terminal */
 .photo-terminal {
   position: absolute;
   top: 0;
@@ -172,7 +172,7 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Main terminal — big, stretches full width */
+/* Main terminal · big, stretches full width */
 .hero-terminal {
   background-color: var(--bg-secondary);
   border: 2px solid var(--border-dark);

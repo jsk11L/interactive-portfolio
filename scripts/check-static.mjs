@@ -79,6 +79,8 @@ assert.equal(
 );
 const home = await readFile(resolve(root, "index.html"), "utf8");
 assert.ok(home.includes('id="skills"'), "Home needs a prominent skills section");
+assert.ok(home.includes('class="home-summary content-shell"'), "Home needs a short professional introduction");
+assert.ok(home.indexOf('class="home-summary') < home.indexOf('id="skills"'), "The introduction must precede skills");
 assert.ok(home.indexOf('id="skills"') < home.indexOf('class="portfolio-composition'), "Skills must precede the longer portfolio composition");
 assert.ok(!home.includes('class="profile-intro"'), "Do not repeat the long introduction on home");
 const { technologyIcons } = await import("../frontend/data/technologyIcons.ts");
@@ -105,10 +107,10 @@ assert.ok(
 );
 const cv = await readFile(resolve(root, "cv/index.html"), "utf8");
 const englishPositions = [
-  "Programming Assistant — SimulaPUCV",
+  "Programming Assistant · SimulaPUCV",
   "Research Assistant",
   "Teaching Assistant",
-  "Security Guard — Monitoring Center",
+  "Security Guard · Monitoring Center",
 ];
 for (const position of englishPositions)
   assert.ok(cv.includes(position), `Missing CV experience: ${position}`);
@@ -119,12 +121,20 @@ assert.equal(
   "Each theme needs a distinct composition",
 );
 for (const item of Object.values(compositions)) {
+  assert.equal(item.catalog, "record", "Every universe must start with the project list");
   assert.deepEqual(
     [...item.order].sort(),
     ["about", "experience", "projects"],
     "Each composition must retain the complete CV sections",
   );
   assert.ok(["record", "gallery"].includes(item.catalog));
+}
+assert.ok((await readFile(resolve(root, "images/cursors/friend-eye.svg"), "utf8")).includes('<svg'), "Manga cursor missing");
+assert.ok((await stat(resolve(root, "images/artwork/eva-hangar-v5.webp"))).size > 0, "Evangelion backdrop missing");
+for (const route of routes) {
+  const html = await readFile(resolve(root, route, "index.html"), "utf8");
+  assert.ok(!html.includes("✳"), `${route}: unexplained asterisk decoration`);
+  assert.ok(!/[—–]/u.test(html), `${route}: long dash remains in generated content`);
 }
 assert.ok(
   (await stat(resolve(root, "images/artwork/candle-flame-v3.png"))).size > 0,

@@ -111,7 +111,7 @@ export const universes = [
     group: "screen",
     source: "Neon Genesis Evangelion",
     symbol: "⬡",
-    color: "#e54e26",
+    color: "#9e7abe",
     subtitle: "Una conexión entre ideas y personas.",
     subtitleEn: "A connection between ideas and people.",
     title: "NEON GENESIS",

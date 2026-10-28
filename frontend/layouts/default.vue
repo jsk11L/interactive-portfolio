@@ -91,7 +91,7 @@ watch(
   >
     <a class="skip-link" href="#main-content">{{ text.skip }}</a>
     <header class="masthead no-print">
-      <NuxtLink to="/" class="wordmark" aria-label="Javier Sepúlveda — inicio"
+      <NuxtLink to="/" class="wordmark" aria-label="Javier Sepúlveda · inicio"
         ><span class="wordmark-monogram">js.</span
         ><span>Javier<br />Sepúlveda</span></NuxtLink
       >
@@ -120,10 +120,7 @@ watch(
     <LanguageControl /><JourneyRail /><PhantomTransition />
     <footer class="colophon no-print">
       <span>© {{ new Date().getFullYear() }} Javier Sepúlveda</span
-      ><span
-        >{{ text.footer }}
-        <span class="footer-spark" aria-hidden="true">✳</span></span
-      ><a
+      ><span>{{ text.footer }}</span><a
         href="https://github.com/jsk11L"
         target="_blank"
         rel="noopener noreferrer"

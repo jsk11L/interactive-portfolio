@@ -27,7 +27,6 @@ const { spanish } = useUniverse();
       <p class="biography-summary">{{ text.description }}</p>
       <p class="interests-note">{{ text.interests }}</p>
       <div class="research-note">
-        <span aria-hidden="true">✳</span>
         <div>
           <h3>{{ text.researchTitle }}</h3>
           <p>{{ spanish ? "Coautor de una publicación sobre optimización de cronogramas hospitalarios." : "Coauthor of a publication on hospital scheduling optimization." }}</p>

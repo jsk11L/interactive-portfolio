@@ -1,0 +1,304 @@
+/* Readable controls, a shared list interaction and ten visual treatments. */
+.portfolio {
+  --catalog-title: Georgia, serif;
+  .main-nav { font: 600 18px/1.4 "Source Sans 3", Arial, sans-serif; gap: 28px; }
+  .main-nav a { min-height: 46px; }
+  .text-link { font-size: 18px; font-weight: 600; min-height: 44px; align-items: center; }
+  :is(.button-solid, .hunter-enter, .animals-play, .redroom-enter, .cyber-enter, .manga-enter) {
+    font-size: 18px; min-height: 48px; padding: 13px 22px;
+  }
+  .scene-caption .scene-scroll, .scene-caption .inspiration-note summary {
+    font-size: 17px; font-weight: 600; min-height: 46px; align-items: center;
+    padding: 10px 16px; background: var(--paper); color: var(--ink);
+    border: 1px solid var(--ink); opacity: 1; border-radius: 2px;
+  }
+  .scene-caption { gap: 18px; }
+  .universe-trigger, .ambient-controls > .theme-controls > .universe-trigger {
+    display: grid; place-items: center; width: 60px; height: 48px; padding: 8px;
+    border: 1px solid var(--ink); background: var(--paper); color: var(--ink); opacity: 1;
+  }
+  .theme-dots { padding: 0 4px 0 0; }
+  .theme-dots i { width: 18px; height: 18px; border-width: 2px; margin-right: -5px; }
+  .project-filters button, .catalog-view-controls button, .record-stage-controls button { min-height: 44px; min-width: 44px; }
+  .project-filters button { font-size: 16px; }
+  .project-search input { font: 16px/1.5 "Source Sans 3", Arial, sans-serif; }
+  .record-stage-controls > span { font-size: 13px; letter-spacing: .03em; }
+  .journey-rail .rail-label { font-size: 14px; }
+  .research-note { display: block; }
+}
+.home-summary {
+  padding-block: 80px 48px; max-width: 1100px;
+  h2 { font: 600 clamp(30px, 3vw, 44px)/1.15 "Source Sans 3", Arial, sans-serif; letter-spacing: -.025em; }
+  > p { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.65; max-width: 800px; margin-top: 22px; }
+  > .text-link { margin-top: 22px; }
+}
+.portfolio .skills-showcase { padding-top: 38px; }
+
+/* The index stays alongside the reading column; its visual language changes. */
+.portfolio .portfolio-composition {
+  width: min(1480px, calc(100% - 112px));
+  display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 80px 44px;
+  > :not(.composition-index) { grid-column: 2; grid-row: auto; }
+  > .composition-index {
+    display: block; grid-column: 1; grid-row: 1 / span 4;
+    position: sticky; top: 112px; align-self: start; padding: 22px 0;
+    border-top: 2px solid var(--accent);
+  }
+  .composition-signature { font: 600 27px/1.1 "Source Sans 3", Arial, sans-serif; letter-spacing: -.025em; }
+  .composition-index > p { font-size: 15px; line-height: 1.55; margin-top: 18px; }
+  .composition-index nav { margin-top: 24px; gap: 5px; width: 100%; }
+  .composition-index nav :is(button, a) {
+    display: flex; align-items: center; min-height: 44px; width: 100%; text-align: left;
+    padding: 8px 10px; font: 600 17px/1.3 "Source Sans 3", Arial, sans-serif;
+    border-bottom: 1px solid var(--line); color: var(--ink);
+  }
+  .composition-index nav [aria-current="location"] { box-shadow: inset 3px 0 var(--accent); background: color-mix(in srgb, var(--accent) 13%, transparent); }
+  .record-catalog { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 36px; }
+  .record-stage { display: block; order: 2; position: sticky; top: 112px; }
+  .track-list { order: 1; min-width: 0; }
+  .project-track { min-height: 126px; padding: 20px 14px; gap: 14px; grid-template-columns: 26px minmax(0, 1fr) 20px; color: var(--ink); }
+  .track-index { font: 500 14px/1.4 "Source Sans 3", Arial, sans-serif; }
+  .track-text > strong { font: 500 clamp(27px, 2.5vw, 42px)/1.1 var(--catalog-title); letter-spacing: -.02em; overflow-wrap: anywhere; }
+  .track-text > small { font: 600 14px/1.4 "Source Sans 3", Arial, sans-serif; letter-spacing: 0; text-transform: none; }
+  .track-text > .track-tech { font: 400 15px/1.5 "Source Sans 3", Arial, sans-serif; margin-top: 10px; }
+  .project-track.selected { background: color-mix(in srgb, var(--accent) 12%, transparent); box-shadow: inset 3px 0 var(--accent); padding-left: 18px; }
+  .project-track:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .selected-project-note h3 { font: 500 32px/1.1 var(--catalog-title); letter-spacing: -.02em; }
+  .selected-project-note > p { font: 400 18px/1.65 "Source Sans 3", Arial, sans-serif; display: block; }
+  .record-sleeve .project-artwork { aspect-ratio: 1.2; min-height: 220px; }
+}
+
+.portfolio[data-theme="dearly"] {
+  .composition-index { border-color: #83a9bc; }
+  .composition-index nav :is(a, button) { border: 0; }
+  .composition-index nav [aria-current]::before { content: "♛"; color: #52758d; margin-right: 10px; }
+  .project-track { border-color: #a9c5d2; }
+  .project-track.selected { background: linear-gradient(90deg, #cce2ee, #eef7fa); }
+  .record-stage { order: 1; }
+  .track-list { order: 2; }
+}
+.portfolio[data-theme="phantom"] {
+  --catalog-title: "Barlow Condensed", Arial, sans-serif;
+  .composition-index { border-top: 7px solid #ff4d51; }
+  .composition-index nav :is(a, button) { font-size: 19px; }
+  .project-track { border: 1px solid #74706a; margin-bottom: 12px; }
+  .project-track.selected { background: #f3f0e7; color: #171717; box-shadow: 6px 6px #e82c3a; }
+  .project-track.selected :is(small, .track-tech, .track-index, .track-play) { color: #6f242c; }
+  .track-text > strong { font-weight: 700; font-size: clamp(34px, 3vw, 46px); }
+  :is(.biography-copy p, .experience-entry li, .experience-company, .experience-date, .detail-highlights) { font-size: 18px; line-height: 1.7; }
+  .phantom-copy > p { font-size: 21px; }
+  .phantom-copy .hero-actions > .text-link { background: #f3f0e7; color: #171717; padding: 10px 18px; border: 2px solid #171717; }
+  .composition-contact > p, .composition-index > p, .selected-project-note > p { font-size: 18px; }
+}
+.portfolio[data-theme="bloodborne"] {
+  --catalog-title: "IM Fell English", Georgia, serif;
+  .composition-index { border-block: 4px double #8e825e; }
+  .composition-index .composition-signature { font-family: "IM Fell English", Georgia, serif; font-size: 32px; font-weight: 400; }
+  .project-track { border-bottom: 1px solid #605e4c; }
+  .project-track.selected { outline: 1px solid #9f8b65; outline-offset: -5px; }
+  .record-sleeve { border: 5px double #807557; padding: 6px; }
+  .hunter-lantern-glow { animation: lantern-flicker 8.3s ease-in-out infinite; }
+}
+.portfolio[data-theme="daydream"] {
+  .composition-index { border-block: 4px double var(--line); }
+  .composition-signature { font-family: Georgia, serif; font-weight: 400; }
+  .record-stage { order: 1; }
+  .track-list { order: 2; }
+  .track-index { border: 1px solid var(--line); padding: 3px; }
+  .project-track { min-height: 138px; }
+}
+.portfolio[data-theme="animals"] {
+  .composition-index { border-top: 7px solid #674332; }
+  .composition-index nav :is(a, button) { border-left: 1px solid #977b5a; padding-left: 15px; }
+  .project-track { border-bottom: 2px solid #aa9474; }
+  .project-track.selected { background: #bca17b55; box-shadow: inset 5px 0 #674332; }
+  .record-sleeve { border: 1px solid #74593f; padding: 12px; background: #c8b18e; }
+}
+.portfolio[data-theme="ferment"] {
+  --catalog-title: "Source Sans 3", Arial, sans-serif;
+  .composition-index { border-top: 5px solid #ba4c4c; border-left: 1px solid #8eafb0; padding-left: 18px; }
+  .composition-signature { color: #2c6170; }
+  .project-track { border-bottom: 1px solid #8eafb0; }
+  .project-track.selected { background: #dcebee; box-shadow: inset 5px 0 #b9413e; }
+  .record-sleeve { padding: 12px; background: #d5e7e8; box-shadow: 7px 7px #b9413e; }
+}
+.portfolio[data-theme="redroom"] {
+  --catalog-title: "IM Fell English", Georgia, serif;
+  .composition-index { border-top: 0; border-left: 2px solid #d8564d; padding-left: 18px; }
+  .composition-signature { font-family: "IM Fell English", Georgia, serif; font-weight: 400; font-size: 32px; }
+  .record-catalog { grid-template-columns: 1fr 1fr; }
+  .record-sleeve { border-block: 8px solid #130b10; outline: 1px solid #70514d; }
+  .project-track.selected { background: #4c1727; box-shadow: inset 3px 0 #e2c58e; }
+}
+.portfolio[data-theme="eva"] {
+  --paper: #100c17; --ink: #f7f0ff; --muted: #cdc0d9; --accent: #c2a1e5; --line: #6c557d;
+  --catalog-title: "Times New Roman", Times, serif;
+  .scene-eva { background: #100c17; }
+  .eva-opening { position: relative; z-index: 1; }
+  .eva-backdrop { opacity: .86; object-position: center; }
+  .scene-eva::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #100c17c9, #100c1740 60%, #100c1750); pointer-events: none; }
+  .eva-title-card { text-shadow: 0 2px 25px #100c17; }
+  .eva-magi-nav { color: #c8a6ec; }
+  .eva-magi-cell { background: #b99bdd; }
+  .eva-magi-cell::before { background: #1b1028ed; }
+  .eva-magi-cell small { color: #d6b9f2; }
+  .eva-magi-cell strong { color: #f5eaff; }
+  .eva-magi-cell:hover::before { background: #47305e; }
+  .composition-index { border: 1px solid #775994; border-top: 6px solid #9e7abe; padding: 18px; }
+  .composition-signature { font-family: "Times New Roman", Times, serif; font-size: 30px; }
+  .project-track { border: 1px solid #775994; margin-bottom: 10px; }
+  .project-track.selected { background: #33213f; box-shadow: inset 4px 0 #c6de8e; }
+  .project-artwork { --paper: #1c1229; --mark-color: #c6de8e; --line: #9b7ebc; background: #1c1229; .project-artwork-orbit { background: #9871b415; } }
+  .technology-icon, .experience-entry, .cv-document { border-color: #775994; }
+  .experience-entry { border-top-color: #9e7abe; }
+  .composition-eva > .biography-section { display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px; border: 0; padding: 0; }
+  .biography-heading img { max-width: 330px; height: 300px; }
+}
+.portfolio[data-theme="edgerunner"] {
+  --catalog-title: "Barlow Condensed", Arial, sans-serif;
+  .composition-index { border-left: 4px solid #edfa37; border-top: 0; padding-left: 16px; }
+  .composition-signature { font-family: "Barlow Condensed", Arial, sans-serif; font-size: 32px; }
+  .track-text > strong { font-weight: 700; font-size: clamp(36px, 3vw, 52px); }
+  .project-track { border-top: 1px solid #4b91a0; }
+  .project-track.selected { background: #19343e; box-shadow: inset 4px 0 #edfa37; }
+}
+.portfolio[data-theme="friend"] {
+  --catalog-title: "Source Sans 3", Arial, sans-serif;
+  .manga-introduction-panel a { font-size: 18px; display: inline-flex; align-items: center; min-height: 48px; padding: 10px 14px; border: 2px solid #202320; background: #fff; color: #202320; }
+  .composition-index { border: 2px solid #202320; padding: 16px; background: #fff; box-shadow: 4px 4px #202320; }
+  .project-track { border: 2px solid #202320; margin-bottom: 12px; }
+  .project-track.selected { background: #202320; color: #fff; box-shadow: 5px 5px #aaa69d; }
+  .project-track.selected :is(small, .track-tech, .track-index, .track-play) { color: #fff; }
+  .track-text > strong { font-weight: 750; }
+  .record-sleeve { border: 3px solid #202320; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .portfolio[data-theme="friend"], .portfolio[data-theme="friend"] :is(a, button, summary, select) {
+    cursor: url("/images/cursors/friend-eye.svg") 18 9, auto;
+  }
+}
+
+/* Animation layers align with the existing illustrations, leaving text still. */
+.scene-atmosphere { pointer-events: none; }
+.scene-light-pass { z-index: -1; mix-blend-mode: screen; }
+.portfolio .gothic-light-pass {
+  opacity: .18; filter: brightness(.65) contrast(3) saturate(.7);
+  mask-image: linear-gradient(90deg, transparent 35%, #000 70%);
+  animation: lantern-flicker 8.3s ease-in-out infinite;
+}
+.portfolio .neon-light-pass {
+  opacity: .23; filter: brightness(.7) contrast(2) hue-rotate(-15deg);
+  clip-path: polygon(0 0, 100% 0, 100% 22%, 66% 25%, 63% 100%, 0 100%);
+  animation: city-light-cycle 12s ease-in-out infinite;
+}
+@keyframes lantern-flicker {
+  0%, 100% { opacity: .19; }
+  23% { opacity: .33; }
+  26% { opacity: .16; }
+  30% { opacity: .28; }
+  57% { opacity: .13; }
+  61% { opacity: .24; }
+  77% { opacity: .34; }
+}
+@keyframes city-light-cycle {
+  0%, 100% { opacity: .16; filter: brightness(.7) contrast(2) hue-rotate(-15deg); }
+  38% { opacity: .35; filter: brightness(.85) contrast(2.2) hue-rotate(12deg); }
+  72% { opacity: .22; filter: brightness(.75) contrast(2) hue-rotate(-35deg); }
+}
+.shore-splashes { position: absolute; inset: 62% 0 0; overflow: hidden; }
+.shore-splash {
+  position: absolute; left: calc(12% + var(--i) * 9%); bottom: calc(12% + var(--i) * 5%);
+  width: 48px; height: 50px;
+  i { position: absolute; left: 50%; bottom: 8px; width: 3px; height: 6px; background: #fff; border-radius: 50%; opacity: 0; animation: sea-droplet 7s ease-out infinite; animation-delay: calc(var(--i) * -.83s); }
+  i:nth-child(2) { --dx: -12px; --dy: -27px; width: 2px; height: 4px; }
+  i:nth-child(3) { --dx: 15px; --dy: -20px; width: 2px; height: 4px; }
+  b { position: absolute; left: 8px; bottom: 2px; width: 38px; height: 8px; border: 1px solid #ffffffe0; border-radius: 50%; opacity: 0; animation: sea-ripple 7s ease-out infinite; animation-delay: calc(var(--i) * -.83s); }
+}
+@keyframes sea-droplet {
+  0%, 8%, 100% { opacity: 0; transform: translate(0, 0) scale(.7); }
+  13% { opacity: .85; }
+  24% { opacity: 0; transform: translate(var(--dx, 4px), var(--dy, -36px)) scale(.3); }
+}
+@keyframes sea-ripple {
+  0%, 14%, 100% { opacity: 0; transform: scale(.4); }
+  20% { opacity: .55; }
+  34% { opacity: 0; transform: scale(2); }
+}
+.paint-impressions { position: absolute; inset: 0; z-index: 0; mix-blend-mode: multiply; }
+.paint-impressions svg { width: 100%; height: 100%; }
+.paint-bloom { transform-box: fill-box; transform-origin: center; opacity: 0; animation: ink-impression 19s ease-in-out infinite; }
+.paint-blue { fill: #377d92; animation-delay: -3s; }
+.paint-red { fill: #c65b5c; animation-delay: -10s; }
+.paint-lilac { fill: #8c6c9d; animation-delay: -15s; }
+@keyframes ink-impression {
+  0%, 9%, 100% { opacity: 0; transform: scale(.82); }
+  15% { opacity: .3; transform: scale(.96); }
+  32%, 60% { opacity: .2; transform: scale(1); }
+  83% { opacity: 0; transform: scale(1.025); }
+}
+.portfolio[data-paused="true"] .scene-atmosphere,
+.portfolio[data-paused="true"] .scene-atmosphere * { animation-play-state: paused !important; }
+
+@media (min-width: 851px) {
+  .portfolio .journey-rail { display: none; }
+  .portfolio:is([data-theme="ferment"], [data-theme="edgerunner"]) .portfolio-composition {
+    grid-template-columns: minmax(0, 1fr) 180px;
+    > .composition-index { grid-column: 2; }
+    > :not(.composition-index) { grid-column: 1; }
+  }
+}
+@media (max-width: 1100px) and (min-width: 851px) {
+  .portfolio .portfolio-composition { width: calc(100% - 64px); grid-template-columns: 155px minmax(0, 1fr); gap: 60px 28px; }
+  .portfolio .portfolio-composition .record-catalog { gap: 22px; }
+  .portfolio .portfolio-composition .track-text > strong { font-size: 30px; }
+  .portfolio .portfolio-composition .project-track { gap: 8px; padding-inline: 9px; grid-template-columns: 20px minmax(0, 1fr) 15px; }
+  .portfolio .portfolio-composition .track-tech { font-size: 14px; }
+  .portfolio .portfolio-composition .selected-project-note h3 { font-size: 28px; }
+}
+@media (max-width: 850px) {
+  .home-summary { padding-block: 48px 28px; }
+  .portfolio .portfolio-composition { display: block; width: calc(100% - 48px); padding-top: 50px; }
+  .portfolio .portfolio-composition > .composition-index { display: none; }
+  .portfolio .portfolio-composition .record-catalog { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 24px; }
+  .portfolio .portfolio-composition .record-stage { position: sticky; top: 100px; order: 2; }
+  .portfolio .portfolio-composition .track-list { order: 1; }
+  .portfolio .portfolio-composition .track-text > strong { font-size: 31px; }
+  .portfolio .portfolio-composition .record-sleeve .project-artwork { min-height: 180px; }
+  .portfolio .masthead .main-nav { font-size: 17px; gap: 20px; order: 0; flex: 1; justify-content: center; border-top: 0; padding-top: 0; }
+  .portfolio .masthead { padding-inline: 24px; gap: 16px; flex-wrap: nowrap; min-height: 76px; }
+  .portfolio .scene-caption { bottom: 25px; left: 24px; right: 24px; }
+  .portfolio[data-theme="eva"] .composition-eva > .biography-section { grid-template-columns: 1fr 1.3fr; }
+}
+@media (max-width: 600px) {
+  .portfolio .wordmark > span:last-child { display: none; }
+  .portfolio .wordmark-monogram { font-size: 31px; }
+  .portfolio .masthead .main-nav { font-size: 16px; gap: 12px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; justify-content: start; }
+  .portfolio .main-nav a, .portfolio .masthead-tools { flex-shrink: 0; }
+  .portfolio .masthead { padding-inline: 16px; gap: 10px; }
+  .portfolio .universe-trigger { width: 52px; }
+  .home-summary { width: calc(100% - 40px); }
+  .portfolio .scene-caption { flex-wrap: wrap; align-items: start; gap: 10px; }
+  .portfolio .scene-caption .scene-scroll, .portfolio .scene-caption .inspiration-note summary { font-size: 15px; padding: 9px 12px; }
+  .portfolio .scene-caption .inspiration-note { max-width: 100%; }
+  .portfolio .portfolio-composition .record-catalog { display: flex; flex-direction: column; gap: 28px; }
+  .portfolio .portfolio-composition .record-stage { order: 1; position: static; width: 100%; }
+  .portfolio .portfolio-composition .track-list { order: 2; width: 100%; }
+  .portfolio .portfolio-composition .record-sleeve .project-artwork { aspect-ratio: 1.9; min-height: 160px; }
+  .portfolio .portfolio-composition .selected-project-note > p { font-size: 17px; }
+  .portfolio .portfolio-composition .track-text > strong { font-size: 31px; }
+  .portfolio .portfolio-composition .project-track { min-height: 116px; }
+  .portfolio .record-stage-controls > span { font-size: 13px; }
+  .portfolio .journey-rail button { min-height: 44px; }
+  .portfolio[data-theme="eva"] .composition-eva > .biography-section { display: block; }
+  .portfolio[data-theme="eva"] .eva-backdrop { object-position: 70% center; opacity: .55; }
+  .portfolio[data-theme="phantom"] .phantom-copy > p { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-atmosphere, .scene-atmosphere *, .portfolio .hunter-lantern-glow { animation: none !important; }
+  .shore-splashes, .scene-light-pass { display: none; }
+  .paint-bloom { opacity: .15; }
+}
+@media print {
+  .portfolio .portfolio-composition { display: block; }
+  .portfolio .portfolio-composition > .composition-index, .scene-atmosphere { display: none; }
+}

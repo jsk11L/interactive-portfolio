@@ -3,7 +3,6 @@ import {
   Pause,
   Play,
   Shuffle,
-  Sparkles,
   X,
 } from "lucide-vue-next";
 import { useId } from "vue";
@@ -48,11 +47,11 @@ onBeforeUnmount(() => {
       type="button"
       :aria-expanded="open"
       :aria-controls="panelId"
+      :aria-label="text.style"
+      :title="text.style"
       @click="open = !open"
     >
-      <span class="theme-dots" aria-hidden="true"><i /><i /><i /></span
-      ><span>{{ text.style }}</span
-      ><Sparkles :size="14" aria-hidden="true" />
+      <span class="theme-dots" aria-hidden="true"><i /><i /><i /></span>
     </button>
     <div v-if="open" :id="panelId" class="universe-panel universe-palette">
       <div class="universe-swatches" role="group" :aria-label="text.style">

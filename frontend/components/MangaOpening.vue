@@ -70,7 +70,7 @@ const { travel } = useJourney();
           />
         </g>
       </svg>
-      <span>VALPARAÍSO, CHILE</span><FriendMark class="manga-small-mark" />
+      <span>VALPARAÍSO, CHILE</span>
     </div>
     <div class="manga-introduction-panel">
       <p>{{ text.description }}</p>

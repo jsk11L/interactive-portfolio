@@ -8,17 +8,17 @@ export const compositions: Record<
   dearly: {
     layout: "journal",
     order: ["about", "projects", "experience"],
-    catalog: "gallery",
+    catalog: "record",
   },
   phantom: {
     layout: "poster-wall",
     order: ["projects", "about", "experience"],
-    catalog: "gallery",
+    catalog: "record",
   },
   bloodborne: {
     layout: "archive",
     order: ["about", "experience", "projects"],
-    catalog: "gallery",
+    catalog: "record",
   },
   daydream: {
     layout: "gatefold",
@@ -28,22 +28,22 @@ export const compositions: Record<
   animals: {
     layout: "industrial-stories",
     order: ["projects", "experience", "about"],
-    catalog: "gallery",
+    catalog: "record",
   },
   ferment: {
     layout: "print-essay",
     order: ["about", "projects", "experience"],
-    catalog: "gallery",
+    catalog: "record",
   },
   redroom: {
     layout: "cinema",
     order: ["about", "projects", "experience"],
-    catalog: "gallery",
+    catalog: "record",
   },
   eva: {
     layout: "terminal-grid",
     order: ["about", "projects", "experience"],
-    catalog: "gallery",
+    catalog: "record",
   },
   edgerunner: {
     layout: "reversed-split",
@@ -53,6 +53,6 @@ export const compositions: Record<
   friend: {
     layout: "manga-storyboard",
     order: ["about", "projects", "experience"],
-    catalog: "gallery",
+    catalog: "record",
   },
 };

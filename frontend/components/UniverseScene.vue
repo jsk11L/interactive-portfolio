@@ -13,6 +13,7 @@ const art = computed(
         ferment: "ferment-perspective-v3",
         redroom: "redroom-curtains",
         edgerunner: "edgerunner-city",
+        eva: "eva-hangar-v5",
       }) as Record<string, string>
     )[theme.value],
 );
@@ -26,12 +27,14 @@ const art = computed(
     <img
       v-if="art"
       class="scene-art"
+      :class="{ 'eva-backdrop': theme === 'eva' }"
       :src="`/images/artwork/${art}.webp`"
       alt=""
       width="1672"
       height="941"
       fetchpriority="high"
     />
+    <SceneAtmosphere />
     <div v-if="theme === 'bloodborne'" class="hunter-scene">
       <div class="hunter-rune" aria-hidden="true">†</div>
       <span class="scene-eyebrow">{{ text.degree }}</span>
