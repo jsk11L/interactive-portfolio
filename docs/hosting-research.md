@@ -47,6 +47,11 @@ Use the current Pages build image and the `NODE_VERSION` override rather than de
 
 The existing generated HTML files support direct route visits on Pages. Preserve the generated `404.html`; a blanket SPA redirect is unnecessary. Leave caching at the platform default for the initial deployment. [Pages route and cache behavior](https://developers.cloudflare.com/pages/configuration/serving-pages/) documents both decisions.
 
+## Build troubleshooting
+
+- `ENOENT ... /repo/package.json`: set the build root to `frontend`, where the application manifest and lockfile live.
+- `npm ci` reports incompatible `commander` versions: deploy the corrected `frontend/package-lock.json`. It resolves the optional `@bomb.sh/tab` peer to Commander 13 and gives SVGO its own Commander 11. Keep `npm ci` enabled; replacing it with `npm install` or disabling peer checks would hide the inconsistent lockfile. After pushing the fix, retry a deployment from the latest commit on `codex/distinct-universe-designs`.
+
 ## Avoiding the old hosting cost pattern
 
 This proposal publishes only `.output/public` on Pages Free. The ten themes, animations, language controls and content navigation run in the browser; publishing them does not require adding Workers, a database or the historical FastAPI/Docker services. Custom domains and optional paid services are outside the free deployment proposal.
