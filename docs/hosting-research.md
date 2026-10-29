@@ -1,5 +1,29 @@
 # Free hosting for the portfolio
 
+## Current deployment: Workers Static Assets
+
+Updated on 28 October 2026 after reviewing the owner's failed deployment log. The existing application is a Worker named `interactive-portfolio`. Keep it and publish the generated site using Workers Static Assets:
+
+| Setting | Value |
+| --- | --- |
+| Repository | `jsk11L/interactive-portfolio` |
+| Production branch | `codex/distinct-universe-designs` |
+| Root directory | `frontend` |
+| Build command | `npm run generate && npm run check:static && node --test ../scripts/theme-navigation.test.mjs` |
+| Deploy command | `npx wrangler deploy` |
+| Build environment | `NODE_VERSION=22` |
+| Wrangler configuration | `frontend/wrangler.json`, committed |
+
+The configuration supplies `assets.directory = "./.output/public"` and a generated 404 fallback. It deliberately has no `main`, server entry point, assets binding or custom build command. Wrangler should publish the existing static output without auto-configuring Nuxt or running `npm run build` again. HTML directory indexes work with the default trailing-slash handling.
+
+The failure `No such module "__STATIC_CONTENT_MANIFEST"` occurred after the static build succeeded: without a committed configuration, Wrangler auto-configured Nuxt and rebuilt it with `cloudflare-module-legacy`. This combined the legacy server adapter with modern asset upload. The explicit assets-only configuration removes that server path.
+
+Validation: `npx wrangler@4.155.0 deploy --dry-run` succeeded against the existing generated output, read the assets directory and exited without Nuxt setup or a second build. The static checker also passed all 11 content pages and 73 rendered resources. The dry run does not prove that a remote deployment has succeeded.
+
+Cloudflare documents [SSG configuration](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/) and recommends [Workers Static Assets for new sites](https://developers.cloudflare.com/workers/best-practices/workers-best-practices/). Static asset requests are [free and unlimited](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/); no Worker script runs in this configuration. The account's plan and billing settings have not been inspected or changed. This correction does not deploy directly or delete the existing application; a Git push can trigger its configured build.
+
+The earlier Pages research below remains an alternative, not the configuration of the existing Worker.
+
 Reviewed on 27 October 2026 against current official provider documentation. This is research and a deployment proposal; no hosting account, billing setting or cloud resource was changed.
 
 ## Recommendation for this build
@@ -38,7 +62,7 @@ Use the generated static directory rather than an SSR deployment preset. Do not 
 
 ## Deployment sequence for the approved version
 
-1. Push the approved commits to `codex/distinct-universe-designs`. During this review, a live remote-ref check found that branch at `3b6397f`, while the approved local application is `e9e0fd1`. Do not deploy the remote branch before synchronizing it. No merge into `main` is required to use the current branch as the production branch.
+1. Ensure the latest approved commits are pushed to `codex/distinct-universe-designs`. No merge into `main` is required to use the current branch as the production branch.
 2. In the owner's Cloudflare dashboard, choose **Workers & Pages > Create application > Pages > Connect to Git**. Connect the GitHub repository `jsk11L/interactive-portfolio`. Select the Free offering and the settings above. The owner may need to complete sign-in or authorize repository access; no account or permission was changed during this research.
 3. Deploy and use the assigned `https://<chosen-project-name>.pages.dev` address. That pattern is an example, not a reserved or verified address. A purchased custom domain is optional. Subsequent pushes to the selected production branch trigger builds automatically.
 4. Check `/`, `/cv`, `/contact` and an individual project URL by opening and reloading them. Then check a random opening, the palette/shuffle buttons, scroll preservation, language controls and mobile layout. Confirm the deployment's commit matches the approved application. Keep the previous deployment available for rollback until these checks pass.
@@ -65,7 +89,7 @@ Deploying here does not cancel old Google Cloud Run resources or any related sto
 - The approved output passes `node scripts/check-static.mjs`: 11 pages, 73 rendered links/assets and all ten universes.
 - `node --test scripts/theme-navigation.test.mjs` passes all three navigation tests.
 - The final output contains no server worker and requires no runtime secrets.
-- Source assets are tracked, but the latest local commits still need pushing before a Git-connected deployment can use them.
+- Source assets are tracked. The design and lockfile correction were pushed to `codex/distinct-universe-designs`; use the latest commit for subsequent configuration fixes.
 - This task researched and documented deployment; it did not create a hosting project, publish the site, grant GitHub permissions or change cloud billing.
 
 Context7 was attempted for current platform documentation but its transport was unavailable; the provider's official documentation was consulted directly instead.

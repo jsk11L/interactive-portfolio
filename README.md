@@ -78,7 +78,7 @@ Project imagery now uses existing or proposed vector identities. Historical conc
 
 ## Static hosting
 
-Cloudflare Pages Free is the recommended host for the approved static build. Use root `frontend`, output `.output/public`, `NODE_VERSION=22`, and build command `npm run generate && npm run check:static && node --test ../scripts/theme-navigation.test.mjs`. No API or database environment variables are required. See the [deployment settings, source checks and rollout steps](docs/hosting-research.md) before creating the hosting project. The generated output can also be served by other static hosts. A GitHub Pages project path requires the appropriate Nuxt `app.baseURL` before generation.
+The existing Cloudflare Worker uses **Workers Static Assets**. Use branch `codex/distinct-universe-designs`, root `frontend`, `NODE_VERSION=22`, build command `npm run generate && npm run check:static && node --test ../scripts/theme-navigation.test.mjs`, and deploy command `npx wrangler deploy`. The committed `frontend/wrangler.json` serves `.output/public` without a Worker script or a second Nuxt server build. No API or database environment variables are required. See the [deployment settings, source checks and rollout steps](docs/hosting-research.md). The generated output can also be served by Pages or other static hosts. A GitHub Pages project path requires the appropriate Nuxt `app.baseURL` before generation.
 
 Building or committing does not deploy the site or change existing Google Cloud resources.
 
